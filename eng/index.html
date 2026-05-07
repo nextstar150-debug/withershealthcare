@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withus Healthcare | (주)위더스헬스케어</title>
+  <meta name="description" content="We are a leading provider of medical devices to medical institutions for Wounds, Burns, and Scar treatment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+
+          <!-- ?뚯궗?뚭컻 ???쒕툕硫붾돱 ?덉쓬 -->
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+
+          <!-- 釉뚮옖?쒖냼媛????쒕툕硫붾돱: 二쇰젰 釉뚮옖?쒕쭔 -->
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="釉뚮옖?쒖냼媛??섏쐞 硫붾돱">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+
+          <!-- ?곌뎄媛쒕컻 ???쒕툕硫붾돱 ?놁쓬 -->
+          <li class="nav-item">
+            <a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a>
+          </li>
+
+          <!-- 怨좉컼?쇳꽣 ???쒕툕硫붾돱 ?놁쓬 -->
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <!-- ?몄뼱 ?좏깮 踰꾪듉 + ?쒕∼?ㅼ슫 -->
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="?몄뼱 ?좏깮" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag" width="18" height="18" aria-hidden="true">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron" width="16" height="16" aria-hidden="true">
+          </button>
+          <!-- ?대┃ ???섑??섎뒗 寃???쒕∼?ㅼ슫 -->
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="?몄뼱 ?좏깮">
+            <li>
+              <a href="../index.html" class="lang-dropdown__item">KOR</a>
+            </li>
+            <li>
+              <a href="/eng/index.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="硫붾돱 ?닿린" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======================================================
+       紐⑤컮???쒕툝由??ъ씠???쒕줈??(1024px ?댄븯)
+       ?꾨쾭嫄??대┃ ???ㅻⅨ履쎌뿉???щ씪?대뱶??       JS: navDrawer / drawerOverlay / drawerClose
+  ====================================================== -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="紐⑤컮??硫붾돱" aria-hidden="true">
+
+    <!-- ?쒕줈???ㅻ뜑: 濡쒓퀬 + ?リ린 踰꾪듉 -->
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="硫붾돱 ?リ린">&#10005;</button>
+    </div>
+
+    <!-- ?쒕줈??硫붾돱 由ъ뒪??-->
+    <ul class="drawer__list">
+
+      <!-- ?뚯궗?뚭컻 -->
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+
+      <!-- 釉뚮옖?쒖냼媛?-->
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+
+      <!-- ?곌뎄媛쒕컻 -->
+      <li class="drawer__item">
+        <a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a>
+      </li>
+
+      <!-- 怨좉컼?쇳꽣 -->
+      <li class="drawer__item">
+        <a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <!-- 諛곌꼍 ?대?吏 ?덉씠?? vision-mission 50% ~ medical-solutions 50% -->
+    <div class="about-bg-layer" aria-hidden="true"></div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <!-- ?덉뼱濡??щ씪?대뱶 ?섑띁: 5珥??섏씠???먮룞 ?꾪솚 -->
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide hero-slide--1 is-active"></div>
+        <div class="hero-slide hero-slide--2"></div>
+        <div class="hero-slide hero-slide--3"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-company">Withus Healthcare Co., Ltd.</p>
+          <h1 class="hero-title">WITHUS HEALTHCARE</h1>
+          <p class="hero-tagline">We are a leading provider of medical devices to medical institutions for Wounds, Burns, and Scar treatment.</p>
+        </div>
+        <div class="hero-controls">
+          <div class="hero-line" aria-hidden="true"></div>
+          <div class="hero-counter" aria-live="polite">
+            <span class="counter-active" id="slideNum">01</span>
+            <span class="counter-dot" aria-hidden="true"></span>
+            <span class="counter-total">03</span>
+          </div>
+          <div class="hero-arrows">
+            <button class="hero-arrow" id="heroPrev" aria-label="?댁쟾 ?щ씪?대뱶">
+              <img src="assets/icon-prev.svg" alt="">
+            </button>
+            <button class="hero-arrow" id="heroNext" aria-label="?ㅼ쓬 ?щ씪?대뱶">
+              <img src="assets/icon-next.svg" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <img src="assets/icon-scroll-down.svg" alt="" class="scroll-arrow">
+        <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section class="vision-mission">
+      <!-- 臾댄븳 留덊궎 ?뚰꽣留덊겕: JS ?놁씠 CSS transform留뚯쑝濡?援ы쁽 -->
+      <div class="vision-watermark" aria-hidden="true">
+        <!-- ?몃옓??2?명듃 蹂듭젣?섏뿬 ?딄? ?녿뒗 臾댄븳 猷⑦봽 援ы쁽 -->
+        <div class="vision-watermark__track">
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+          <!-- 蹂듭젣 ?명듃: 泥?踰덉㎏ ?몃옓???쇱そ?쇰줈 鍮좎졇?섍컝 ???댁뼱 遺숈쓬 -->
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">쨌</span>
+        </div>
+      </div>
+      <div class="vision-cards">
+        <article class="vision-card">
+          <div class="vision-card-img-wrap">
+            <picture>
+              <!-- 紐⑤컮??767px ?댄븯): ?꾩슜 ?щ∼ ?대?吏 -->
+              <source media="(max-width: 767px)" srcset="assets/Mask_group__1_.webp" type="image/webp">
+              <!-- ?곗뒪?ы깙: 湲곗〈 ?대?吏 ?좎? -->
+              <source srcset="assets/vision-card.webp" type="image/webp">
+              <img src="assets/vision-card.jpg" alt="?섎뒛怨?諛붾떎 ?띻꼍" class="vision-card-img" width="580" height="720" loading="lazy">
+            </picture>
+          </div>
+          <div class="vision-card-content">
+            <div class="card-line" aria-hidden="true">
+              <img src="assets/icon-card-line.svg" alt="">
+            </div>
+            <div class="card-text">
+              <h3 class="card-title">Our Vision and Goal</h3>
+              <p class="card-desc">The world's leading manufacturer<br>and distributor of medical devices.</p>
+            </div>
+          </div>
+        </article>
+        <article class="vision-card vision-card--offset">
+          <div class="vision-card-img-wrap">
+            <picture>
+              <!-- 紐⑤컮??767px ?댄븯): 臾쇱썒?⑹씠 ?꾩껜媛 蹂댁씠???꾩슜 ?щ∼ ?대?吏 -->
+              <source media="(max-width: 767px)" srcset="assets/Mask_group__2_.webp" type="image/webp">
+              <!-- ?곗뒪?ы깙: 湲곗〈 ?대?吏 ?좎? -->
+              <source srcset="assets/mission-card.webp" type="image/webp">
+              <img src="assets/mission-card.jpg" alt="臾쇰갑?? class="vision-card-img" width="580" height="720" loading="lazy">
+            </picture>
+          </div>
+          <div class="vision-card-content">
+            <div class="card-line" aria-hidden="true">
+              <img src="assets/icon-card-line.svg" alt="">
+            </div>
+            <div class="card-text">
+              <h3 class="card-title">Our mission and<br>Core Value</h3>
+              <p class="card-desc">We exist to help those in need.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT + CAROUSEL 怨듯넻 諛곌꼍 wrapper -->
+    <div class="about-carousel-wrap">
+
+    <!-- ABOUT / SINCE 2012 -->
+    <section class="about">
+      <div class="about-inner">
+        <p class="about-label">Wounds, Burn &amp; Scar care</p>
+        <h2 class="about-title">
+          <!-- 475px ?댄븯: 以꾨컮轅??섎룞 ?쒖뼱 -->
+          <span class="about-title__mobile">
+            We supply various<br>
+            <span class="about-highlight">Wound Care Medical Devices</span><br>
+            to Medical Institutions.
+          </span>
+          <!-- 476px ?댁긽: 湲곗〈 援ъ“ ?좎? -->
+          <span class="about-title__desktop">
+            We supply various<br>
+            <span class="about-highlight">Wound Care Medical Devices</span> to Medical Institutions.
+          </span>
+        </h2>
+          <div class="about-since-wrap">
+          <span class="about-since">Since 2012</span>
+          <div class="since-line" aria-hidden="true">
+            <img src="assets/icon-since-line.svg" alt="">
+          </div>
+        </div>
+        <p class="about-desc">
+          We have been supplying over 50+ specialized Medical Devices<br> for Wounds, Burns &amp; Scar treatment to Medical Institutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRODUCT CAROUSEL -->
+    <section class="product-carousel" aria-label="?쒗뭹 ?대?吏">
+      <div class="carousel-track-wrap">
+        <div class="carousel-track">
+          <!-- 1踰?-->
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-1.webp" type="image/webp">
+              <img src="assets/carousel-1.jpg" alt="臾쇨껐" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-2.webp" type="image/webp">
+              <img src="assets/carousel-2.jpg" alt="?ㅽ겕" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-3.webp" type="image/webp">
+              <img src="assets/carousel-3.jpg" alt="?먰겕由? loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-4.webp" type="image/webp">
+              <img src="assets/carousel-4.jpg" alt="臾쇰갑?? loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-5.webp" type="image/webp">
+              <img src="assets/carousel-5.jpg" alt="?쒗뭹" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-6.webp" type="image/webp">
+              <img src="assets/carousel-6.jpg" alt="?섏닠" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/products-carousel-7.webp" type="image/webp">
+              <img src="assets/carousel-7.jpg" alt="?쒕툕" loading="lazy" width="310" height="480">
+            </picture></div>
+          <!-- 2踰?(臾댄븳猷⑦봽 蹂듭젣) -->
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-1.webp" type="image/webp">
+              <img src="assets/carousel-1.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-2.webp" type="image/webp">
+              <img src="assets/carousel-2.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-3.webp" type="image/webp">
+              <img src="assets/carousel-3.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-4.webp" type="image/webp">
+              <img src="assets/carousel-4.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-5.webp" type="image/webp">
+              <img src="assets/carousel-5.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-6.webp" type="image/webp">
+              <img src="assets/carousel-6.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-7.webp" type="image/webp">
+              <img src="assets/carousel-7.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+        </div>
+      </div>
+    </section>
+
+    </div><!-- /.about-carousel-wrap -->
+
+    <!-- MEDICAL SOLUTIONS -->
+    <section class="medical-solutions">
+      <div class="ms-inner">
+        <div class="ms-header">
+          <div class="ms-titles">
+            <h2 class="ms-title">MEDICAL SOLUTIONS</h2>
+            <p class="ms-subtitle ms-subtitle--sentence">Expert medical solutions trusted by clinical professionals</p>
+          </div>
+
+          <!-- ?쒗뭹 ???ㅻ퉬寃뚯씠??               ?щ씪?대뵫 ?몃뜑?쇱씤 諛⑹떇:
+               - ???쒖꽌 怨좎젙, DOM ?대룞 ?놁쓬
+               - ms-tab-underline 諛붽? translateX + width濡??щ씪?대뵫
+          -->
+          <nav class="ms-tabs" aria-label="Product categories" id="msTabs">
+
+            <!-- ?щ씪?대뵫 ?몃뜑?쇱씤 諛???JS媛 ?좏깮 ???꾩튂濡??대룞 -->
+            <span class="ms-tab-underline" id="msTabUnderline" aria-hidden="true"></span>
+
+            <!-- ??紐⑸줉 ??怨좎젙 ?쒖꽌 -->
+            <button class="ms-tab is-active" role="tab" aria-selected="true"
+              data-index="0"
+              data-label="Adhesive Transparent Wound Dressing"
+              data-name="移대씪寃?S / CARRAGEL S"
+              data-desc="Advanced Spray-on Barrier for superior hydration of post-op and burn sites">
+              CARRAGEL S
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="1"
+              data-label="Adhesive Transparent Wound Dressing"
+              data-name="移대씪寃?T / CARRAGEL T"
+              data-desc="Advanced Gel-type Barrier for superior hydration of post-op and burn sites">
+              CARRAGEL T
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="2"
+              data-label="Adhesive Transparent Wound Dressing"
+              data-name="?꾨컮?ъ뒪 / AVARUS"
+              data-desc="Open-Mesh Silicone Wound Contact Layer dressing: Primary dressing for protecting the wound surface and effective transfer of exudate to a secondary dressing.">
+              AVARUS
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="3"
+              data-label="Adhesive Foam Dressing : Heavy-Exudate"
+              data-name="由ъ젨?ㅽ? A / REGENSTA A"
+              data-desc="Effectively absorbs Heavy-Exudate to maintain an optimal moist wound healing environment and provides a protective barrier.">
+              REGENSTA A
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="4"
+              data-label="Foam Backing Hydrocolloid : Moderate Exudate"
+              data-name="由ъ젨?ㅽ? B / REGENSTA B"
+              data-desc="Effectively absorbs Moderate-Exudate to maintain an optimal moist wound healing environment and provides a protective barrier with Foam Backing Hydrocolloid dressing.">
+              REGENSTA B
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="5"
+              data-label="Hydrocolloid Dressing : Light Exudate"
+              data-name="由ъ젨?ㅽ? H / REGENSTA H"
+              data-desc="Effectively absorbs Light-Exudate to maintain an optimal moist wound healing environment and provides a protective barrier with Hydrocolloid dressing.">
+              REGENSTA H
+            </button>
+            <button class="ms-tab is-hidden--temp" role="tab" aria-selected="false"
+              data-index="6"
+              data-label="Skin Protector : Adhesive Remover"
+              data-name="?대━鍮?/ CLEVY"
+              data-desc="Helps remove adhesive appliances safely and painlessly from the skin.">
+              CLEVY
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="7"
+              data-label="Adhesive Transparent Wound Dressing"
+              data-name="由ъ젨?ㅽ? G ?щ┝ / REGENSTA G CREAM"
+              data-desc="Formulated with Beta-Glucan to help moisturize and regenerate the damaged skin barriers, while protecting the skin by forming a physical barrier.">
+              REGENSTA G CREAM
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="8"
+              data-label="Adhesive Transparent Wound Dressing"
+              data-name="?ㅼ뭅寃붿숴鍮꾨꽕?댁뀡 / SCARGEL COMBINATION"
+              data-desc="Formulated with Onion Extract to suppress scar tissue buildup and soothe redness for smoother scar care.">
+              SCARGEL COMBINATION
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="9"
+              data-label="Adhesive Transparent Wound Dressing"
+              data-name="硫붽???/ MEGA HEAL"
+              data-desc="Washable and reusable Silicone Gel Sheets provide a moist environment for the effective recovery of thickened scars.">
+              MEGA HEAL
+            </button>
+          </nav>
+        </div>
+
+      </div><!-- /.ms-inner -->
+
+      <!-- ?쒗뭹 ?곸꽭 ?곸뿭 ??ms-inner 諛뽰쑝濡??대룞?섏뿬 媛ㅻ윭由ш? ?붾㈃ ?ㅻⅨ履??앷퉴吏 ?뺤옣
+           ms-info??pad-x padding-left濡??쇱そ ?щ갚 ?좎? -->
+      <div class="ms-featured" id="msFeatured">
+          <div class="ms-info">
+            <p class="ms-product-label" id="msProductLabel">Adhesive Transparent Wound Dressing</p>
+            <h3 class="ms-product-name" id="msProductName">移대씪寃?S / CARRAGEL S</h3>
+            <div class="ms-product-line" aria-hidden="true"></div>
+            <p class="ms-product-desc" id="msProductDesc">Advanced Spray-on Barrier for superior hydration of post-op and burn sites</p>
+            <a href="./brand-detail-carragel-s.html" class="btn-view-more btn-blue">
+              <span>View More</span>
+              <img src="assets/icon-arrow-blue.svg" alt="" class="btn-icon">
+            </a>
+          </div>
+          <div class="ms-product-img" id="msGalleryWrap">
+            <!-- JS媛 ?꾩옱 ???몃뜳??湲곗??쇰줈 translateX ?대룞
+                 ?щ씪?대뱶 1: ?좏깮 ?쒗뭹 (?ㅻ쾭?덉씠 ?놁쓬)
+                 ?щ씪?대뱶 2: ?ㅼ쓬 ?쒗뭹 (#DDD 20% ?ㅻ쾭?덉씠)
+                 ?щ씪?대뱶 3: 洹??ㅼ쓬 ?쒗뭹 (#DDD 20% ?ㅻ쾭?덉씠, ?ㅻⅨ履?諛??섎┝) -->
+            <div class="ms-gallery-track" id="msGalleryTrack">
+              <div class="ms-gallery-slide"><img src="assets/ms-product-1.webp" alt="Carragel S product image" loading="lazy" width="502" height="560" fetchpriority="high"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-2.webp" alt="Carragel T product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-3.webp" alt="AVARUS product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-4.webp" alt="REGENSTA A product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-5.webp" alt="REGENSTA B product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-6.webp" alt="REGENSTA H product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide is-hidden--temp"><img src="assets/ms-product-7.webp" alt="CLEVY product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-8.webp" alt="REGENSTA G Cream product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-9.webp" alt="Scargel Combination product image" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-10.webp" alt="MEGA HEAL product image" loading="lazy" width="502" height="560"></div>
+              <!-- 留먮? 蹂듭젣 ?щ씪?대뱶 ??留덉?留????좏깮 ???ㅻⅨ履?鍮??먮━ 梨꾩?
+                   aria-hidden: ?ㅽ겕由곕━?붿뿉??以묐났 ?쏀옒 諛⑹? -->
+              <div class="ms-gallery-slide ms-gallery-slide--clone" aria-hidden="true"><img src="assets/ms-product-1.webp" alt="" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide ms-gallery-slide--clone" aria-hidden="true"><img src="assets/ms-product-2.webp" alt="" loading="lazy" width="502" height="560"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- R&D -->
+    <section class="rd-section section">
+      <div class="rd-watermark" aria-hidden="true">
+        <span class="rd-wm-1">Withus</span>
+        <span class="rd-wm-2">Healthcare</span>
+      </div>
+      <div class="rd-inner">
+        <div class="rd-photo">
+          <img src="assets/rd-photo.png" alt="Research and Development" loading="lazy">
+        </div>
+        <div class="rd-content">
+          <div class="rd-text-group">
+            <p class="rd-label">R &amp; D</p>
+            <h2 class="rd-title">Research &amp; Development</h2>
+          </div>
+          <div class="rd-body">
+            <p class="rd-desc">Our WITHUS R&amp;D focuses on ensuring the highest standards of safety and practical utility for Wounds, Burns, and Scar treatment devices.</p>
+            <a href="./rd.html" class="btn-view-more btn-blue">
+              <span>View More</span>
+              <img src="assets/icon-arrow-blue.svg" alt="" class="btn-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND PRODUCTS -->
+    <section class="brand-products section">
+      <div class="brand-inner">
+        <!-- ??댄? + ?ㅻ퉬寃뚯씠??踰꾪듉 (?쇱そ) -->
+        <div class="brand-label-group">
+          <h3 class="brand-title">Specialized Medical Devices</h3>
+          <div class="brand-nav" aria-label="釉뚮옖???먯깋">
+            <button class="brand-nav-btn" id="brandPrev" aria-label="?댁쟾">&#8249;</button>
+            <button class="brand-nav-btn brand-nav-btn--pause" id="brandPause" aria-label="?쇱떆?뺤?"><span class="pause-icon" aria-hidden="true"></span></button>
+            <button class="brand-nav-btn" id="brandNext" aria-label="?ㅼ쓬">&#8250;</button>
+          </div>
+        </div>
+        <!-- 濡쒓퀬 ?щ씪?대뱶 ?몃옓 -->
+        <div class="brand-logos-wrap">
+          <div class="brand-logos-track" id="brandTrack">
+            <div class="brand-logo-item"><img src="assets/brand-carragel-s.jpg" alt="Carragel S" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-carragel-t.jpg" alt="Carragel T" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-avarus.jpg" alt="AVARUS Contact" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-a.jpg" alt="REGENSTA A" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-b.jpg" alt="REGENSTA B" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-h.jpg" alt="REGENSTA H" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item is-hidden--temp"><img src="assets/brand-clevy.jpg" alt="Clevy" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-g.jpg" alt="REGENSTA G" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-scargel.jpg" alt="Scargel combination" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-megaheal.jpg" alt="MegaHeal" loading="lazy" width="190" height="68"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

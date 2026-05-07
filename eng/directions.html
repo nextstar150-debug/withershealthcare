@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location | Withus Healthcare</title>
+  <meta name="description" content="Find Withus Healthcare. Located in Cheongna, Incheon. Open weekdays 09:00??8:00.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Onest:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="directions.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="釉뚮옖?쒖냼媛??섏쐞 硫붾돱">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a></li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="?몄뼱 ?좏깮" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="?몄뼱 ?좏깮">
+            <li><a href="../directions.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/directions.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="硫붾돱 ?닿린" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="紐⑤컮??硫붾돱" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="硫붾돱 ?リ린">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a></li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="pg-hero dir-pg-hero section" aria-label="?ㅼ떆?붽만 諛곕꼫">
+      <div class="pg-hero__bg dir-hero-bg" aria-hidden="true"></div>
+      <div class="pg-hero__content">
+        <h1 class="pg-hero__title">Location</h1>
+        <nav class="pg-breadcrumb" aria-label="?꾩옱 ?꾩튂">
+          <a href="./index.html" class="pg-breadcrumb__home" aria-label="Home">
+            <img src="./assets/icon-home-breadcrumb.svg" alt="?? width="16" height="16">
+          </a>
+          <span class="pg-breadcrumb__dot" aria-hidden="true">쨌</span>
+          <a href="./about.html" class="pg-breadcrumb__item">COMPANY
+            <img src="./assets/icon-breadcrumb-arrow.svg" alt="" class="pg-breadcrumb__chevron-icon" aria-hidden="true" width="10" height="6">
+          </a>
+          <span class="pg-breadcrumb__dot" aria-hidden="true">쨌</span>
+          <span class="pg-breadcrumb__item pg-breadcrumb__item--current" aria-current="page">Location
+            <img src="./assets/icon-breadcrumb-arrow-active.svg" alt="" class="pg-breadcrumb__chevron-icon" aria-hidden="true" width="10" height="6">
+          </span>
+        </nav>
+      </div>
+      <nav class="pg-subnav" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+        <a href="./about.html" class="pg-subnav__item">About Us</a>
+        <a href="./core-values.html" class="pg-subnav__item">Core Values</a>
+        <a href="./history.html" class="pg-subnav__item">Our History</a>
+        <a href="./directions.html" class="pg-subnav__item" aria-current="page">Location</a>
+      </nav>
+    </section>
+
+    <section class="dir-section section" aria-label="?ㅼ떆?붽만">
+      <div class="dir-inner">
+
+        <div class="dir-heading dir-reveal">
+          <p class="dir-label">Directions</p>
+          <h2 class="dir-title">Always by your side.</h2>
+        </div>
+
+        <div class="dir-content dir-reveal">
+          <div class="dir-map">
+            <!-- 吏???대?吏 ?대┃ ??援ш?留?????쑝濡??대룞 -->
+            <a href="https://maps.google.com/maps?q=?몄쿇愿묒뿭???쒓뎄+泥?씪?쒕궡濡?96" target="_blank" rel="noopener noreferrer" aria-label="援ш?留듭뿉???꾨뜑?ㅽ뿬?ㅼ????꾩튂 蹂닿린">
+              <img src="./assets/map-cheongna.webp" alt="?꾨뜑?ㅽ뿬?ㅼ????꾩튂 吏?????몄쿇愿묒뿭???쒓뎄 泥?씪?쒕궡濡?96 (?대┃ ??援ш?留듭쑝濡??대룞)" class="dir-map__img" width="1200" height="900" loading="lazy">
+            </a>
+          </div>
+
+          <div class="dir-info" aria-label="?곕씫泥?諛??댁쁺?쒓컙">
+            <div class="dir-line dir-line--primary" aria-hidden="true"></div>
+
+            <div class="dir-block">
+              <div class="dir-block__header">
+                <!--
+                  icon-location.svg???쇰? 紐⑤컮??釉뚮씪?곗??먯꽌 mask 湲곕컲 SVG瑜?img濡?濡쒕뱶 ???꾨씫?????덉뼱
+                  inline svg濡??뚮뜑留곷릺寃?泥섎━
+                -->
+                <svg
+                  class="dir-location-icon"
+                  width="16"
+                  height="19"
+                  viewBox="0 0 15.5 19.4965"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0"
+                  y="0"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <defs>
+                    <mask
+                      id="mask2_552_482"
+                      style="mask-type:alpha"
+                      maskUnits="userSpaceOnUse"
+                      x="-0.25"
+                      y="-0.9165000000000418"
+                      width="16"
+                      height="21"
+                    >
+                      <path
+                        id="Union"
+                        d="M7.83,0.0055c4.23,0.045 7.67,3.431 7.67,7.63c0,1.397 -0.24,2.186 -0.6,3.299v0.001c-0.3,0.915 -0.88,1.895 -1.55,2.823c-0.68,0.938 -1.47,1.867 -2.22,2.684c-0.75,0.818 -1.47,1.533 -2,2.043c-0.27,0.255 -0.48,0.46 -0.64,0.601c-0.03,0.035 -0.07,0.065 -0.1,0.092c0,0.008 -0.01,0.018 -0.01,0.026c-0.16,0.203 -0.37,0.263 -0.5,0.282c0,0 0,0 0,0.001c-0.02,0.002 -0.04,0.007 -0.05,0.008c-0.01,0 -0.02,-0.001 -0.02,-0.001c-0.04,0.003 -0.08,0.003 -0.12,0c-0.01,0 -0.01,0.001 -0.02,0.001c-0.01,-0.001 -0.03,-0.006 -0.05,-0.008c0,-0.001 0,-0.001 -0.01,-0.001c-0.13,-0.019 -0.33,-0.081 -0.48,-0.282c-0.01,-0.008 -0.02,-0.016 -0.02,-0.024c-0.03,-0.027 -0.07,-0.058 -0.1,-0.094c-0.16,-0.141 -0.38,-0.346 -0.64,-0.602c-0.53,-0.511 -1.25,-1.227 -2,-2.047c-0.75,-0.819 -1.55,-1.749 -2.22,-2.688c-0.67,-0.931 -1.26,-1.913 -1.55,-2.831v-0.001c-0.36,-1.107 -0.6,-1.89 -0.6,-3.285c0,-4.227 3.48,-7.632 7.75,-7.632c0.03,0 0.06,0.002 0.08,0.005zM7.71,1.5005c-3.45,0.021 -6.21,2.77 -6.21,6.132c0,1.157 0.18,1.76 0.52,2.827l0.1,0.268c0.25,0.638 0.69,1.372 1.24,2.146c0.63,0.874 1.38,1.756 2.11,2.549c0.73,0.792 1.43,1.486 1.94,1.982c0.12,0.119 0.24,0.225 0.34,0.32c0.1,-0.094 0.22,-0.2 0.34,-0.319c0.51,-0.496 1.21,-1.188 1.94,-1.979c0.72,-0.791 1.47,-1.672 2.1,-2.545c0.64,-0.882 1.12,-1.712 1.34,-2.406v-0.001c0.35,-1.067 0.53,-1.679 0.53,-2.839c0,-3.375 -2.79,-6.133 -6.25,-6.133c-0.01,0 -0.03,-0.002 -0.04,-0.002zM7.75,3.1495c2.32,0 4.25,1.821 4.25,4.126c0,2.305 -1.93,4.126 -4.25,4.126c-2.32,0 -4.25,-1.821 -4.25,-4.126c0,-2.305 1.93,-4.126 4.25,-4.126zM7.75,4.6495c-1.55,0 -2.75,1.201 -2.75,2.626c0,1.425 1.21,2.626 2.75,2.626c1.55,0 2.75,-1.201 2.75,-2.626c0,-1.425 -1.2,-2.626 -2.75,-2.626z"
+                        fill="#333333"
+                      />
+                    </mask>
+                  </defs>
+                  <g mask="url(#mask2_552_482)">
+                    <rect id="Rectangle 3468257" x="-2.25" y="-0.24950000000001182" width="20" height="20" fill="#0B579F" />
+                    <circle id="Ellipse 456" cx="7.75" cy="7.250499999999988" r="5" fill="#0B579F" />
+                  </g>
+                </svg>
+                <span class="dir-block__title">Location</span>
+              </div>
+              <p class="dir-block__text">96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</p>
+            </div>
+
+            <div class="dir-line dir-line--light" aria-hidden="true"></div>
+
+            <div class="dir-block">
+              <div class="dir-block__header">
+                <img src="./assets/icon-tel-circle.svg" alt="?꾪솕 ?꾩씠肄? width="19" height="19" aria-hidden="true">
+                <span class="dir-block__title">Tel</span>
+              </div>
+              <p class="dir-block__tel">032-564-0174 <span class="dir-fax-inline" aria-label="Fax">| Fax. 032-564-0175</span></p>
+            </div>
+
+            <div class="dir-line dir-line--light" aria-hidden="true"></div>
+
+            <div class="dir-block">
+              <div class="dir-block__header">
+                <img src="./assets/icon-clock.svg" alt="?쒓퀎 ?꾩씠肄? width="19" height="19" aria-hidden="true">
+                <span class="dir-block__title">Time</span>
+              </div>
+              <div class="dir-times">
+                <div class="dir-time-row">
+                  <span class="dir-time-label">Weekdays</span>
+                  <span class="dir-time-dot" aria-hidden="true"></span>
+                  <span class="dir-time-value">AM 09:00 ~ PM 06:00</span>
+                </div>
+                <div class="dir-time-row">
+                  <span class="dir-time-label">Lunch Break</span>
+                  <span class="dir-time-dot" aria-hidden="true"></span>
+                  <span class="dir-time-value">PM 12:00 ~ PM 02:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dir-line dir-line--softer" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="directions.js"></script>
+</body>
+</html>
+
+

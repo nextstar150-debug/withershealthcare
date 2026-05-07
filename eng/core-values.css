@@ -1,0 +1,421 @@
+/* ===========================================
+   WITHUS HEALTHCARE — core-values.css
+   핵심가치 (Core Values) page
+   =========================================== */
+
+/* ============================================================
+   HERO OVERRIDE — cv-hero-bg
+   ============================================================ */
+.cv-hero-bg {
+  background-image: url('assets/about_bg.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ============================================================
+   CORE VALUES SECTION
+   ============================================================ */
+.cv-section {
+  position: relative;
+  background-color: #f2f6fa;
+  overflow: hidden;
+  padding-top: calc(32px + 120px);
+  padding-bottom: 0;
+  min-height: 1280px;
+}
+
+/* ---- Background decorative circle ---- */
+/*
+  [배경 원 위치 설계]
+  큰 원 1개를 섹션 상단 중앙에 배치.
+  top을 음수로 설정해 위쪽 절반이 잘려 반원처럼 보임.
+  원 하단이 카드 영역까지 내려와 카드들을 품는 형태.
+*/
+.cv-bg-circles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cv-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.60);
+}
+
+/* 원 2, 3번 숨김 — 큰 원 1개만 사용 */
+.cv-bg-circle--2,
+.cv-bg-circle--3 {
+  display: none;
+}
+
+.cv-bg-circle--1 {
+  width: 3015px;
+  height: 3015px;
+  /* 원의 중심을 섹션 상단 근처에 맞춤.
+     위쪽은 overflow:hidden으로 잘리고,
+     하단 반원 부분만 보여 거대한 반원 형태가 됨 */
+  top: -2100px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* opacity: 0.70; */
+}
+
+/* ============================================================
+   INNER CONTENT
+   ============================================================ */
+.cv-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  padding: 0 var(--pad-x) 0; /* 워터마크가 마지막 요소 — 하단 패딩 제거 */
+}
+
+/* ============================================================
+   HEADING BLOCK
+   ============================================================ */
+.cv-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.cv-heading__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-heading__en {
+  font-family: var(--f-dm);
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -1.08px;
+  color: #00479d;
+}
+
+.cv-heading__ko {
+  font-family: var(--f-pre);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.72px;
+  color: var(--c-dark);
+}
+
+.cv-heading__line {
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #0b579f 100%);
+  border-radius: 50px;
+}
+
+.cv-heading__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-heading__main {
+  font-family: var(--f-outfit);
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1.44px;
+  color: var(--c-dark);
+}
+
+.cv-heading__sub {
+  font-family: var(--f-pre);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.72px;
+  color: var(--c-dark);
+}
+
+/* ============================================================
+   THREE VALUE COLUMNS ROW
+   ============================================================ */
+.cv-values {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  justify-content: center;
+}
+
+/* ============================================================
+   SINGLE VALUE COLUMN
+   ============================================================ */
+.cv-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv-value--center {
+  margin-top: 80px;
+}
+
+/* ---- Circle container ---- */
+.cv-value__circle {
+  width: 360px;
+  height: 360px;
+  border-radius: 500px;
+  border: 2px solid #f2f6fa;
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-shrink: 0;
+}
+
+/* ---- Icon ---- */
+.cv-value__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+}
+
+.cv-value__icon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---- Number + title inside circle ---- */
+.cv-value__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cv-value__num {
+  font-family: var(--f-outfit);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.54px;
+  color: #666666;
+}
+
+.cv-value__title {
+  font-family: var(--f-pre);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.72px;
+  line-height: 1.40;
+  color: #0b579f;
+  text-align: center;
+}
+
+/* ---- Dashed connector line ---- */
+.cv-value__connector {
+  width: 1px;
+  height: 32px;
+  border-left: 2px dashed #0b579f;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* ---- Description card ---- */
+.cv-value__card {
+  width: 300px;
+  border-radius: 16px;
+  background-color: rgba(11, 87, 159, 0.90);
+  backdrop-filter: blur(6px);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cv-value__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cv-value__dot {
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-top: 10px;
+}
+
+.cv-value__item p {
+  font-family: var(--f-pre);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.54px;
+  line-height: 1.40;
+  color: #ffffff;
+}
+
+/* ============================================================
+   WATERMARK
+   ============================================================ */
+/* ---- 무한 마키 애니메이션 ---- */
+@keyframes cv-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.cv-watermark {
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  width: 100vw; /* 섹션 너비 꽉 채움 */
+  margin-left: calc(-1 * var(--pad-x)); /* cv-inner 좌우 패딩 상쇄 */
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* 마키 트랙 — 텍스트를 2벌 복사해 끊김 없이 무한 흐름 */
+.cv-watermark__track {
+  display: flex;
+  width: max-content;
+  animation: cv-marquee 35s linear infinite; /* 의료 B2B — 품격 있는 속도 */
+}
+
+.cv-watermark__item {
+  font-family: var(--f-outfit);
+  font-size: 160px;
+  font-weight: 800;
+  letter-spacing: -6.40px;
+  color: rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+  padding-right: 80px; /* 텍스트 사이 간격 */
+  line-height: 1;
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.cv-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.cv-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cv-value--center.cv-reveal {
+  transition-delay: 0.15s;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 1199px)
+   ============================================================ */
+@media (max-width: 1199px) {
+  .cv-heading__main { font-size: 36px; }
+  .cv-heading__en   { font-size: 28px; }
+
+  .cv-values { gap: 60px; }
+  .cv-value__circle { width: 280px; height: 280px; }
+  .cv-value__title  { font-size: 20px; }
+  .cv-value__item p { font-size: 16px; }
+  .cv-value__card   { width: 240px; padding: 24px 20px; }
+
+  /* 배경 원: 1199px — 크기 유지, top 미세조정으로 카드 영역까지 내려오게 */
+  .cv-bg-circle--1 {
+    width: 3015px;
+    height: 3015px;
+    top: -2100px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .cv-section { min-height: 1200px; } /* 빈 공백 줄임 */
+
+  .cv-values { gap: 40px; }
+  .cv-value__circle { width: 240px; height: 240px; gap: 20px; }
+  .cv-value__icon   { width: 36px; height: 36px; }
+  .cv-value__title  { font-size: 18px; }
+  .cv-value__num    { font-size: 15px; }
+  .cv-value__card   { width: 200px; padding: 20px 16px; gap: 10px; }
+  .cv-value__item p { font-size: 14px; }
+  .cv-value--center { margin-top: 60px; }
+  .cv-watermark__item { font-size: 100px; letter-spacing: -4px; }
+
+  /* 배경 원: 1024px 이하 — 화면보다 크게(150vw) 유지해 카드 영역까지 내려오게 */
+  .cv-bg-circle--1 {
+    width: 150vw;
+    height: 150vw;
+    top: -100vw; /* 150vw 원에서 상단 100vw 잘리고 하단 50vw 노출 */
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .cv-section {
+    padding-top: calc(24px + 80px);
+    min-height: auto; /* 모바일 세로 스택 — 콘텐츠 높이에 맞게 자동 */
+  }
+
+  .cv-inner {
+    padding: 0 20px 0; /* 하단 패딩 제거 — 워터마크가 마지막 요소 */
+    gap: 48px;
+  }
+
+  .cv-heading__en   { font-size: 22px; }
+  .cv-heading__ko   { font-size: 18px; }
+  .cv-heading__main { font-size: 24px; letter-spacing: -0.72px; }
+  .cv-heading__sub  { font-size: 16px; }
+  .cv-heading__line { height: 60px; }
+
+  .cv-values {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .cv-value--center {
+    margin-top: 0;
+  }
+
+  .cv-value__circle { width: 280px; height: 280px; gap: 20px; }
+  .cv-value__icon   { width: 36px; height: 36px; }
+  .cv-value__title  { font-size: 20px; }
+  .cv-value__card   { width: 280px; }
+
+  .cv-watermark { margin-top: 0; } /* 하단 밀착 — margin 제거 */
+  .cv-watermark__item {
+    font-size: 80px; /* 60px → 80px, 섹션 하단 밀착을 위해 증가 */
+    letter-spacing: -3.2px;
+  }
+
+  /* 배경 원: 모바일 — 150vw 유지로 카드 영역까지 내려오게, 은은하게 opacity 낮춤 */
+  .cv-bg-circle--1 {
+    display: block;
+    width: 200vw;
+    height: 150vw;
+    top: -10vw; /* 상단 100vw 잘리고 하단 50vw 노출 */
+    /* opacity: 0.45; */
+  }
+}

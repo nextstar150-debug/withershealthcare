@@ -1,0 +1,677 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withus Healthcare | (주)위더스헬스케어</title>
+  <meta name="description" content="상처 및 화상, 흉터치료 전문 병의원에서 처방하는 식품의약품안전처 허가승인 치료재료 의료기기(Medical Device)를 공급합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Withus Healthcare 홈으로">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+
+          <!-- 회사소개 — 서브메뉴 있음 -->
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              회사소개
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="회사소개 하위 메뉴">
+              <li><a href="./about.html"><span>회사개요</span></a></li>
+              <li><a href="./core-values.html"><span>핵심가치</span></a></li>
+              <li><a href="./history.html"><span>연혁</span></a></li>
+              <li><a href="./directions.html"><span>오시는길</span></a></li>
+            </ul>
+          </li>
+
+          <!-- 브랜드소개 — 서브메뉴: 주력 브랜드만 -->
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              브랜드소개
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="브랜드소개 하위 메뉴">
+              <li><a href="./brand.html"><span>주력 브랜드</span></a></li>
+              <li><a href="./special-brand.html"><span>스페셜 프로덕트</span></a></li>
+            </ul>
+          </li>
+
+          <!-- 연구개발 — 서브메뉴 없음 -->
+          <li class="nav-item">
+            <a href="./rd.html" class="nav-link">연구개발</a>
+          </li>
+
+          <!-- 채용정보 — 서브메뉴 없음 -->
+          <li class="nav-item">
+            <a href="./recruitment.html" class="nav-link">채용정보</a>
+          </li>
+
+          <!-- 온라인몰 — 서브메뉴 있음 -->
+          <li class="nav-item nav-item--has-sub">
+            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              온라인몰
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="온라인몰 하위 메뉴">
+              <li><a href="#"><span>일반고객 전용몰</span></a></li>
+              <li><a href="#"><span>병의원 전용몰</span></a></li>
+            </ul>
+          </li>
+
+          <!-- 고객센터 — 서브메뉴 없음 -->
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link">고객센터</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <!-- 언어 선택 버튼 + 드롭다운 -->
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="언어 선택" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag" width="18" height="18" aria-hidden="true">
+            <span>KOR</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron" width="16" height="16" aria-hidden="true">
+          </button>
+          <!-- 클릭 시 나타나는 검정 드롭다운 -->
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="언어 선택">
+            <li>
+              <a href="./index.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">KOR</a>
+            </li>
+            <li>
+              <a href="./eng/index.html" class="lang-dropdown__item">ENG</a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======================================================
+       모바일/태블릿 사이드 드로어 (1024px 이하)
+       햄버거 클릭 시 오른쪽에서 슬라이드인
+       JS: navDrawer / drawerOverlay / drawerClose
+  ====================================================== -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="모바일 메뉴" aria-hidden="true">
+
+    <!-- 드로어 헤더: 로고 + 닫기 버튼 -->
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Withus Healthcare 홈으로">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="메뉴 닫기">&#10005;</button>
+    </div>
+
+    <!-- 드로어 메뉴 리스트 -->
+    <ul class="drawer__list">
+
+      <!-- 회사소개 -->
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>회사소개</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">회사개요</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">핵심가치</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">연혁</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">오시는길</a></li>
+        </ul>
+      </li>
+
+      <!-- 브랜드소개 -->
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>브랜드소개</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">주력 브랜드</a></li>
+          <li><a href="./special-brand.html" class="drawer__sub-link">스페셜 프로덕트</a></li>
+        </ul>
+      </li>
+
+      <!-- 연구개발 -->
+      <li class="drawer__item">
+        <a href="./rd.html" class="drawer__btn drawer__btn--link">연구개발</a>
+      </li>
+
+      <!-- 채용정보 -->
+      <li class="drawer__item">
+        <a href="./recruitment.html" class="drawer__btn drawer__btn--link">채용정보</a>
+      </li>
+
+      <!-- 온라인몰 -->
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSubMall">
+          <span>온라인몰</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSubMall" role="list">
+          <li><a href="#" class="drawer__sub-link">일반고객 전용몰</a></li>
+          <li><a href="#" class="drawer__sub-link">병의원 전용몰</a></li>
+        </ul>
+      </li>
+
+      <!-- 고객센터 -->
+      <li class="drawer__item">
+        <a href="./contact.html" class="drawer__btn drawer__btn--link">고객센터</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <!-- 배경 이미지 레이어: vision-mission 50% ~ medical-solutions 50% -->
+    <div class="about-bg-layer" aria-hidden="true"></div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <!-- 히어로 슬라이드 래퍼: 5초 페이드 자동 전환 -->
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide hero-slide--1 is-active"></div>
+        <div class="hero-slide hero-slide--2"></div>
+        <div class="hero-slide hero-slide--3"></div>
+      </div>
+
+      <aside class="hero-sidebar" aria-label="빠른 링크">
+        <a href="#" class="sidebar-btn sidebar-btn--online" aria-label="온라인몰 문의">
+          <img src="assets/icon-online.svg" alt="" class="sidebar-icon">
+          <span>온라인몰</span>
+        </a>
+        <a href="#" class="sidebar-btn sidebar-btn--biz" aria-label="사업자몰 문의">
+          <img src="assets/icon-business.svg" alt="" class="sidebar-icon">
+          <span>사업자몰</span>
+        </a>
+        <a href="./contact.html" class="sidebar-btn sidebar-btn--blue" aria-label="고객센터 이동">
+          <img src="assets/icon-cs.svg" alt="" class="sidebar-icon">
+          <span>고객센터</span>
+        </a>
+        <div class="sidebar-scroll-ind" aria-hidden="true">
+          <img src="assets/arrowfloating.svg" alt="">
+        </div>
+      </aside>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-company">(주)위더스헬스케어</p>
+          <h1 class="hero-title">WITHUS HEALTHCARE</h1>
+          <p class="hero-tagline">상처 및 화상, 흉터치료 전문 병의원에서 처방하는 식품의약품안전처 <br> 허가승인 치료재료 의료기기(Medical Device)를 공급합니다.</p>
+        </div>
+        <div class="hero-controls">
+          <div class="hero-line" aria-hidden="true"></div>
+          <div class="hero-counter" aria-live="polite">
+            <span class="counter-active" id="slideNum">01</span>
+            <span class="counter-dot" aria-hidden="true"></span>
+            <span class="counter-total">03</span>
+          </div>
+          <div class="hero-arrows">
+            <button class="hero-arrow" id="heroPrev" aria-label="이전 슬라이드">
+              <img src="assets/icon-prev.svg" alt="">
+            </button>
+            <button class="hero-arrow" id="heroNext" aria-label="다음 슬라이드">
+              <img src="assets/icon-next.svg" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <img src="assets/icon-scroll-down.svg" alt="" class="scroll-arrow">
+        <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section class="vision-mission">
+      <!-- 무한 마키 워터마크: JS 없이 CSS transform만으로 구현 -->
+      <div class="vision-watermark" aria-hidden="true">
+        <!-- 트랙을 2세트 복제하여 끊김 없는 무한 루프 구현 -->
+        <div class="vision-watermark__track">
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+          <!-- 복제 세트: 첫 번째 트랙이 왼쪽으로 빠져나갈 때 이어 붙음 -->
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+          <span class="vision-watermark__item">Withus Healthcare</span>
+          <span class="vision-watermark__sep" aria-hidden="true">·</span>
+        </div>
+      </div>
+      <div class="vision-cards">
+        <article class="vision-card">
+          <div class="vision-card-img-wrap">
+            <picture>
+              <!-- 모바일(767px 이하): 전용 크롭 이미지 -->
+              <source media="(max-width: 767px)" srcset="assets/Mask_group__1_.webp" type="image/webp">
+              <!-- 데스크탑: 기존 이미지 유지 -->
+              <source srcset="assets/vision-card.webp" type="image/webp">
+              <img src="assets/vision-card.jpg" alt="하늘과 바다 풍경" class="vision-card-img" width="580" height="720" loading="lazy">
+            </picture>
+          </div>
+          <div class="vision-card-content">
+            <div class="card-line" aria-hidden="true">
+              <img src="assets/icon-card-line.svg" alt="">
+            </div>
+            <div class="card-text">
+              <h3 class="card-title">Our Vision and Goal</h3>
+              <p class="card-desc">The world's leading manufacturer<br>and distributor of medical devices.</p>
+            </div>
+          </div>
+        </article>
+        <article class="vision-card vision-card--offset">
+          <div class="vision-card-img-wrap">
+            <picture>
+              <!-- 모바일(767px 이하): 물웅덩이 전체가 보이는 전용 크롭 이미지 -->
+              <source media="(max-width: 767px)" srcset="assets/Mask_group__2_.webp" type="image/webp">
+              <!-- 데스크탑: 기존 이미지 유지 -->
+              <source srcset="assets/mission-card.webp" type="image/webp">
+              <img src="assets/mission-card.jpg" alt="물방울" class="vision-card-img" width="580" height="720" loading="lazy">
+            </picture>
+          </div>
+          <div class="vision-card-content">
+            <div class="card-line" aria-hidden="true">
+              <img src="assets/icon-card-line.svg" alt="">
+            </div>
+            <div class="card-text">
+              <h3 class="card-title">Our mission and<br>Core Value</h3>
+              <p class="card-desc">We exist to help those in need.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT + CAROUSEL 공통 배경 wrapper -->
+    <div class="about-carousel-wrap">
+
+    <!-- ABOUT / SINCE 2012 -->
+    <section class="about">
+      <div class="about-inner">
+        <p class="about-label">Wounds &amp; Burn, Scar care</p>
+        <h2 class="about-title">
+          <!-- 475px 이하: 줄바꿈 수동 제어 -->
+          <span class="about-title__mobile">
+            (주)위더스헬스케어는<br>
+            상처 및 화상 등 <span class="about-highlight">병•의원</span><br>
+            <span class="about-highlight">처방용 전문 의료기기를</span><br>
+            <span class="about-highlight">유통</span>하는 기업입니다.
+          </span>
+          <!-- 476px 이상: 기존 구조 유지 -->
+          <span class="about-title__desktop">
+            (주)위더스헬스케어는 상처 및 화상 등<br>
+            <span class="about-highlight">병•의원 처방용 전문 의료기기를 유통</span>하는 기업입니다.
+          </span>
+        </h2>
+          <div class="about-since-wrap">
+          <span class="about-since">Since 2012</span>
+          <div class="since-line" aria-hidden="true">
+            <img src="assets/icon-since-line.svg" alt="">
+          </div>
+        </div>
+        <p class="about-desc">
+          현재까지 국내 상처 및 화상, 흉터치료 전문 병의원에<br>
+          <strong>Wounds &amp; Burn, Scar care를 위한 50여 종의 특화된 제품을 공급</strong>하고 있습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRODUCT CAROUSEL -->
+    <section class="product-carousel" aria-label="제품 이미지">
+      <div class="carousel-track-wrap">
+        <div class="carousel-track">
+          <!-- 1벌 -->
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-1.webp" type="image/webp">
+              <img src="assets/carousel-1.jpg" alt="물결" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-2.webp" type="image/webp">
+              <img src="assets/carousel-2.jpg" alt="실크" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-3.webp" type="image/webp">
+              <img src="assets/carousel-3.jpg" alt="손크림" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-4.webp" type="image/webp">
+              <img src="assets/carousel-4.jpg" alt="물방울" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-5.webp" type="image/webp">
+              <img src="assets/carousel-5.jpg" alt="제품" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-6.webp" type="image/webp">
+              <img src="assets/carousel-6.jpg" alt="수술" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/products-carousel-7.webp" type="image/webp">
+              <img src="assets/carousel-7.jpg" alt="튜브" loading="lazy" width="310" height="480">
+            </picture></div>
+          <!-- 2벌 (무한루프 복제) -->
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-1.webp" type="image/webp">
+              <img src="assets/carousel-1.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-2.webp" type="image/webp">
+              <img src="assets/carousel-2.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-3.webp" type="image/webp">
+              <img src="assets/carousel-3.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-4.webp" type="image/webp">
+              <img src="assets/carousel-4.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-5.webp" type="image/webp">
+              <img src="assets/carousel-5.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--low"><picture>
+              <source srcset="assets/carousel-6.webp" type="image/webp">
+              <img src="assets/carousel-6.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+          <div class="carousel-card carousel-card--high"><picture>
+              <source srcset="assets/carousel-7.webp" type="image/webp">
+              <img src="assets/carousel-7.jpg" alt="" loading="lazy" width="310" height="480">
+            </picture></div>
+        </div>
+      </div>
+    </section>
+
+    </div><!-- /.about-carousel-wrap -->
+
+    <!-- MEDICAL SOLUTIONS -->
+    <section class="medical-solutions">
+      <div class="ms-inner">
+        <div class="ms-header">
+          <div class="ms-titles">
+            <h2 class="ms-title">MEDICAL SOLUTIONS</h2>
+            <p class="ms-subtitle">Wounds &amp; Burn, Scar care <br>의료기관이 선택하는 전문 의료기기</p>
+          </div>
+
+          <!-- 제품 탭 네비게이션
+               슬라이딩 언더라인 방식:
+               - 탭 순서 고정, DOM 이동 없음
+               - ms-tab-underline 바가 translateX + width로 슬라이딩
+          -->
+          <nav class="ms-tabs" aria-label="제품 카테고리" id="msTabs">
+
+            <!-- 슬라이딩 언더라인 바 — JS가 선택 탭 위치로 이동 -->
+            <span class="ms-tab-underline" id="msTabUnderline" aria-hidden="true"></span>
+
+            <!-- 탭 목록 — 고정 순서 -->
+            <button class="ms-tab is-active" role="tab" aria-selected="true"
+              data-index="0"
+              data-label="점착성 투명 창상피복재"
+              data-name="카라겔 S"
+              data-desc="스프레이 타입으로 수술 및 화상 부위의 우수한 수분 공급과 보호막을 형성시킵니다.">
+              카라겔 S
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="1"
+              data-label="점착성 투명 창상피복재"
+              data-name="카라겔 T"
+              data-desc="연고 타입으로 수술 및 화상 부위의 우수한 수분 공급과 보호막을 형성시킵니다.">
+              카라겔 T
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="2"
+              data-label="점착성 투명 창상피복재"
+              data-name="아바러스"
+              data-desc="오픈메쉬 형태의 1차 드레싱제로 상처 표면을 보호하고 삼출물을 2차 드레싱으로 효과적으로 전달합니다.">
+              아바러스
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="3"
+              data-label="국소 폼제 창상피복재"
+              data-name="리젠스타 A"
+              data-desc="다량의 삼출물을 흡수하면서 상처보호 및 적절한 습윤 환경 형성에 도움을 줍니다.">
+              리젠스타 A
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="4"
+              data-label="2차 치유 하이드로겔 창상피복제"
+              data-name="리젠스타 B"
+              data-desc="적은 삼출물을 흡수하면서 상처보호 및 적절한 습윤 환경 형성에 도움을 줍니다.">
+              리젠스타 B
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="5"
+              data-label="2차 치유 하이드로겔 창상피복제"
+              data-name="리젠스타 H"
+              data-desc="소량의 삼출물을 흡수하면서 상처보호 및 적절한 습윤 환경 형성에 도움을 줍니다.">
+              리젠스타 H
+            </button>
+            <button class="ms-tab is-hidden--temp" role="tab" aria-selected="false"
+              data-index="6"
+              data-label="피부보호대 : 접착드레싱 제거제"
+              data-name="클리비"
+              data-desc="접착성 드레싱을 안전하게 제거하고 환부 통증을 줄이기 위해 사용하는 제품입니다.">
+              클리비
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="7"
+              data-label="점착성 투명 창상피복재"
+              data-name="리젠스타 G 크림"
+              data-desc="베타글루칸 함유로 피부 장벽이 손상된 부위의 보습 및 재생을 도우며, 물리적인 막을 형성하여 피부를 보호합니다.">
+              리젠스타 G 크림
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="8"
+              data-label="흉터치료의료기기"
+              data-name="스카겔 콤비네이션"
+              data-desc="양파추출물 성분이 비후된 흉터 조직의 과도한 증식을 억제하고, 붉은기를 완화하여 흉터를 매끄럽게 개선하는 데 도움을 줍니다.">
+              스카겔 콤비네이션
+            </button>
+            <button class="ms-tab" role="tab" aria-selected="false"
+              data-index="9"
+              data-label="창상피복재"
+              data-name="메가힐"
+              data-desc="세척 후 재사용이 가능한 실리콘겔시트로 습윤환경을 유지하여 비후된 흉터의 정상적인 재생을 돕습니다.">
+              메가힐
+            </button>
+          </nav>
+        </div>
+
+      </div><!-- /.ms-inner -->
+
+      <!-- 제품 상세 영역 — ms-inner 밖으로 이동하여 갤러리가 화면 오른쪽 끝까지 확장
+           ms-info는 pad-x padding-left로 왼쪽 여백 유지 -->
+      <div class="ms-featured" id="msFeatured">
+          <div class="ms-info">
+            <p class="ms-product-label" id="msProductLabel">점착성 투명 창상피복재</p>
+            <h3 class="ms-product-name" id="msProductName">카라겔 S</h3>
+            <div class="ms-product-line" aria-hidden="true"></div>
+            <p class="ms-product-desc" id="msProductDesc">스프레이 타입으로 수술 및 화상 부위의 우수한 수분 공급과 보호막을 형성시킵니다.</p>
+            <a href="./brand-detail-carragel-s.html" class="btn-view-more btn-blue">
+              <span>View More</span>
+              <img src="assets/icon-arrow-blue.svg" alt="" class="btn-icon">
+            </a>
+          </div>
+          <div class="ms-product-img" id="msGalleryWrap">
+            <!-- JS가 현재 탭 인덱스 기준으로 translateX 이동
+                 슬라이드 1: 선택 제품 (오버레이 없음)
+                 슬라이드 2: 다음 제품 (#DDD 20% 오버레이)
+                 슬라이드 3: 그 다음 제품 (#DDD 20% 오버레이, 오른쪽 반 잘림) -->
+            <div class="ms-gallery-track" id="msGalleryTrack">
+              <div class="ms-gallery-slide"><img src="assets/ms-product-1.webp" alt="카라겔 S 제품 이미지" loading="lazy" width="502" height="560" fetchpriority="high"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-2.webp" alt="카라겔 T 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-3.webp" alt="아바러스 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-4.webp" alt="리젠스타 A 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-5.webp" alt="리젠스타 B 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-6.webp" alt="리젠스타 H 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide is-hidden--temp"><img src="assets/ms-product-7.webp" alt="클리비 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-8.webp" alt="리젠스타 G 크림 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-9.webp" alt="스카겔 콤비네이션 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide"><img src="assets/ms-product-10.webp" alt="메가힐 제품 이미지" loading="lazy" width="502" height="560"></div>
+              <!-- 말미 복제 슬라이드 — 마지막 탭 선택 시 오른쪽 빈 자리 채움
+                   aria-hidden: 스크린리더에서 중복 읽힘 방지 -->
+              <div class="ms-gallery-slide ms-gallery-slide--clone" aria-hidden="true"><img src="assets/ms-product-1.webp" alt="" loading="lazy" width="502" height="560"></div>
+              <div class="ms-gallery-slide ms-gallery-slide--clone" aria-hidden="true"><img src="assets/ms-product-2.webp" alt="" loading="lazy" width="502" height="560"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- R&D -->
+    <section class="rd-section">
+      <div class="rd-watermark" aria-hidden="true">
+        <span class="rd-wm-1">Withus</span>
+        <span class="rd-wm-2">Healthcare</span>
+      </div>
+      <div class="rd-inner">
+        <div class="rd-photo">
+          <img src="assets/rd-photo.png" alt="Research and Development 연구 실험실">
+        </div>
+        <div class="rd-content">
+          <div class="rd-text-group">
+            <p class="rd-label">R&amp;D</p>
+            <h2 class="rd-title">Research &amp; Development</h2>
+          </div>
+          <div class="rd-body">
+            <p class="rd-desc">전문 병의원에서 처방하는 Wounds &amp; Burn, Scar care 제품의<br>실용성 및 안정성을 담보하기 위하여 노력하고 있습니다.</p>
+            <a href="./rd.html" class="btn-view-more btn-blue">
+              <span>View More</span>
+              <img src="assets/icon-arrow-blue.svg" alt="" class="btn-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MALL CTA -->
+    <section class="mall-cta" aria-label="온라인몰 및 사업자몰">
+      <a href="#" class="mall-item" aria-label="온라인몰 문의 이동">
+        <picture>
+          <!-- 모바일(768px 이하): 3x 고해상도 WebP 우선 → PNG fallback -->
+          <source media="(max-width: 768px)" srcset="assets/Frame_1321318460.webp" type="image/webp">
+          <source media="(max-width: 768px)" srcset="assets/Frame_1321318460.png">
+          <!-- 데스크탑: 기존 이미지 유지 -->
+          <img src="assets/Frame_1321318431.jpg" alt="일반 고객 전용 온라인몰" width="837" height="300" loading="lazy">
+        </picture>
+      </a>
+      <a href="#" class="mall-item" aria-label="사업자몰 문의 이동">
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/Frame_1321318459.webp" type="image/webp">
+          <source media="(max-width: 768px)" srcset="assets/Frame_1321318459.png">
+          <img src="assets/Frame_1321318432.jpg" alt="병·의원 전용 사업자몰" width="837" height="300" loading="lazy">
+        </picture>
+      </a>
+    </section>
+
+    <!-- BRAND PRODUCTS -->
+    <section class="brand-products">
+      <div class="brand-inner">
+        <!-- 타이틀 + 네비게이션 버튼 (왼쪽) -->
+        <div class="brand-label-group">
+          <h3 class="brand-title">전문 의료기기</h3>
+          <div class="brand-nav" aria-label="브랜드 탐색">
+            <button class="brand-nav-btn" id="brandPrev" aria-label="이전">&#8249;</button>
+            <button class="brand-nav-btn brand-nav-btn--pause" id="brandPause" aria-label="일시정지"><span class="pause-icon" aria-hidden="true"></span></button>
+            <button class="brand-nav-btn" id="brandNext" aria-label="다음">&#8250;</button>
+          </div>
+        </div>
+        <!-- 로고 슬라이드 트랙 -->
+        <div class="brand-logos-wrap">
+          <div class="brand-logos-track" id="brandTrack">
+            <div class="brand-logo-item"><img src="assets/brand-carragel-s.jpg" alt="Carragel S" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-carragel-t.jpg" alt="Carragel T" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-avarus.jpg" alt="AVARUS Contact" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-a.jpg" alt="REGENSTA A" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-b.jpg" alt="REGENSTA B" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-h.jpg" alt="REGENSTA H" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item is-hidden--temp"><img src="assets/brand-clevy.jpg" alt="Clevy" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-regensta-g.jpg" alt="REGENSTA G" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-scargel.jpg" alt="Scargel combination" loading="lazy" width="190" height="68"></div>
+            <div class="brand-logo-item"><img src="assets/brand-megaheal.jpg" alt="MegaHeal" loading="lazy" width="190" height="68"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="푸터 내비게이션">
+        <a href="./privacy.html" class="footer-link footer-link--primary">개인정보처리방침</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">이용약관</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">고객센터</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./recruitment.html" class="footer-link">채용정보</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>상호명 :</strong> (주)위더스헬스케어</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>대표자 :</strong> 김지영 David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>사업자등록번호 :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>주소 :</strong> 인천광역시 서구 청라한내로 96, 701호(청라동)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

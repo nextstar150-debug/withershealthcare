@@ -1,0 +1,424 @@
+/* ===========================================
+   WITHUS HEALTHCARE — history.css
+   Company History (회사소개 > 연혁) page
+   Extends style.css + about.css
+   =========================================== */
+
+/* ============================================================
+   PAGE HERO — history-specific background override
+   ============================================================ */
+.pg-hero__bg--history {
+  background-image: url('./assets/about_bg.webp');
+}
+
+/* ============================================================
+   HISTORY SECTION
+   ============================================================ */
+:root {
+  --c-hist-year:     #0065b2;
+  --c-hist-line:     #D5DBE4;
+  --c-hist-dot:      #6ca6e8;
+  --c-hist-dot-past: #dddddd;
+}
+
+.hist-section {
+  padding-top: 0;       /* 섹션 간격은 .section + .section 규칙으로 통일 */
+  padding-bottom: 160px;
+  background: var(--c-white);
+}
+
+/* ============================================================
+   TWO-COLUMN CONTAINER
+   ============================================================ */
+.hist-container {
+  max-width: 1660px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  display: flex;
+  gap: 78px;
+  align-items: flex-start;
+}
+
+/* ============================================================
+   LEFT COLUMN — intro text + building photo
+   ============================================================ */
+.hist-left {
+  flex: 0 0 auto;
+  width: clamp(280px, 38%, 560px);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ---- Intro: "History" label + heading ---- */
+.hist-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hist-label {
+  font-family: var(--f-outfit);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.60px;
+  line-height: 24px;
+  color: var(--c-hist-dot);
+}
+
+.hist-heading {
+  font-family: var(--f-pre);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1.20px;
+  line-height: 56px;
+  color: #222222;
+}
+
+/* ---- Building photo ---- */
+.hist-photo-wrap {
+  width: 100%;
+  aspect-ratio: 476 / 340;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hist-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.hist-photo-wrap:hover .hist-photo {
+  transform: scale(1.03);
+}
+
+/* ============================================================
+   RIGHT COLUMN — vertical timeline
+   ============================================================ */
+.hist-right {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---- Timeline wrapper with vertical line ---- */
+.hist-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+
+/* 회색 고정선 — 처음부터 전체 높이로 항상 표시 */
+.hist-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;            /* 31px 동심원 바깥 원의 중심 */
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--c-hist-line);
+  z-index: 0;
+}
+
+
+
+/* ============================================================
+   TIMELINE GROUP — each era (active / past)
+   flex row: [dot] [gap: 78px] [entries]
+   ============================================================ */
+.hist-group {
+  display: flex;
+  flex-direction: row;
+  gap: 78px;
+  align-items: flex-start;
+}
+
+.hist-group--past {
+  opacity: 1;
+}
+
+.hist-group--past:hover {
+  opacity: 1;
+}
+
+/* ---- Dots — 기본 회색, 뷰포트 진입 시 파란 동심원으로 전환 ---- */
+.hist-dot {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  background: transparent;
+  transition: background 0.4s ease;
+}
+
+/* 기본 회색 점 */
+.hist-dot::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c-hist-dot-past);
+  transition: width 0.4s ease, height 0.4s ease, background 0.4s ease;
+}
+
+/* 뷰포트 진입 시 — 바깥 파란 반투명 원 + 안쪽 진한 파란 점 */
+.hist-dot.is-active {
+  background: rgba(108, 166, 232, 0.10);
+}
+
+.hist-dot.is-active::before {
+  width: 13px;
+  height: 13px;
+  background: var(--c-hist-dot);
+}
+
+/* ============================================================
+   ENTRIES COLUMN
+   ============================================================ */
+.hist-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ---- Single entry: [year] [gap: 40px] [month + desc] ---- */
+.hist-entry {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.hist-year {
+  font-family: var(--f-pre);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.96px;
+  color: var(--c-hist-year);
+  flex-shrink: 0;
+  width: 80px;
+  line-height: 1.4;
+}
+
+/* Month + description inline row */
+.hist-meta {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding-top: 8px;    /* align with year text mid-baseline */
+}
+
+.hist-month {
+  font-family: var(--f-pre);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.54px;
+  color: var(--c-text);
+  flex-shrink: 0;
+  min-width: 38px;
+}
+
+.hist-desc {
+  font-family: var(--f-pre);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.54px;
+  color: var(--c-text-sec);
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.hist-intro,
+.hist-photo-wrap,
+.hist-group {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.hist-intro.in-view,
+.hist-photo-wrap.in-view,
+.hist-group.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* past group starts at correct opacity when revealed */
+.hist-group--past.in-view {
+  opacity: 1;
+}
+
+/* ============================================================
+   RESPONSIVE — 1440px
+   ============================================================ */
+@media (max-width: 1440px) {
+  .hist-container {
+    gap: 60px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 1199px)
+   ============================================================ */
+@media (max-width: 1199px) {
+  .hist-section {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  .hist-left {
+    width: clamp(260px, 36%, 480px);
+  }
+
+  .hist-container {
+    gap: 48px;
+  }
+
+  .hist-heading {
+    font-size: 32px;
+    letter-spacing: -0.96px;
+    line-height: 46px;
+  }
+
+  .hist-year {
+    font-size: 26px;
+    width: 68px;
+  }
+
+  .hist-month,
+  .hist-desc {
+    font-size: 16px;
+  }
+
+  .hist-group {
+    gap: 48px;
+  }
+
+  .hist-entries {
+    gap: 44px;
+  }
+
+  .hist-timeline {
+    gap: 140px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .hist-left {
+    width: clamp(240px, 34%, 400px);
+  }
+
+  .hist-container {
+    gap: 40px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   Stack vertically: photo first, then timeline
+   ============================================================ */
+@media (max-width: 768px) {
+  .hist-section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .hist-container {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .hist-left {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .hist-heading {
+    font-size: 26px;
+    letter-spacing: -0.78px;
+    line-height: 38px;
+  }
+
+  /* br 유지 — 모바일에서 줄바꿈 의도적으로 표시 */
+  /* .hist-heading br { display: none; } */
+
+  .hist-photo-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hist-right {
+    width: 100%;
+  }
+
+  .hist-group {
+    gap: 32px;
+  }
+
+  .hist-entries {
+    gap: 32px;
+  }
+
+  .hist-timeline {
+    gap: 60px;
+  }
+
+  .hist-entry {
+    gap: 20px;
+  }
+
+  .hist-year {
+    font-size: 22px;
+    width: 56px;
+    letter-spacing: -0.66px;
+  }
+
+  .hist-month,
+  .hist-desc {
+    font-size: 14px;
+    letter-spacing: -0.42px;
+  }
+
+  .hist-meta {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE SMALL (≤ 360px)
+   ============================================================ */
+@media (max-width: 360px) {
+  .hist-section {
+    padding-top: 48px;
+    padding-bottom: 60px;
+  }
+
+  .hist-heading {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .hist-year {
+    font-size: 20px;
+    width: 48px;
+  }
+
+  .hist-month,
+  .hist-desc {
+    font-size: 13px;
+  }
+}

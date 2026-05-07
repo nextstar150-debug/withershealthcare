@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Withus Healthcare</title>
+  <meta name="description" content="Contact Withus Healthcare for product inquiries, quotes, and personalized 1:1 consultation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="釉뚮옖?쒖냼媛??섏쐞 硫붾돱">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a></li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./contact.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              CONTACT&nbsp;&nbsp;US
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="怨좉컼?쇳꽣 ?섏쐞 硫붾돱">
+              <li><a href="./contact.html"><span>Contact Us</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="?몄뼱 ?좏깮" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="?몄뼱 ?좏깮">
+            <li><a href="../contact.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/contact.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="硫붾돱 ?닿린" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="紐⑤컮??硫붾돱" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="硫붾돱 ?リ린">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a></li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub3">
+          <span>CONTACT US</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub3" role="list">
+          <li><a href="./contact.html" class="drawer__sub-link">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HERO BANNER
+  ============================================================ -->
+  <section class="pg-hero contact-pg-hero">
+    <div class="pg-hero__bg pg-hero__bg--contact">
+      <img src="./assets/contact-hero-bg.webp" alt="" class="contact-hero__photo" aria-hidden="true">
+    </div>
+    <div class="pg-hero__content">
+      <h1 class="pg-hero__title">Contact Us</h1>
+      <nav class="pg-breadcrumb" aria-label="?꾩옱 ?꾩튂">
+        <a href="./index.html" class="pg-breadcrumb__home" aria-label="Home">
+          <img src="./assets/icon-home-breadcrumb.svg" alt="?? width="16" height="16">
+        </a>
+        <span class="pg-breadcrumb__dot" aria-hidden="true">쨌</span>
+        <a href="contact.html" class="pg-breadcrumb__item pg-breadcrumb__item--current" aria-current="page">
+          CONTACT US
+          <svg class="pg-breadcrumb__chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1L5 5L9 1" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MAIN ??CONTACT FORM SECTION
+  ============================================================ -->
+  <main>
+    <section class="contact-main" aria-labelledby="contact-heading">
+      <div class="contact-container">
+
+        <!-- ?? Intro ?? -->
+        <div class="contact-intro reveal">
+          <span class="contact-label">Contact Us</span>
+          <h2 class="contact-heading" id="contact-heading">
+            Feel free to reach out to us anytime.
+          </h2>
+          <p class="contact-subtitle">To get prompt and accurate responses to your inquiries and personalized 1:1 consultation.</p>
+        </div>
+
+        <!-- ?? Contact Form ?? -->
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <!-- Required note + top divider -->
+          <div class="cform-top">
+            <p class="cform-required-note">*All fields are required.</p>
+          </div>
+          <div class="cform-divider" role="separator" aria-hidden="true"></div>
+
+          <!-- ?대쫫 -->
+          <div class="cform-row" id="row-name">
+            <label class="cform-label" for="fieldName">Name*</label>
+            <div class="cform-input-area">
+              <input
+                type="text"
+                id="fieldName"
+                name="name"
+                class="cform-input"
+                placeholder="Full Name"
+                required
+                autocomplete="name"
+              >
+            </div>
+          </div>
+
+          <!-- ?곕씫泥?-->
+          <div class="cform-row" id="row-tel">
+            <label class="cform-label" id="telLabel">Phone*</label>
+            <div class="cform-input-area" role="group" aria-labelledby="telLabel">
+              <div class="cform-phone">
+                <!-- 援??肄붾뱶 ?쒕∼?ㅼ슫 -->
+                <div class="cform-tel-wrap cform-tel-wrap--country">
+                  <select
+                    id="fieldCountryCode"
+                    name="countryCode"
+                    class="cform-input cform-select"
+                    required
+                    aria-label="援?? 肄붾뱶 ?좏깮"
+                  >
+                    <option value="" disabled selected>+ Code</option>
+                    <option value="+82">?눖?눟 +82 Korea</option>
+                    <option value="+1">?눣?눡 +1 USA</option>
+                    <option value="+1-CA">?눊?눇 +1 Canada</option>
+                    <option value="+81">?눓?눝 +81 Japan</option>
+                    <option value="+86">?눊?눛 +86 China</option>
+                    <option value="+852">?눑?눖 +852 Hong Kong</option>
+                    <option value="+65">?눡?눐 +65 Singapore</option>
+                    <option value="+66">?눢?눑 +66 Thailand</option>
+                    <option value="+84">?눤?눛 +84 Vietnam</option>
+                    <option value="+62">?눒?눍 +62 Indonesia</option>
+                    <option value="+60">?눚?눧 +60 Malaysia</option>
+                    <option value="+91">?눒?눛 +91 India</option>
+                    <option value="+44">?눐?눉 +44 UK</option>
+                    <option value="+49">?눍?눎 +49 Germany</option>
+                    <option value="+33">?눏?눟 +33 France</option>
+                    <option value="+39">?눒?눢 +39 Italy</option>
+                    <option value="+34">?눎?눡 +34 Spain</option>
+                    <option value="+61">?눇?눣 +61 Australia</option>
+                    <option value="+971">?눇?눎 +971 UAE</option>
+                    <option value="+966">?눡?눇 +966 Saudi Arabia</option>
+                  </select>
+                </div>
+                <!-- ?먯쑀 ?낅젰 1移?-->
+                <div class="cform-tel-wrap cform-tel-wrap--number">
+                  <input
+                    type="tel"
+                    id="fieldTelNumber"
+                    name="telNumber"
+                    class="cform-input cform-tel"
+                    placeholder="Phone number"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    required
+                    aria-label="?꾪솕踰덊샇 ?낅젰"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ?뚯궗紐?(optional) -->
+          <div class="cform-row" id="row-company">
+            <label class="cform-label" for="fieldCompany">Company Name</label>
+            <div class="cform-input-area">
+              <input
+                type="text"
+                id="fieldCompany"
+                name="company"
+                class="cform-input"
+                placeholder="Company / Organization"
+                autocomplete="organization"
+              >
+            </div>
+          </div>
+
+          <!-- ?대찓??-->
+          <div class="cform-row" id="row-email">
+            <label class="cform-label" id="emailLabel">Email*</label>
+            <div class="cform-input-area" role="group" aria-labelledby="emailLabel">
+              <div class="cform-email">
+                <input
+                  type="text"
+                  id="fieldEmailId"
+                  name="emailId"
+                  class="cform-input cform-email-id"
+                  placeholder="Email ID"
+                  inputmode="email"
+                  autocomplete="email"
+                  required
+                  aria-label="Email ID"
+                >
+                <span class="cform-at" aria-hidden="true">@</span>
+                <input
+                  type="text"
+                  id="fieldEmailDomain"
+                  name="emailDomain"
+                  class="cform-input cform-email-domain"
+                  placeholder="Domain (e.g. gmail.com)"
+                  inputmode="url"
+                  autocomplete="off"
+                  required
+                  aria-label="Email Domain"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ?쒕ぉ -->
+          <div class="cform-row" id="row-subject">
+            <label class="cform-label" for="fieldSubject">Subject*</label>
+            <div class="cform-input-area">
+              <input
+                type="text"
+                id="fieldSubject"
+                name="subject"
+                class="cform-input"
+                placeholder="Subject"
+                required
+              >
+            </div>
+          </div>
+
+          <!-- ?댁슜 -->
+          <div class="cform-row cform-row--textarea" id="row-content">
+            <label class="cform-label" for="fieldContent">Message*</label>
+            <div class="cform-input-area">
+              <textarea
+                id="fieldContent"
+                name="content"
+                class="cform-input cform-textarea"
+                placeholder="Please enter your message"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Bottom divider -->
+          <div class="cform-divider" role="separator" aria-hidden="true"></div>
+
+          <!-- ?? Privacy Policy ?? -->
+          <div class="cform-privacy-section">
+            <h3 class="cform-privacy-title">Privacy Policy</h3>
+
+            <div class="cform-privacy-box" id="privacyBox">
+              <div class="cform-privacy-scroll">
+
+                <p class="cform-priv-subtitle">Consent to Collection and Use of Personal Information by Withus Healthcare Co., Ltd.</p>
+                <p class="cform-priv-body">
+                  Withus Healthcare Co., Ltd. collects and uses personal information as follows for the purpose of receiving and processing inquiries.<br>
+                  For more details, please see our <a href="./privacy.html" target="_blank" class="cform-priv-link">Privacy Policy</a>.
+                </p>
+
+                <p class="cform-priv-article">Article 1. Personal Information Collected</p>
+                <p class="cform-priv-body">
+                  The Company collects the following personal information solely for inquiry purposes, without requiring membership registration.<br>
+                  恝 Required: Name, Phone Number, Email Address<br>
+                  恝 Optional: Company/Hospital Name, Inquiry Details<br>
+                  恝 Collection Method: Direct input via the website contact form
+                </p>
+
+                <p class="cform-priv-article">Article 2. Purpose of Collection and Use</p>
+                <p class="cform-priv-body">
+                  Collected personal information is used solely for the following purposes and will not be used for any other purpose.<br>
+                  恝 Customer identification and inquiry reception<br>
+                  恝 Notification of inquiry results (via phone or email)
+                </p>
+
+                <p class="cform-priv-article">Article 3. Retention and Use Period</p>
+                <p class="cform-priv-body">
+                  The Company will promptly destroy personal information upon completion of inquiry processing.<br>
+                  However, information may be retained separately if required by applicable laws.<br>
+                  恝 Retained items: Name, Phone Number, Email<br>
+                  恝 Legal basis: Act on Consumer Protection in Electronic Commerce<br>
+                  恝 Retention period: 3 years
+                </p>
+
+              </div><!-- /.cform-privacy-scroll -->
+            </div><!-- /.cform-privacy-box -->
+
+            <!-- Consent checkbox -->
+            <div class="cform-consent" id="consentRow">
+              <label class="cform-consent-label" for="consentCheck">
+                <input type="checkbox" id="consentCheck" name="consent" class="cform-checkbox-input" required aria-required="true">
+                <span class="cform-checkbox-custom" aria-hidden="true">
+                  <img src="./assets/icon-checkbox-checked.svg" alt="" class="cform-checkbox-icon">
+                </span>
+                <span class="cform-consent-text">I agree to the collection and use of my personal information.</span>
+              </label>
+            </div>
+
+          </div><!-- /.cform-privacy-section -->
+
+          <!-- ?? Submit button ?? -->
+          <div class="cform-submit-wrap">
+            <button type="submit" class="contact-submit">Submit</button>
+          </div>
+
+        </form><!-- /#contactForm -->
+
+      </div><!-- /.contact-container -->
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>채용 공고 관리 | Withus Healthcare Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --c-blue: #0b579f;
+      --c-blue-light: #eff6ff;
+      --c-blue-grad: linear-gradient(149.05deg, rgba(108,166,232,1) 34.31%, rgba(11,87,159,1) 113.26%);
+      --c-dark: #111827;
+      --c-text: #374151;
+      --c-sub: #6b7280;
+      --c-border: #e5e7eb;
+      --c-bg: #f3f4f6;
+      --c-white: #ffffff;
+      --c-error: #e81111;
+      --c-open: #059669;
+      --c-open-bg: #ecfdf5;
+      --c-closed: #6b7280;
+      --c-closed-bg: #f3f4f6;
+      --nav-h: 60px;
+      --f-pre: 'Pretendard', sans-serif;
+    }
+    body { font-family: var(--f-pre); background: var(--c-bg); color: var(--c-text); min-height: 100vh; }
+
+    /* NAV */
+    .adm-nav {
+      height: var(--nav-h); background: var(--c-white);
+      border-bottom: 1px solid var(--c-border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; position: sticky; top: 0; z-index: 100;
+    }
+    .adm-nav__logo { font-size: 16px; font-weight: 700; color: var(--c-blue); letter-spacing: -0.3px; }
+    .adm-nav__logo span { font-weight: 400; color: var(--c-sub); font-size: 13px; margin-left: 8px; }
+    .adm-nav__right { display: flex; align-items: center; gap: 12px; }
+    .adm-nav__user { font-size: 13px; color: var(--c-sub); }
+    .btn-logout {
+      font-size: 13px; color: var(--c-sub); background: none;
+      border: 1px solid var(--c-border); border-radius: 6px;
+      padding: 6px 14px; cursor: pointer; font-family: var(--f-pre);
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-logout:hover { background: var(--c-bg); color: var(--c-text); }
+
+    /* LAYOUT */
+    .adm-wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+    /* PAGE HEADER */
+    .adm-page-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .adm-page-header h1 { font-size: 22px; font-weight: 700; color: var(--c-dark); letter-spacing: -0.5px; }
+    .adm-page-header p { font-size: 13px; color: var(--c-sub); margin-top: 3px; }
+
+    /* TABS */
+    .adm-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--c-border); margin-bottom: 24px; }
+    .adm-tab {
+      padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--c-sub);
+      background: none; border: none; cursor: pointer; font-family: var(--f-pre);
+      border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s;
+    }
+    .adm-tab.is-active { color: var(--c-blue); border-bottom-color: var(--c-blue); }
+    .adm-tab-panel { display: none; }
+    .adm-tab-panel.is-active { display: block; }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      height: 40px; padding: 0 18px; border: none; border-radius: 8px;
+      background: var(--c-blue-grad); color: #fff; font-family: var(--f-pre);
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 6px;
+      height: 36px; padding: 0 14px; border: 1px solid var(--c-border); border-radius: 7px;
+      background: var(--c-white); color: var(--c-text); font-family: var(--f-pre);
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-secondary:hover { background: var(--c-bg); }
+    .btn-danger {
+      display: inline-flex; align-items: center; gap: 6px;
+      height: 36px; padding: 0 14px; border: 1px solid #fecaca; border-radius: 7px;
+      background: #fff; color: var(--c-error); font-family: var(--f-pre);
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-danger:hover { background: #fff5f5; }
+
+    /* JOB LIST TABLE */
+    .adm-card {
+      background: var(--c-white); border-radius: 12px;
+      border: 1px solid var(--c-border); overflow: hidden;
+    }
+    .adm-table { width: 100%; border-collapse: collapse; }
+    .adm-table th {
+      background: var(--c-bg); padding: 12px 16px; text-align: left;
+      font-size: 12px; font-weight: 600; color: var(--c-sub);
+      letter-spacing: 0.3px; border-bottom: 1px solid var(--c-border);
+    }
+    .adm-table td {
+      padding: 14px 16px; font-size: 14px; color: var(--c-text);
+      border-bottom: 1px solid var(--c-border); vertical-align: middle;
+    }
+    .adm-table tr:last-child td { border-bottom: none; }
+    .adm-table tr:hover td { background: #fafafa; }
+
+    .badge-open {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      background: var(--c-open-bg); color: var(--c-open);
+    }
+    .badge-closed {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      background: var(--c-closed-bg); color: var(--c-closed);
+    }
+    .job-title-link {
+      color: var(--c-dark); font-weight: 500; text-decoration: none;
+      letter-spacing: -0.2px;
+    }
+    .job-title-link:hover { color: var(--c-blue); text-decoration: underline; }
+    .td-actions { display: flex; gap: 6px; }
+    .empty-state {
+      text-align: center; padding: 60px 20px;
+      color: var(--c-sub); font-size: 14px;
+    }
+    .empty-state p { margin-top: 8px; font-size: 13px; }
+
+    /* FORM MODAL */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+      z-index: 200; display: flex; align-items: flex-start;
+      justify-content: center; padding: 40px 16px; overflow-y: auto;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .modal-overlay.is-open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--c-white); border-radius: 16px; width: 100%;
+      max-width: 720px; padding: 36px 40px; box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+      transform: translateY(12px); transition: transform 0.2s;
+    }
+    .modal-overlay.is-open .modal { transform: translateY(0); }
+    .modal__header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .modal__title { font-size: 20px; font-weight: 700; color: var(--c-dark); letter-spacing: -0.5px; }
+    .modal__close {
+      width: 32px; height: 32px; border: none; background: none; cursor: pointer;
+      font-size: 20px; color: var(--c-sub); display: flex; align-items: center; justify-content: center;
+      border-radius: 6px; transition: background 0.15s;
+    }
+    .modal__close:hover { background: var(--c-bg); }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-grid .form-full { grid-column: 1 / -1; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 13px; font-weight: 500; color: var(--c-text); }
+    .form-label .req { color: var(--c-error); margin-left: 2px; }
+    .form-input, .form-select, .form-textarea {
+      border: 1.5px solid var(--c-border); border-radius: 8px;
+      padding: 10px 12px; font-family: var(--f-pre); font-size: 14px;
+      color: var(--c-dark); background: var(--c-white);
+      outline: none; transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--c-blue); }
+    .form-textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
+    .form-hint { font-size: 11px; color: var(--c-sub); margin-top: 2px; }
+
+    .modal__footer {
+      display: flex; justify-content: flex-end; gap: 10px;
+      margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--c-border);
+    }
+
+    /* APPLICANTS */
+    .app-job-name {
+      font-size: 15px; font-weight: 600; color: var(--c-dark);
+      margin-bottom: 16px; letter-spacing: -0.3px;
+    }
+    .app-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--c-blue); background: none; border: none;
+      cursor: pointer; font-family: var(--f-pre); margin-bottom: 16px;
+      padding: 0;
+    }
+    .app-back:hover { text-decoration: underline; }
+
+    /* TOAST */
+    .toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(10px);
+      background: var(--c-dark); color: #fff; padding: 12px 22px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; z-index: 400; pointer-events: none;
+      opacity: 0; transition: opacity 0.2s, transform 0.2s;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.error { background: var(--c-error); }
+
+    /* LOADING */
+    .loading-row td { text-align: center; color: var(--c-sub); font-size: 13px; padding: 40px; }
+
+    @media (max-width: 768px) {
+      .adm-wrap { padding: 20px 16px; }
+      .adm-nav { padding: 0 16px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .modal { padding: 24px 20px; }
+      .adm-table th:nth-child(3), .adm-table td:nth-child(3),
+      .adm-table th:nth-child(4), .adm-table td:nth-child(4) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="adm-nav">
+  <div class="adm-nav__logo">
+    Withus Healthcare <span>채용 관리</span>
+  </div>
+  <div class="adm-nav__right">
+    <span class="adm-nav__user" id="navUser"></span>
+    <button class="btn-logout" id="logoutBtn">로그아웃</button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="adm-wrap">
+
+  <div class="adm-page-header">
+    <div>
+      <h1>채용 공고 관리</h1>
+      <p id="jobCount">공고를 불러오는 중...</p>
+    </div>
+    <button class="btn-primary" id="btnNewJob">
+      + 새 공고 등록
+    </button>
+  </div>
+
+  <!-- TABS -->
+  <div class="adm-tabs">
+    <button class="adm-tab is-active" data-tab="jobs">공고 목록</button>
+    <button class="adm-tab" data-tab="applicants">지원자 관리</button>
+  </div>
+
+  <!-- TAB: 공고 목록 -->
+  <div class="adm-tab-panel is-active" id="tab-jobs">
+    <div class="adm-card">
+      <table class="adm-table">
+        <thead>
+          <tr>
+            <th>공고 제목</th>
+            <th>직군</th>
+            <th>경력</th>
+            <th>마감일</th>
+            <th>상태</th>
+            <th>관리</th>
+          </tr>
+        </thead>
+        <tbody id="jobTableBody">
+          <tr class="loading-row"><td colspan="6">불러오는 중...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB: 지원자 관리 -->
+  <div class="adm-tab-panel" id="tab-applicants">
+    <div id="applicantView">
+      <!-- 공고 선택 화면 -->
+      <div id="jobSelectView">
+        <div class="adm-card">
+          <table class="adm-table">
+            <thead>
+              <tr>
+                <th>공고 제목</th>
+                <th>직군</th>
+                <th>상태</th>
+                <th>지원자 수</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="jobSelectBody">
+              <tr class="loading-row"><td colspan="5">불러오는 중...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 지원자 목록 화면 (공고 선택 후) -->
+      <div id="applicantListView" style="display:none;">
+        <button class="app-back" id="btnBackToJobs">← 공고 목록으로</button>
+        <div class="app-job-name" id="selectedJobName"></div>
+        <div class="adm-card">
+          <table class="adm-table">
+            <thead>
+              <tr>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>연락처</th>
+                <th>지원일시</th>
+                <th>이력서</th>
+              </tr>
+            </thead>
+            <tbody id="applicantTableBody">
+              <tr class="loading-row"><td colspan="5">불러오는 중...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.adm-wrap -->
+
+<!-- 공고 등록/수정 모달 -->
+<div class="modal-overlay" id="jobModal">
+  <div class="modal">
+    <div class="modal__header">
+      <h2 class="modal__title" id="modalTitle">새 공고 등록</h2>
+      <button class="modal__close" id="modalClose">✕</button>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group form-full">
+        <label class="form-label">공고 제목 <span class="req">*</span></label>
+        <input class="form-input" type="text" id="fTitle" placeholder="예: 영업 및 관리 업무 사원 상시 채용">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">직군 <span class="req">*</span></label>
+        <select class="form-select" id="fJobType">
+          <option value="">선택</option>
+          <option value="연구개발">연구개발</option>
+          <option value="영업/관리">영업/관리</option>
+          <option value="마케팅">마케팅</option>
+          <option value="생산/품질">생산/품질</option>
+          <option value="경영지원">경영지원</option>
+          <option value="IT/개발">IT/개발</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">경력 <span class="req">*</span></label>
+        <select class="form-select" id="fCareer">
+          <option value="">선택</option>
+          <option value="신입">신입</option>
+          <option value="경력">경력</option>
+          <option value="신입·경력">신입·경력</option>
+          <option value="경력무관">경력무관</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">채용 형태</label>
+        <select class="form-select" id="fHireType">
+          <option value="일반채용">일반채용</option>
+          <option value="수시채용">수시채용</option>
+          <option value="인턴십">인턴십</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">마감일</label>
+        <input class="form-input" type="datetime-local" id="fDeadline">
+        <span class="form-hint">비워두면 상시채용으로 표시됩니다.</span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">상태</label>
+        <select class="form-select" id="fStatus">
+          <option value="open">접수중</option>
+          <option value="closed">접수마감</option>
+        </select>
+      </div>
+
+      <div class="form-group form-full">
+        <label class="form-label">내용</label>
+        <textarea class="form-textarea" id="fContent" placeholder="공고 내용을 자유롭게 입력하세요." style="min-height:320px;"></textarea>
+      </div>
+    </div>
+
+    <div class="modal__footer">
+      <button class="btn-secondary" id="modalCancel">취소</button>
+      <button class="btn-primary" id="modalSave">저장하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const { createClient } = supabase;
+  const sb = createClient('https://qdxivfcrtipqcmodekkk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkeGl2ZmNydGlwcWNtb2Rla2trIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5Nzc3NTAsImV4cCI6MjA4OTU1Mzc1MH0.GHY0aYFit4vbqjZrAovc12zIqIjQslPYcU3c8m4XcEs');
+
+  let currentUser  = null;
+  let editingJobId = null;
+  let allJobs      = [];
+
+  /* ────────────────────────────────────────
+     AUTH CHECK
+  ──────────────────────────────────────── */
+  async function init() {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) { window.location.href = 'admin-login.html'; return; }
+    currentUser = session.user;
+    document.getElementById('navUser').textContent = currentUser.email;
+    loadJobs();
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', async () => {
+    await sb.auth.signOut();
+    window.location.href = 'admin-login.html';
+  });
+
+  /* ────────────────────────────────────────
+     TABS
+  ──────────────────────────────────────── */
+  document.querySelectorAll('.adm-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('is-active'));
+      document.querySelectorAll('.adm-tab-panel').forEach(p => p.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('is-active');
+      if (tab.dataset.tab === 'applicants') renderJobSelectTable();
+    });
+  });
+
+  /* ────────────────────────────────────────
+     LOAD JOBS
+  ──────────────────────────────────────── */
+  async function loadJobs() {
+    const { data, error } = await sb
+      .from('jobs')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) { showToast('공고 로딩 실패: ' + error.message, true); return; }
+    allJobs = data || [];
+
+    const openCount   = allJobs.filter(j => j.status === 'open').length;
+    document.getElementById('jobCount').textContent =
+      `전체 ${allJobs.length}개 공고 · 접수중 ${openCount}개`;
+
+    renderJobTable();
+  }
+
+  function renderJobTable() {
+    const tbody = document.getElementById('jobTableBody');
+    if (!allJobs.length) {
+      tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state">등록된 공고가 없습니다.<p>새 공고 등록 버튼을 눌러 첫 공고를 등록해보세요.</p></div></td></tr>';
+      return;
+    }
+    tbody.innerHTML = allJobs.map(job => {
+      const deadline = job.deadline
+        ? new Date(job.deadline).toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' })
+        : '상시';
+      const badge = job.status === 'open'
+        ? '<span class="badge-open">접수중</span>'
+        : '<span class="badge-closed">마감</span>';
+      return `
+        <tr>
+          <td><a class="job-title-link" href="recruitment-detail.html?id=${job.id}" target="_blank">${escHtml(job.title)}</a></td>
+          <td>${escHtml(job.job_type)}</td>
+          <td>${escHtml(job.career)}</td>
+          <td>${deadline}</td>
+          <td>${badge}</td>
+          <td>
+            <div class="td-actions">
+              <button class="btn-secondary" onclick="openEditModal('${job.id}')">수정</button>
+              <button class="btn-danger" onclick="deleteJob('${job.id}')">삭제</button>
+            </div>
+          </td>
+        </tr>`;
+    }).join('');
+  }
+
+  /* ────────────────────────────────────────
+     MODAL — OPEN / CLOSE
+  ──────────────────────────────────────── */
+  document.getElementById('btnNewJob').addEventListener('click', openNewModal);
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalCancel').addEventListener('click', closeModal);
+  document.getElementById('jobModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('jobModal')) closeModal();
+  });
+
+  function openNewModal() {
+    editingJobId = null;
+    document.getElementById('modalTitle').textContent = '새 공고 등록';
+    clearForm();
+    document.getElementById('jobModal').classList.add('is-open');
+  }
+
+  function openEditModal(id) {
+    const job = allJobs.find(j => j.id === id);
+    if (!job) return;
+    editingJobId = id;
+    document.getElementById('modalTitle').textContent = '공고 수정';
+    fillForm(job);
+    document.getElementById('jobModal').classList.add('is-open');
+  }
+
+  function closeModal() {
+    document.getElementById('jobModal').classList.remove('is-open');
+    editingJobId = null;
+  }
+
+  function clearForm() {
+    ['fTitle','fContent','fDeadline']
+      .forEach(id => { document.getElementById(id).value = ''; });
+    document.getElementById('fJobType').value  = '';
+    document.getElementById('fCareer').value   = '';
+    document.getElementById('fHireType').value = '일반채용';
+    document.getElementById('fStatus').value   = 'open';
+  }
+
+  function fillForm(job) {
+    document.getElementById('fTitle').value    = job.title    || '';
+    document.getElementById('fJobType').value  = job.job_type || '';
+    document.getElementById('fCareer').value   = job.career   || '';
+    document.getElementById('fHireType').value = job.hire_type || '일반채용';
+    document.getElementById('fStatus').value   = job.status   || 'open';
+    if (job.deadline) {
+      // datetime-local requires "YYYY-MM-DDTHH:MM" format
+      const d = new Date(job.deadline);
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('fDeadline').value =
+        `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    } else {
+      document.getElementById('fDeadline').value = '';
+    }
+    const c = job.content || {};
+    document.getElementById('fContent').value = c.body || '';
+  }
+
+  /* ────────────────────────────────────────
+     SAVE (CREATE / UPDATE)
+  ──────────────────────────────────────── */
+  document.getElementById('modalSave').addEventListener('click', saveJob);
+
+  async function saveJob() {
+    const title   = document.getElementById('fTitle').value.trim();
+    const jobType = document.getElementById('fJobType').value;
+    const career  = document.getElementById('fCareer').value;
+
+    if (!title)   { showToast('공고 제목을 입력해주세요.', true); return; }
+    if (!jobType) { showToast('직군을 선택해주세요.', true); return; }
+    if (!career)  { showToast('경력을 선택해주세요.', true); return; }
+
+    const deadlineVal = document.getElementById('fDeadline').value;
+
+    const payload = {
+      title,
+      job_type:  jobType,
+      career,
+      hire_type: document.getElementById('fHireType').value,
+      status:    document.getElementById('fStatus').value,
+      deadline:  deadlineVal ? new Date(deadlineVal).toISOString() : null,
+      content: {
+        body: document.getElementById('fContent').value.trim(),
+      }
+    };
+
+    const saveBtn = document.getElementById('modalSave');
+    saveBtn.disabled = true; saveBtn.textContent = '저장 중...';
+
+    let error;
+    if (editingJobId) {
+      ({ error } = await sb.from('jobs').update(payload).eq('id', editingJobId));
+    } else {
+      ({ error } = await sb.from('jobs').insert([payload]));
+    }
+
+    saveBtn.disabled = false; saveBtn.textContent = '저장하기';
+
+    if (error) {
+      showToast('저장 실패: ' + error.message, true);
+    } else {
+      showToast(editingJobId ? '공고가 수정되었습니다.' : '공고가 등록되었습니다.');
+      closeModal();
+      loadJobs();
+    }
+  }
+
+  /* ────────────────────────────────────────
+     DELETE
+  ──────────────────────────────────────── */
+  async function deleteJob(id) {
+    const job = allJobs.find(j => j.id === id);
+    if (!confirm(`"${job?.title}" 공고를 삭제하시겠습니까?\n삭제 시 지원자 데이터도 함께 삭제됩니다.`)) return;
+    const { error } = await sb.from('jobs').delete().eq('id', id);
+    if (error) { showToast('삭제 실패: ' + error.message, true); return; }
+    showToast('공고가 삭제되었습니다.');
+    loadJobs();
+  }
+
+  /* ────────────────────────────────────────
+     APPLICANTS TAB
+  ──────────────────────────────────────── */
+  async function renderJobSelectTable() {
+    const tbody = document.getElementById('jobSelectBody');
+    if (!allJobs.length) {
+      tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state">등록된 공고가 없습니다.</div></td></tr>';
+      return;
+    }
+
+    // 각 공고별 지원자 수 조회
+    const counts = await Promise.all(allJobs.map(async job => {
+      const { count } = await sb
+        .from('applications')
+        .select('id', { count: 'exact', head: true })
+        .eq('job_id', job.id);
+      return { id: job.id, count: count || 0 };
+    }));
+    const countMap = Object.fromEntries(counts.map(c => [c.id, c.count]));
+
+    tbody.innerHTML = allJobs.map(job => {
+      const badge = job.status === 'open'
+        ? '<span class="badge-open">접수중</span>'
+        : '<span class="badge-closed">마감</span>';
+      return `
+        <tr>
+          <td>${escHtml(job.title)}</td>
+          <td>${escHtml(job.job_type)}</td>
+          <td>${badge}</td>
+          <td><strong>${countMap[job.id]}명</strong></td>
+          <td><button class="btn-secondary" onclick="showApplicants('${job.id}', '${escHtml(job.title).replace(/'/g,"\\'")}')">지원자 보기</button></td>
+        </tr>`;
+    }).join('');
+  }
+
+  async function showApplicants(jobId, jobTitle) {
+    document.getElementById('jobSelectView').style.display    = 'none';
+    document.getElementById('applicantListView').style.display = 'block';
+    document.getElementById('selectedJobName').textContent    = jobTitle;
+
+    const tbody = document.getElementById('applicantTableBody');
+    tbody.innerHTML = '<tr class="loading-row"><td colspan="5">불러오는 중...</td></tr>';
+
+    const { data, error } = await sb
+      .from('applications')
+      .select('*')
+      .eq('job_id', jobId)
+      .order('created_at', { ascending: false });
+
+    if (error || !data?.length) {
+      tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state">지원자가 없습니다.</div></td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = data.map(app => {
+      const date = new Date(app.created_at).toLocaleString('ko-KR', {
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit'
+      });
+      const resumeLink = app.resume_url
+        ? `<a href="${app.resume_url}" target="_blank" style="color:var(--c-blue);text-decoration:none;font-weight:500;">다운로드</a>`
+        : '<span style="color:var(--c-sub);">미첨부</span>';
+      return `
+        <tr>
+          <td><strong>${escHtml(app.name)}</strong></td>
+          <td>${escHtml(app.email)}</td>
+          <td>${escHtml(app.phone || '-')}</td>
+          <td style="font-size:13px;color:var(--c-sub);">${date}</td>
+          <td>${resumeLink}</td>
+        </tr>`;
+    }).join('');
+  }
+
+  document.getElementById('btnBackToJobs').addEventListener('click', () => {
+    document.getElementById('jobSelectView').style.display     = 'block';
+    document.getElementById('applicantListView').style.display = 'none';
+  });
+
+  /* ────────────────────────────────────────
+     HELPERS
+  ──────────────────────────────────────── */
+  function showToast(msg, isError = false) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className   = 'toast' + (isError ? ' error' : '');
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 3000);
+  }
+
+  function escHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  init();
+</script>
+</body>
+</html>

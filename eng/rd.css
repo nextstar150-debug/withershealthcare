@@ -1,0 +1,334 @@
+/* ============================================================
+   R&D PAGE — rd.css
+   연구개발 page — extends style.css + about.css
+   ============================================================ */
+
+/* ---- Page variables ---- */
+:root {
+  --rd-col-gap:      24px;
+  --rd-row-gap:      24px;
+  --rd-card-bg:      #ffffff;
+  --rd-card-border:  rgba(0, 0, 0, 0.08);
+  --rd-card-radius:  12px;
+  --rd-icon-color:   #0b579f; /* 아이콘 색상 — 프리픽 아이콘 교체 시 동일 색상 적용 */
+}
+
+/* ============================================================
+   HERO — no subnav variant
+   Override about.css margin-bottom which is reserved for subnav
+   ============================================================ */
+.pg-hero--no-subnav {
+  margin-bottom: 0;
+}
+
+/* R&D-specific hero background */
+.pg-hero__bg--rd {
+  background-image: url('./assets/rd-hero-bg.webp');
+}
+
+/* Breadcrumb CSS chevron — matches design (down-pointing ▾) */
+.rd-breadcrumb__chevron {
+  display:       inline-block;
+  width:         8px;
+  height:        8px;
+  border-right:  1.5px solid #999999;
+  border-bottom: 1.5px solid #999999;
+  transform:     rotate(45deg);
+  flex-shrink:   0;
+  margin-left:   10px;
+  margin-top:    -3px;
+  vertical-align: middle;
+}
+
+/* 영문 브레드크럼 — 대소문자 혼합으로 작아 보이는 것 보정
+   font-size 17px + letter-spacing 확대 */
+.pg-breadcrumb__item {
+  font-size:      17px;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   R&D CONTENT SECTION
+   120px top from design (n_5b63b gap: 120px)
+   ============================================================ */
+.rd-content-section {
+  position:       relative;
+  padding-top:    clamp(60px, 8.33vw, 120px);
+  padding-bottom: clamp(60px, 8.33vw, 120px);
+  background:     var(--c-white);
+  overflow:       visible; /* hidden → visible: 음수 top 이미지가 잘리지 않도록 */
+}
+
+/* 섹션 배경 이미지 레이어
+   margin-top(120px) 영역까지 덮도록 top 음수 적용 */
+.rd-section-bg {
+  position:       absolute;
+  top:            -120px;   /* about.css .pg-hero + .section margin-top 값 */
+  left:           0;
+  right:          0;
+  bottom:         0;
+  z-index:        0;
+  pointer-events: none;
+}
+.rd-section-bg img {
+  width:           100%;
+  height:          100%;
+  object-fit:      cover;
+  object-position: right top;
+  opacity:         0.30;
+}
+
+/* 태블릿: margin-top 80px 대응 */
+@media (max-width: 1024px) {
+  .rd-section-bg { top: -80px; }
+}
+
+/* Centered container — max-width 1440px, matching brand page */
+.rd-container {
+  position:       relative;
+  z-index:        1;
+  max-width:      1440px;
+  margin-inline:  auto;
+  padding-inline: clamp(1.25rem, 6.77vw, 8.125rem);
+}
+
+/* Right padding guards against sidebar overlap on wide screens */
+@media (min-width: 1200px) {
+  .rd-container {
+    padding-right: clamp(6rem, 7vw, 8.125rem);
+  }
+}
+
+/* ============================================================
+   INTRO TEXT BLOCK
+   n_99efb gap: 16px between label / heading / desc
+   margin-bottom 40px → gap to cards (n_1249a gap: 40px)
+   ============================================================ */
+.rd-intro {
+  display:        flex;
+  flex-direction: column;
+  gap:            16px;
+  margin-bottom:  40px;
+}
+
+/* "Research & Development" — Outfit 600 22px #6ca6e8 */
+.rd-page-label {
+  font-family:    var(--f-outfit);
+  font-size:      22px;
+  font-weight:    600;
+  letter-spacing: -0.60px;
+  line-height:    24px;
+  color:          var(--c-primary-light);
+}
+
+/* "사용자 중심 R&D" — Pretendard 600 44px #121212 */
+.rd-page-heading {
+  font-family:    var(--f-pre);
+  font-size:      clamp(1.75rem, 2.29vw, 2.75rem); /* 44px at design width */
+  font-weight:    600;
+  letter-spacing: -1.32px;
+  color:          var(--c-dark);
+  line-height:    1.2;
+}
+
+/* Subtitle — Pretendard 400 20px #434343 */
+.rd-page-desc {
+  font-family:    var(--f-pre);
+  font-size:      20px;
+  font-weight:    400;
+  letter-spacing: -0.54px;
+  color:          var(--c-text);
+  line-height:    1.5;
+}
+
+/* ============================================================
+   인트로 강조 텍스트
+   ============================================================ */
+.rd-page-desc__em {
+  font-weight:    700;
+  color:          var(--c-dark);
+}
+
+/* ============================================================
+   인트로 강조 텍스트 — "사용자-니즈-기반 연구와 디자인" bold
+   ============================================================ */
+.rd-page-desc__em {
+  font-weight:    700;
+  color:          var(--c-dark);
+}
+
+/* ============================================================
+   R&D CARDS GRID — 3열 2행
+   ============================================================ */
+.rd-cards {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap:            var(--rd-col-gap);
+  row-gap:               var(--rd-row-gap);
+  padding-bottom:        0;
+}
+
+/* ============================================================
+   INDIVIDUAL CARD — 흰 배경, 보더, 아이콘+제목+설명 구조
+   참고 이미지 스타일: 파란 헤더 제거, 단일 카드 구조
+   ============================================================ */
+.rd-card {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;    /* 중앙정렬 */
+  text-align:      center;
+  /* 반투명 흰색 — 배경 이미지와 어우러져 입체감 연출 */
+  background:      rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border:          1px solid rgba(255, 255, 255, 0.90);
+  /* 상단 하이라이트 — 유리 질감 */
+  box-shadow:      0 2px 16px rgba(11, 87, 159, 0.06),
+                   inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-radius:   var(--rd-card-radius);
+  padding:         clamp(1.5rem, 2.6vw, 2rem);
+  gap:             16px;
+  /* Subtle lift — 가이드: Card/List 허용 이펙트 */
+  transition:      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                   box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.rd-card:hover {
+  transform:       translateY(-4px);
+  background:      rgba(255, 255, 255, 0.88);
+  box-shadow:      0 12px 36px rgba(11, 87, 159, 0.14),
+                   inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ── 아이콘 래퍼 — 중앙 배치, 크기 확대 */
+.rd-card__icon-wrap {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           72px;
+  height:          72px;
+  flex-shrink:     0;
+  margin-bottom:   4px;
+}
+
+/* 프리픽 SVG img 아이콘 — #0b579f 색상으로 통일 */
+.rd-card__icon {
+  width:       56px;          /* 40 → 56px 확대 */
+  height:      56px;
+  flex-shrink: 0;
+  /* #0b579f 색상 필터 */
+  filter:      brightness(0) saturate(100%)
+               invert(23%) sepia(89%) saturate(694%)
+               hue-rotate(185deg) brightness(97%) contrast(102%);
+  transition:  filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* 호버 시 아이콘 살짝 밝아짐 */
+.rd-card:hover .rd-card__icon {
+  filter:      brightness(0) saturate(100%)
+               invert(40%) sepia(60%) saturate(500%)
+               hue-rotate(185deg) brightness(110%) contrast(100%);
+}
+
+/* ── 카드 제목 */
+.rd-card__title {
+  font-family:    var(--f-pre);
+  font-size:      clamp(1.0625rem, 1.354vw, 1.375rem);
+  font-weight:    700;
+  letter-spacing: -0.60px;
+  color:          var(--c-dark);
+  line-height:    1.3;
+}
+
+/* ── 카드 설명 */
+.rd-card__desc {
+  font-family:    var(--f-pre);
+  font-size:      clamp(0.9375rem, 1.042vw, 1.0625rem);
+  font-weight:    400;
+  letter-spacing: -0.48px;
+  color:          var(--c-text);
+  line-height:    1.6;
+  word-break:     keep-all;
+  overflow-wrap:  break-word;
+}
+
+/* ============================================================
+   RESPONSIVE — 1440px
+   ============================================================ */
+@media (max-width: 1440px) {
+}
+
+/* ============================================================
+   RESPONSIVE — 1199px (tablet landscape)
+   ============================================================ */
+@media (max-width: 1199px) {
+  .rd-page-heading    { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+  .rd-card__title     { font-size: 1.05rem; }
+  .rd-card__desc      { font-size: 0.9rem; }
+}
+
+/* ============================================================
+   RESPONSIVE — 1024px (3열 유지 → 1023px 이하부터 1열)
+   1024px까지는 3개 나란히, 1023px 이하는 1개씩 수직 배치
+   ============================================================ */
+@media (max-width: 1023px) {
+  .rd-cards {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿: 2열 */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rd-cards {
+    grid-template-columns: 1fr; /* 모바일: 1열 */
+    gap: 16px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 768px (mobile)
+   ============================================================ */
+@media (max-width: 768px) {
+  .rd-cards            { padding-bottom: 0; }
+
+  .rd-page-label       { font-size: 17px; }
+  .rd-page-heading     { font-size: clamp(1.375rem, 7vw, 1.875rem); letter-spacing: -0.84px; }
+  .rd-page-desc        { font-size: 17px; letter-spacing: -0.45px; }
+
+  .rd-card             { padding: 1.25rem; gap: 12px; }
+  .rd-card__icon-wrap  { width: 44px; height: 44px; }
+  .rd-card__icon       { width: 24px; height: 24px; }
+  .rd-card__title      { font-size: 1rem; }
+  .rd-card__desc       { font-size: 0.875rem; }
+}
+
+/* ============================================================
+   줄바꿈 제어 — 모바일 전용 br / span
+   .rd-desc-br  : 480px 이하에서만 노출 (rd-page-desc 줄바꿈) /* 기본 숨김 — 481px 이상 노출 안 됨 */
+/* ============================================================
+   RESPONSIVE — 480px
+   480px 이하: rd-page-desc 줄바꿈 활성화
+   첫줄: 환자와 의료진 모두를 위한
+   둘째줄: 안전한 제품을 만들기 위해 노력합니다.
+   ============================================================ */
+@media (max-width: 480px) {
+  .rd-card__title { font-size: 0.9375rem; }
+  .rd-card__desc  { font-size: 0.8125rem; }
+  .rd-desc-br     { display: inline; }
+}
+
+/* ============================================================
+   첫줄  : Withus Healthcare의 R&D는
+   둘째줄: 기술과 디자인, 그리고
+   셋째줄: 사람에 대한 이해를 기본으로
+   마지막: 제품의 품질 향상을 목표로 매진하고 있습니다.
+   ============================================================ */
+@media (max-width: 375px) {
+}
+
+/* ============================================================
+   RESPONSIVE — 360px minimum
+   ============================================================ */
+@media (max-width: 360px) {
+  .rd-page-heading { font-size: 1.375rem; }
+  .rd-card__title  { font-size: 0.875rem; }
+  .rd-card__desc   { font-size: 0.75rem; }
+}

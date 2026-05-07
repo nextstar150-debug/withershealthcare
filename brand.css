@@ -1,0 +1,489 @@
+/* ============================================================
+   BRAND PAGE — brand.css
+   Brand Introduction (브랜드소개) product listing page
+   Extends style.css + about.css
+   ============================================================ */
+
+/* ---- Page variables ---- */
+:root {
+  --brand-col-gap:   30px;
+  --brand-row-gap:   70px;
+  --brand-card-gap:  24px;
+  --brand-info-gap:  4px;
+
+  /* 페이지네이션 gap 조정 변수
+     --pag-gap-inner : 숫자 ↔ 단화살표(< >) 간격
+     --pag-gap-outer : 단화살표 ↔ 쌍화살표(<< >>) 간격 */
+  --pag-gap-inner: 40px;
+  --pag-gap-outer: 30px;
+}
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+.brand-main {
+  /* nav-h (70px) + design gap (~140px from top) */
+  padding-top:    calc(var(--nav-h) + 8.75rem);
+  padding-bottom: 7.5rem; /* ~120px */
+  background:     var(--c-white);
+  min-height:     100vh;
+}
+
+/* Centered container — content max-width matches 3×460 + 2×30 = 1440px */
+.brand-container {
+  max-width:     1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 6.77vw, 8.125rem);
+}
+
+/* Right-side padding so sidebar (76px btn + 20px right) doesn't overlap content */
+@media (min-width: 1200px) {
+  .brand-container {
+    padding-right: clamp(6rem, 7vw, 8.125rem);
+  }
+}
+
+/* ============================================================
+   BRAND DETAIL — 상단 브레드크럼·제목·제품 네비 래퍼 (brand-detail-*.html)
+   ============================================================ */
+.brand-detail-intro {
+  padding-top: calc(var(--nav-h) + 8.75rem);
+}
+
+@media (max-width: 1440px) {
+  .brand-detail-intro {
+    padding-top: calc(var(--nav-h) + 7rem);
+  }
+}
+
+@media (max-width: 1199px) {
+  .brand-detail-intro {
+    padding-top: calc(var(--nav-h) + 5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-detail-intro {
+    padding-top: calc(var(--nav-h) + 3rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-detail-intro {
+    padding-top: calc(var(--nav-h) + 2rem);
+  }
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.brand-breadcrumb {
+  display:     flex;
+  align-items: center;
+  gap:         16px;
+  margin-bottom: 1.75rem; /* 28px — gap between breadcrumb and title */
+}
+
+/* Gray home icon */
+.brand-breadcrumb__home {
+  display:     flex;
+  align-items: center;
+}
+.brand-breadcrumb__home img {
+  filter: brightness(0) saturate(0%) invert(60%);
+}
+
+/* Small circle dot separator */
+.brand-breadcrumb__dot {
+  width:         3px;
+  height:        3px;
+  border-radius: 50%;
+  background:    rgba(0, 0, 0, 0.10);
+  flex-shrink:   0;
+}
+
+/* Breadcrumb text item */
+.brand-breadcrumb__item {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             12px;
+  font-family:     var(--f-pre);
+  font-size:       16px;
+  font-weight:     500;
+  letter-spacing:  -0.48px;
+  color:           var(--c-text-sec);
+  text-decoration: none;
+  transition:      color var(--ease);
+}
+.brand-breadcrumb__item:hover { color: var(--c-primary); }
+
+/* CSS-only down chevron (replacing SVG asset) */
+.brand-breadcrumb__chevron {
+  display:       inline-block;
+  width:         8px;
+  height:        8px;
+  border-right:  1.5px solid var(--c-text-sec);
+  border-bottom: 1.5px solid var(--c-text-sec);
+  transform:     rotate(45deg);
+  flex-shrink:   0;
+  margin-top:    -3px;
+  transition:    border-color var(--ease);
+}
+.brand-breadcrumb__item:hover .brand-breadcrumb__chevron {
+  border-color: var(--c-primary);
+}
+
+/* ============================================================
+   PAGE HEADING — "Product descriptions"
+   ============================================================ */
+.brand-heading {
+  font-family:    var(--f-pre);
+  font-size:      clamp(1.75rem, 2.29vw, 2.75rem); /* 44px at 1920px */
+  font-weight:    600;
+  letter-spacing: -1.32px;
+  white-space:    pre-wrap;
+  color:          var(--c-dark);
+  margin-bottom:  1.5rem; /* 24px — heading → 탭 네비 간격 */
+  line-height:    1.2;
+}
+.brand-heading__link {
+  text-decoration: none;
+  color: inherit;
+}
+.brand-heading__link:hover .brand-heading {
+  opacity: 0.7;
+  transition: opacity var(--ease);
+}
+
+/* ============================================================
+   PRODUCT GRID — 3 columns
+   col-gap 30px, row-gap 70px (from Figma n_ce056 + n_37d35)
+   ============================================================ */
+.brand-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap:            var(--brand-col-gap);
+  row-gap:               var(--brand-row-gap);
+}
+
+/* ============================================================
+   PRODUCT CARD
+   ============================================================ */
+.brand-card {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--brand-card-gap); /* 24px image-to-text gap */
+}
+
+/* Image wrapper — maintains 460:400 aspect ratio from design */
+.brand-card__img-wrap {
+  display:        block;
+  width:          100%;
+  aspect-ratio:   460 / 400;
+  overflow:       hidden;
+  background:     #f0f2f5;
+  border-radius:  2px;
+  text-decoration: none;
+}
+
+/* Product image — scales and crops to fill */
+.brand-card__img {
+  width:       100%;
+  height:      100%;
+  object-fit:  cover;
+  display:     block;
+  transition:  transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Subtle zoom on hover */
+.brand-card:hover .brand-card__img {
+  transform: scale(1.04);
+}
+
+/* Text info block */
+.brand-card__info {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--brand-info-gap); /* 4px name-to-en gap */
+}
+
+/* Korean product name — Pretendard 500 24px #121212 */
+.brand-card__name {
+  font-family:    var(--f-pre);
+  font-size:      24px;
+  font-weight:    500;
+  letter-spacing: -0.72px;
+  color:          var(--c-dark);
+  line-height:    1.4;
+  word-break:     keep-all;
+}
+
+/* English product name — Outfit 300 20px #666666 */
+.brand-card__name-en {
+  font-family:    var(--f-outfit);
+  font-size:      20px;
+  font-weight:    300;
+  letter-spacing: -0.60px;
+  color:          var(--c-text-sec);
+  line-height:    1.4;
+}
+
+/* ============================================================
+   PAGINATION — « < [1] > »
+   구조: [pag-side--left] [pag-numbers] [pag-side--right]
+   간격: 쌍화살표↔단화살표 = --pag-gap-outer(30px)
+         단화살표↔숫자      = --pag-gap-inner(40px)
+   ============================================================ */
+.brand-pagination {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  /* 숫자 그룹 ↔ 화살표 사이드 간격 = --pag-gap-inner */
+  gap:             var(--pag-gap-inner);
+  margin-top:      5rem; /* 80px from grid to pagination */
+}
+
+/* 왼쪽/오른쪽 화살표 사이드 묶음
+   내부 gap = --pag-gap-outer (쌍화살표 ↔ 단화살표) */
+.pag-side {
+  display:     flex;
+  align-items: center;
+  gap:         var(--pag-gap-outer);
+}
+
+/* 숫자 버튼 묶음 */
+.pag-numbers {
+  display:     flex;
+  align-items: center;
+  gap:         8px;
+}
+
+/* 개별 화살표 버튼 */
+.pag-arrow {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  background:      none;
+  border:          none;
+  padding:         6px;
+  cursor:          pointer;
+  border-radius:   4px;
+  transition:      opacity var(--ease), background var(--ease);
+  line-height:     0;
+}
+.pag-arrow:hover  { opacity: 0.55; }
+.pag-arrow:focus-visible {
+  outline:        2px solid var(--c-primary);
+  outline-offset: 2px;
+}
+.pag-arrow img { display: block; }
+
+/* 페이지 번호 버튼 */
+.pag-page {
+  font-family:    var(--f-outfit);
+  font-size:      16px;
+  font-weight:    600;
+  letter-spacing: -0.48px;
+  color:          var(--c-text-sec);
+  background:     none;
+  border:         none;
+  border-bottom:  2px solid transparent;
+  padding:        4px 2px 4px;
+  cursor:         pointer;
+  transition:     color var(--ease), border-color var(--ease);
+  min-width:      20px;
+  text-align:     center;
+  line-height:    1.4;
+}
+.pag-page:hover { color: var(--c-dark); }
+.pag-page:focus-visible {
+  outline:        2px solid var(--c-primary);
+  outline-offset: 2px;
+}
+
+/* 활성 페이지 — 파란 텍스트 + 파란 언더라인 */
+.pag-page--active {
+  color:        var(--c-primary);
+  border-color: var(--c-primary);
+  cursor:       default;
+}
+.pag-page--active:hover { color: var(--c-primary); }
+
+/* ============================================================
+   PRODUCT TAB NAV — 브레드크럼 아래 제품 가로 나열
+   모바일: 가로 스크롤 (ms-tabs 동일 패턴)
+   ============================================================ */
+.brand-product-nav {
+  margin-bottom: 3.75rem; /* grid 위 간격 — heading margin-bottom과 동일 60px */
+}
+
+.brand-product-nav__list {
+  display:     flex;
+  align-items: center;
+  flex-wrap:   wrap;
+  list-style:  none;
+  gap:         32px; /* ms-tabs와 동일 간격 */
+}
+
+.brand-product-nav__link {
+  display:         block;
+  padding-bottom:  2px; /* 언더라인과 간격 — ms-tab 동일 */
+  font-family:     var(--f-pre);
+  font-size:       15px;
+  font-weight:     500;
+  letter-spacing:  -0.45px;
+  color:           rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  position:        relative;
+  transition:      color var(--ease);
+}
+
+/* 언더라인 — 텍스트 너비에 딱 맞게 */
+.brand-product-nav__link::after {
+  content:       '';
+  position:      absolute;
+  bottom:        0;
+  left:          0;
+  width:         100%;
+  height:        2px;
+  background:    var(--c-primary);
+  border-radius: 2px;
+  transform:     scaleX(0);
+  transform-origin: left center;
+  transition:    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-product-nav__link:hover {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* 현재 페이지 제품 active */
+.brand-product-nav__link.is-active {
+  color:       var(--c-primary);
+  font-weight: 700;
+}
+.brand-product-nav__link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* 상세 페이지 탭은 줄바꿈/두께 변화로 레이아웃이 흔들리지 않도록 고정 */
+.brand-detail-intro .brand-product-nav__list {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.brand-detail-intro .brand-product-nav__link.is-active {
+  font-weight: 500;
+}
+.brand-product-nav__link:focus-visible {
+  outline:        2px solid var(--c-primary);
+  outline-offset: 2px;
+  border-radius:  2px;
+}
+
+/* 첫 항목 왼쪽 정렬 맞춤 */
+.brand-product-nav__list li:first-child .brand-product-nav__link {
+  padding-left: 0;
+}
+
+/* ============================================================
+   RESPONSIVE — 1440px (large desktop)
+   ============================================================ */
+@media (max-width: 1440px) {
+  .brand-main { padding-top: calc(var(--nav-h) + 7rem); }
+  .brand-product-nav__list { gap: 28px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 1199px (tablet landscape / sidebar hidden)
+   ============================================================ */
+@media (max-width: 1199px) {
+  .brand-main     { padding-top: calc(var(--nav-h) + 5rem); }
+  .brand-heading  { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+  .brand-card__name    { font-size: 20px; }
+  .brand-card__name-en { font-size: 17px; }
+  .brand-product-nav__link { font-size: 14px; }
+  .brand-product-nav__list { gap: 24px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 1024px (2-column grid)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    row-gap:    48px;
+  }
+  .brand-product-nav { margin-bottom: 2.5rem; }
+  .brand-product-nav__link { font-size: 13px; }
+  .brand-product-nav__list { gap: 20px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 768px (mobile)
+   ============================================================ */
+@media (max-width: 768px) {
+  .brand-main {
+    padding-top:    calc(var(--nav-h) + 3rem);
+    padding-bottom: 4rem;
+  }
+
+  .brand-breadcrumb { margin-bottom: 1.25rem; }
+  .brand-breadcrumb__item { font-size: 13px; }
+
+  .brand-heading {
+    font-size:      clamp(1.25rem, 7vw, 1.75rem);
+    letter-spacing: -0.78px;
+    margin-bottom:  1.25rem;
+  }
+
+  .brand-product-nav { margin-bottom: 2rem; }
+  .brand-product-nav__link { font-size: 12px; }
+  .brand-product-nav__list { gap: 16px; }
+
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap:    36px;
+  }
+
+  .brand-card__name    { font-size: 15px; letter-spacing: -0.45px; }
+  .brand-card__name-en { font-size: 13px; letter-spacing: -0.39px; }
+
+  .brand-pagination { --pag-gap-inner: 28px; margin-top: 3rem; }
+  .pag-side { --pag-gap-outer: 20px; }
+  .pag-page  { font-size: 14px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 480px (1-column grid)
+   ============================================================ */
+@media (max-width: 480px) {
+  .brand-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .brand-card__img-wrap { aspect-ratio: 4 / 3; }
+  .brand-product-nav__link { font-size: 11px; }
+  .brand-product-nav__list { gap: 12px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 360px minimum
+   ============================================================ */
+@media (max-width: 360px) {
+  .brand-main { padding-top: calc(var(--nav-h) + 2rem); }
+
+  .brand-heading  { font-size: 1.25rem; margin-bottom: 1rem; }
+  .brand-product-nav { margin-bottom: 1.5rem; }
+  .brand-product-nav__link { font-size: 11px; }
+  .brand-product-nav__list { gap: 10px; }
+  .brand-grid     { grid-template-columns: 1fr; row-gap: 28px; }
+
+  .brand-card__name    { font-size: 14px; }
+  .brand-card__name-en { font-size: 12px; }
+
+  .brand-pagination { gap: 20px; }
+}

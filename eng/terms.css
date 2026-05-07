@@ -1,0 +1,33 @@
+/* ============================================================
+   TERMS PAGE — terms.css
+   Extends style.css + privacy.css with terms-specific layout.
+   Shared policy-page styles (prv-*) live in privacy.css.
+   ============================================================ */
+
+/* ============================================================
+   LAYOUT — terms page main area
+   Mirrors .privacy-main from privacy.css
+   ============================================================ */
+.terms-main {
+  /* nav-h (70px) + design gap (120px) */
+  padding-top: calc(var(--nav-h) + 7.5rem);
+  padding-bottom: 5rem;
+  background: var(--c-white);
+  min-height: 100vh;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .terms-main {
+    padding-top: calc(var(--nav-h) + 3rem);
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .terms-main {
+    padding-top: calc(var(--nav-h) + 2rem);
+  }
+}

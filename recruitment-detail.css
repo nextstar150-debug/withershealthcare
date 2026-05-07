@@ -1,0 +1,403 @@
+/* ===========================================
+   WITHUS HEALTHCARE — recruitment-detail.css
+   채용정보 상세 (Job Detail) page styles
+   =========================================== */
+
+/* ============================================================
+   CUSTOM PROPERTY — deadline red (page-scoped)
+   ============================================================ */
+.rcd-section {
+  --c-deadline: #e81111;
+}
+
+/* ============================================================
+   SECTION WRAPPER
+   ============================================================ */
+.rcd-section {
+  padding: 120px 0 160px;
+  background: var(--c-white);
+}
+
+/* ============================================================
+   INNER CONTAINER
+   Centered at 1440px. Uses CSS max() so that at viewports
+   wider than 1440px, side margins grow to center content,
+   while at smaller viewports a minimum 20px padding is kept.
+   ============================================================ */
+.rcd-inner {
+  padding-left:  max(1.25rem, calc((100vw - 1440px) / 2));
+  padding-right: max(1.25rem, calc((100vw - 1440px) / 2));
+}
+
+/* ============================================================
+   TWO-COLUMN LAYOUT
+   ============================================================ */
+.rcd-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* ── Main content column ── */
+.rcd-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* n_bfd3f gap: 80px — between header and body */
+}
+
+/* ── Sticky sidebar ── */
+.rcd-sidebar {
+  flex: 0 0 280px;
+  width: 280px;
+  position: sticky;
+  top: calc(var(--nav-h) + 40px);
+}
+
+/* ============================================================
+   JOB HEADER — title + upload date + divider
+   ============================================================ */
+.rcd-header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* n_e0b61 gap: 40px */
+}
+
+/* Job title */
+.rcd-title {
+  font-family: var(--f-pre);
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -1.32px;
+  color: var(--c-dark);
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+/* Upload date + divider group */
+.rcd-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* n_f6c49 gap: 20px */
+}
+
+.rcd-date {
+  font-family: var(--f-pre);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.45px;
+  color: #999999;
+  text-align: right; /* right-aligned within main column */
+}
+
+.rcd-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ebebeb;
+  margin: 0;
+}
+
+/* ============================================================
+   MOBILE-ONLY INFO CARD
+   Shown only on tablet/mobile (hidden on desktop).
+   Mirrors the sidebar card content for small screens.
+   ============================================================ */
+.rcd-mobile-card {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  gap: 28px;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* ============================================================
+   CONTENT BODY
+   ============================================================ */
+.rcd-body {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* n_13c0b gap: 60px */
+}
+
+/* Individual section block */
+.rcd-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* n_db2fa etc. gap: 8px */
+}
+
+/* Section heading (e.g. [직무 소개]) */
+.rcd-block__title {
+  font-family: var(--f-pre);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.66px;
+  color: var(--c-dark);
+}
+
+/* Default body text — 16px gray (주요업무, 자격요건 등) */
+.rcd-block__text {
+  font-family: var(--f-pre);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.48px;
+  line-height: 1.8; /* 28.8px / 16px */
+  color: var(--c-text-sec);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Large body text — 18px dark (직무소개, 채용절차) */
+.rcd-block__text--lg {
+  font-size: 18px;
+  letter-spacing: -0.54px;
+  line-height: 1.5; /* 27px / 18px */
+  color: var(--c-text);
+}
+
+/* ============================================================
+   SIDEBAR INFO CARD
+   ============================================================ */
+.rcd-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* gap between info rows section and apply button */
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* Info rows container */
+.rcd-info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* n_689ff gap: 24px */
+}
+
+/* Single info row: label + value */
+.rcd-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* n_5ba15 etc. gap: 20px */
+}
+
+.rcd-info-row__label {
+  font-family: var(--f-pre);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.48px;
+  color: var(--c-text-sec);
+  flex-shrink: 0;
+  width: 58px; /* match Figma label width for alignment */
+}
+
+.rcd-info-row__value {
+  font-family: var(--f-pre);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  color: var(--c-dark);
+  line-height: 1.5;
+}
+
+/* Deadline date — red */
+.rcd-info-row__value--deadline {
+  color: var(--c-deadline);
+  font-weight: 500;
+}
+
+/* ============================================================
+   APPLY BUTTON
+   ============================================================ */
+.rcd-apply-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* n_b0d47 gap: 16px */
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  background: linear-gradient(149.05deg, rgba(108,166,232,1) 34.31%, rgba(11,87,159,1) 113.26%);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.06);
+  font-family: var(--f-pre);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.54px;
+  color: var(--c-white);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--ease), box-shadow var(--ease), transform var(--ease);
+  flex-shrink: 0;
+}
+
+.rcd-apply-btn:hover {
+  opacity: 0.92;
+  box-shadow: 2px 4px 20px rgba(11, 87, 159, 0.30);
+  transform: translateY(-1px);
+}
+
+.rcd-apply-btn:active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rcd-apply-btn img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  flex-shrink: 0;
+  /* The SVG may need to be white — force via filter if not already */
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.rcd-block {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.rcd-block.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET LARGE (≤ 1199px)
+   ============================================================ */
+@media (max-width: 1199px) {
+  .rcd-section {
+    padding: 80px 0 120px;
+  }
+
+  .rcd-title {
+    font-size: 36px;
+    letter-spacing: -1.08px;
+  }
+
+  .rcd-sidebar {
+    flex: 0 0 240px;
+    width: 240px;
+  }
+
+  /* Adjust label width in sidebar for narrower card */
+  .rcd-info-row__label {
+    width: auto;
+    min-width: 52px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   Switch to single column layout, sidebar becomes mobile card
+   ============================================================ */
+@media (max-width: 1024px) {
+  .rcd-layout {
+    flex-direction: column;
+  }
+
+  .rcd-sidebar {
+    display: none; /* hide desktop sidebar, show mobile card instead */
+  }
+
+  .rcd-mobile-card {
+    display: flex; /* show mobile card */
+  }
+
+  .rcd-main {
+    gap: 48px;
+    width: 100%;
+  }
+
+  .rcd-title {
+    font-size: 30px;
+    letter-spacing: -0.9px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .rcd-section {
+    padding: 48px 0 80px;
+  }
+
+  .rcd-main {
+    gap: 36px;
+  }
+
+  .rcd-header {
+    gap: 28px;
+  }
+
+  .rcd-title {
+    font-size: 22px;
+    letter-spacing: -0.66px;
+    line-height: 1.35;
+  }
+
+  .rcd-date {
+    font-size: 13px;
+  }
+
+  .rcd-body {
+    gap: 40px;
+  }
+
+  .rcd-block__title {
+    font-size: 18px;
+    letter-spacing: -0.54px;
+  }
+
+  .rcd-block__text {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .rcd-block__text--lg {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .rcd-mobile-card {
+    padding: 20px;
+    gap: 20px;
+    border-radius: 12px;
+  }
+
+  .rcd-info-row__label,
+  .rcd-info-row__value {
+    font-size: 14px;
+  }
+
+  .rcd-apply-btn {
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE SMALL (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .rcd-title {
+    font-size: 20px;
+    letter-spacing: -0.6px;
+  }
+
+  .rcd-block__title {
+    font-size: 16px;
+  }
+
+  .rcd-block__text {
+    font-size: 13px;
+  }
+
+  .rcd-block__text--lg {
+    font-size: 14px;
+  }
+}

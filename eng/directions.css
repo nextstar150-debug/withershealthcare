@@ -1,0 +1,259 @@
+.dir-hero-bg {
+  background-image: url('./assets/about_bg.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.dir-section {
+  padding: 0 0 120px; /* 섹션 간격은 .section + .section 규칙으로 통일 */
+  background: var(--c-white);
+}
+
+.dir-inner {
+  max-width: 1660px; /* hist-container 기준과 동일 — pg-subnav 양끝 정렬 */
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.dir-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.dir-label {
+  font-family: var(--f-outfit);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.60px;
+  line-height: 24px;
+  color: #6ca6e8;
+}
+
+.dir-title {
+  font-family: var(--f-pre);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1.20px;
+  line-height: 56px;
+  color: #222222;
+}
+
+.dir-content {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.dir-map {
+  flex: 0 0 720px; /* 1920px 기준 720px 고정 */
+  overflow: hidden;
+  min-height: 460px;
+}
+
+.dir-map__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* 지도 hover 시 살짝 어두워져 클릭 가능함을 암시 */
+.dir-map a:hover .dir-map__img {
+  opacity: 0.9;
+}
+
+.dir-info {
+  flex: 1 1 690px;      /* 기준 690px, 화면 좁아지면 축소 허용 */
+  max-width: 690px;     /* 1920px 기준 최대 너비 */
+  height: 460px;        /* 지도와 동일 높이 고정 */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;     /* 높이 초과 콘텐츠 클리핑 */
+}
+
+.dir-line {
+  height: 1px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.dir-line--primary { background: #0b579f; }
+.dir-line--light   { background: #f5f5f5; }
+.dir-line--softer  { background: #ebebeb; }
+
+.dir-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 44px 0 40px;
+}
+
+.dir-block__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dir-block__header img {
+  flex-shrink: 0;
+  display: block;
+}
+
+/* 모바일에서 일부 SVG(마스크 기반 등)가 img 렌더링에서 누락될 수 있어
+   인라인 svg도 동일 레이아웃으로 맞춤 */
+.dir-block__header svg {
+  flex-shrink: 0;
+  display: block;
+}
+
+.dir-block__title {
+  font-family: var(--f-outfit);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.54px;
+  color: #0b579f;
+}
+
+.dir-block__text {
+  font-family: 'Onest', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.51px;
+  color: #666666;
+}
+
+.dir-block__tel {
+  font-family: var(--f-outfit);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.51px;
+  color: #666666;
+}
+
+/* Tel 번호 인라인 Fax — 구분선 + 번호 */
+.dir-fax-inline {
+  margin-left: 10px;
+  color: #666666;
+  font-family: var(--f-outfit);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.51px;
+}
+
+.dir-times {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dir-time-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dir-time-label {
+  font-family: 'Onest', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.51px;
+  color: #666666;
+  min-width: 5em; /* "점심시간" 기준 — 라벨 너비 통일로 점 수직 정렬 */
+  flex-shrink: 0;
+}
+
+.dir-time-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.dir-time-value {
+  font-family: 'Onest', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.51px;
+  color: #434343;
+}
+
+.dir-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.dir-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dir-content.dir-reveal {
+  transition-delay: 0.15s;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   지도 + 정보 세로 스택 배치
+   ============================================================ */
+@media (max-width: 1024px) {
+  .dir-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .dir-map {
+    width: 100%;
+    min-height: 360px;
+    flex: none;
+  }
+
+  .dir-info {
+    flex: none;
+    width: 100%;
+    max-width: 100%;   /* 가로 max-width 해제 */
+    height: auto;      /* 세로 스택 시 높이 자동 */
+    overflow: visible;
+    margin-top: 40px;  /* 지도와 간격 */
+  }
+
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .dir-section {
+    padding-bottom: 80px;
+  }
+
+  .dir-title {
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.84px;
+  }
+
+  .dir-map {
+    min-height: 260px;
+  }
+
+  .dir-block {
+    padding: 32px 0 28px;
+  }
+
+  .dir-block__title {
+    font-size: 16px;
+  }
+
+  .dir-block__text,
+  .dir-block__tel,
+  .dir-time-label,
+  .dir-time-value {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이용약관 | (주)위더스헬스케어</title>
+  <meta name="description" content="(주)위더스헬스케어 이용약관 — 서비스 이용에 관한 권리·의무 및 책임사항을 규정합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- privacy.css provides shared policy-page layout styles (prv-*) -->
+  <link rel="stylesheet" href="privacy.css">
+  <link rel="stylesheet" href="terms.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Withus Healthcare 홈으로">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              회사소개
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="회사소개 하위 메뉴">
+              <li><a href="./about.html"><span>회사개요</span></a></li>
+              <li><a href="./core-values.html"><span>핵심가치</span></a></li>
+              <li><a href="./history.html"><span>연혁</span></a></li>
+              <li><a href="./directions.html"><span>오시는길</span></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              브랜드소개
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="브랜드소개 하위 메뉴">
+              <li><a href="./brand.html"><span>주력 브랜드</span></a></li>
+              <li><a href="./special-brand.html"><span>스페셜 프로덕트</span></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./rd.html" class="nav-link">연구개발</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./recruitment.html" class="nav-link">채용정보</a>
+          </li>
+
+          <!-- 온라인몰 — 서브메뉴 있음 -->
+          <li class="nav-item nav-item--has-sub">
+            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              온라인몰
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="온라인몰 하위 메뉴">
+              <li><a href="#"><span>일반고객 전용몰</span></a></li>
+              <li><a href="#"><span>병의원 전용몰</span></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link">고객센터</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="언어 선택" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>KOR</span>
+            <img src="assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="언어 선택">
+            <li><a href="./terms.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">KOR</a></li>
+            <li><a href="./eng/terms.html" class="lang-dropdown__item">ENG</a></li>
+          </ul>
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       모바일 드로어
+       ============================================================ -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="모바일 메뉴" aria-hidden="true">
+
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Withus Healthcare 홈으로">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="메뉴 닫기">&#10005;</button>
+    </div>
+
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>회사소개</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">회사개요</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">핵심가치</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">연혁</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">오시는길</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>브랜드소개</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">주력 브랜드</a></li>
+          <li><a href="./special-brand.html" class="drawer__sub-link">스페셜 프로덕트</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer__item">
+        <a href="./rd.html" class="drawer__btn drawer__btn--link">연구개발</a>
+      </li>
+      <li class="drawer__item">
+        <a href="./recruitment.html" class="drawer__btn drawer__btn--link">채용정보</a>
+      </li>
+      <!-- 온라인몰 -->
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSubMall">
+          <span>온라인몰</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSubMall" role="list">
+          <li><a href="#" class="drawer__sub-link">일반고객 전용몰</a></li>
+          <li><a href="#" class="drawer__sub-link">병의원 전용몰</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item">
+        <a href="./contact.html" class="drawer__btn drawer__btn--link">고객센터</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       플로팅 사이드바 (데스크탑 고정)
+       ============================================================ -->
+  <aside class="privacy-sidebar" aria-label="빠른 링크">
+    <a href="#" class="sidebar-btn sidebar-btn--online" aria-label="온라인몰 바로가기" title="온라인몰">
+      <img src="./assets/icon-online.svg" alt="" class="sidebar-icon">
+      <span>온라인몰</span>
+    </a>
+    <a href="#" class="sidebar-btn sidebar-btn--biz" aria-label="사업자몰 바로가기" title="사업자몰">
+      <img src="./assets/icon-business.svg" alt="" class="sidebar-icon">
+      <span>사업자몰</span>
+    </a>
+    <a href="./contact.html" class="sidebar-btn sidebar-btn--blue" aria-label="고객센터 바로가기" title="고객센터">
+      <img src="./assets/icon-cs.svg" alt="" class="sidebar-icon">
+      <span>고객센터</span>
+    </a>
+    <button class="prv-scroll-top" id="scrollTopBtn" aria-label="맨 위로 이동" title="맨 위로">
+      <img src="./assets/arrowfloating.svg" alt="맨 위로" width="18" height="18">
+    </button>
+  </aside>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="terms-main" id="termsMain">
+
+    <!-- 브레드크럼 -->
+    <div class="prv-breadcrumb-bar">
+      <div class="prv-container">
+        <nav class="prv-breadcrumb" aria-label="페이지 경로">
+          <a href="index.html" class="prv-breadcrumb__link prv-breadcrumb__home" aria-label="홈">
+            <img src="assets/icon-home-breadcrumb.svg" alt="홈" width="14" height="14">
+          </a>
+          <span class="prv-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="prv-breadcrumb__current" aria-current="page">이용약관</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 타이틀 섹션 -->
+    <section class="prv-hero" aria-labelledby="termsTitle">
+      <div class="prv-container">
+
+        <div class="prv-hero__title-group">
+          <h1 class="prv-hero__title" id="termsTitle">(주)위더스헬스케어 이용약관</h1>
+        </div>
+
+        <div class="prv-hero__meta">
+          <time class="prv-hero__date" datetime="2026-03-10">시행일: 2026년 03월 10일</time>
+          <hr class="prv-divider" aria-hidden="true">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 본문 콘텐츠 -->
+    <section class="prv-content" aria-label="이용약관 내용">
+      <div class="prv-container">
+        <div class="prv-articles">
+
+          <!-- ── 제1조 ── -->
+          <article class="prv-article" id="article-1">
+            <h2 class="prv-article__heading">제1조 (목적)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">이 약관은 (주)위더스헬스케어(이하 '회사'라 함)가 운영하는 웹사이트(이하 '사이트'라 함)에서 제공하는 인터넷 관련 서비스(이하 '서비스'라 함)를 이용함에 있어
+회사와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+              <p class="prv-text--base">※ PC통신, 무선 등을 이용하는 전자거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제2조 ── -->
+          <article class="prv-article" id="article-2">
+            <h2 class="prv-article__heading">제2조 (정의)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. '사이트'란 (주)위더스헬스케어가 서비스에 관한 정보를 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 설정한 가상의 서비스 공간을 말하며,
+아울러 사이트를 운영하는 사업자의 의미로도 사용합니다.</p>
+              <p class="prv-text--medium">2. '이용자'란 '사이트'에 접속하여 이 약관에 따라 '사이트'가 제공하는 서비스를 이용하는 자를 말합니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제3조 ── -->
+          <article class="prv-article" id="article-3">
+            <h2 class="prv-article__heading">제3조 (약관의 명시와 설명 및 개정)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사는 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소, 전화번호·전자우편주소, 사업자등록번호, 개인정보 관리책임자 등을 이용자가 쉽게 알 수 있도록
+사이트의 초기 서비스화면에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.</p>
+              <p class="prv-text--medium">2. 회사는 이용자가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 중요한 내용을 이용자가 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 이용자의 확인을 구하여야 합니다.</p>
+              <p class="prv-text--medium">3. 회사는 「약관의 규제에 관한 법률」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</p>
+              <p class="prv-text--medium">4. 회사가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 사이트의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다.
+다만, 이용자에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지합니다.</p>
+              <p class="prv-text--medium">5. 회사가 약관을 개정할 경우 그 개정약관은 적용일자 이후에 체결되는 계약에만 적용되고, 그 이전에 이미 체결된 계약에 대해서는 개정 전의 약관조항이 그대로 적용됩니다.
+다만, 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 개정약관의 공지기간 내에 회사에 송신하여 회사의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.</p>
+              <p class="prv-text--medium">6. 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 「약관의 규제 등에 관한 법률」, 공정거래위원회가 정하는 소비자 보호지침 및 관계법령 또는 상관례에 따릅니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제4조 ── -->
+          <article class="prv-article" id="article-4">
+            <h2 class="prv-article__heading">제4조 (서비스의 제공 및 변경)</h2>
+            <div class="prv-article__body">
+              <div class="prv-sub">
+                <p class="prv-text--medium">1. 회사는 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소, 전화번호·전자우편주소, 사업자등록번호, 개인정보 관리책임자 등을 이용자가 쉽게 알 수 있도록
+사이트의 초기 서비스화면에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.</p>
+                <p class="prv-text--list">1.&emsp;회사 및 제품·서비스에 관한 정보 제공<br>
+2.&emsp;문의 및 상담 서비스 제공<br>
+3.&emsp;기타 회사가 정하는 업무</p>
+              </div>
+              <p class="prv-text--medium">2. 회사는 서비스의 내용을 변경할 경우에는 변경된 서비스의 내용 및 제공일자를 명시하여 현재의 서비스 내용을 게시한 곳에 즉시 공지합니다</p>
+              <p class="prv-text--medium">3. 회사가 제공하기로 이용자와 계약을 체결한 서비스의 내용을 기술적 사양의 변경 등의 사유로 변경할 경우에는 그 사유를 이용자에게 통지 가능한 주소로 즉시 통지합니다.</p>
+              <p class="prv-text--medium">4. 전항의 경우 회사는 이로 인하여 이용자가 입은 손해를 배상합니다. 다만, 회사가 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제5조 ── -->
+          <article class="prv-article" id="article-5">
+            <h2 class="prv-article__heading">제5조 (서비스의 중단)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사는 컴퓨터 등 정보통신 설비의 보수점검·교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.</p>
+              <p class="prv-text--medium">2. 회사는 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상합니다. 단, 회사가 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다</p>
+              <p class="prv-text--medium">3. 사업종목의 전환, 사업의 포기, 업체간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 회사는 제6조에 정한 방법으로 이용자에게 통지합니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제6조 ── -->
+          <article class="prv-article" id="article-6">
+            <h2 class="prv-article__heading">제6조 (이용자에 대한 통지)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사가 이용자에 대한 통지를 하는 경우, 이용자가 회사와 미리 약정하여 지정한 전자우편 주소로 할 수 있습니다.</p>
+              <p class="prv-text--medium">2. 회사는 불특정다수 이용자에 대한 통지의 경우 1주일 이상 '사이트' 공지사항에 게시함으로써 개별 통지에 갈음할 수 있습니다. 다만, 이용자 본인과 관련하여 중대한 영향을 미치는 사항에 대하여는 개별 통지를 합니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제7조 ── -->
+          <article class="prv-article" id="article-7">
+            <h2 class="prv-article__heading">제7조 (개인정보보호)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사는 이용자의 개인정보 수집 시 서비스 제공을 위하여 필요한 범위에서 최소한의 개인정보를 수집합니다.</p>
+              <p class="prv-text--medium">2. 회사는 이용자의 개인정보를 수집·이용하는 때에는 당해 이용자에게 그 목적을 고지하고 동의를 받습니다.</p>
+              <p class="prv-text--medium">3. 회사는 수집된 개인정보를 목적 외의 용도로 이용할 수 없으며, 새로운 이용목적이 발생한 경우 또는 제3자에게 제공하는 경우에는 이용·제공 단계에서 당해 이용자에게 그 목적을 고지하고 동의를 받습니다.
+다만, 관련 법령에 달리 정함이 있는 경우에는 예외로 합니다.</p>
+              <p class="prv-text--medium">4. 이용자는 언제든지 회사가 가지고 있는 자신의 개인정보에 대해 열람 및 오류정정을 요구할 수 있으며, 회사는 이에 대해 지체 없이 필요한 조치를 취할 의무를 집니다.</p>
+              <p class="prv-text--medium">5. 회사는 개인정보 보호를 위하여 이용자의 개인정보를 취급하는 자를 최소한으로 제한하여야 하며,
+이용자의 개인정보의 분실, 도난, 유출, 동의 없는 제3자 제공, 변조 등으로 인한 이용자의 손해에 대하여 모든 책임을 집니다.</p>
+              <p class="prv-text--medium">6. 회사 또는 그로부터 개인정보를 제공받은 제3자는 개인정보의 수집목적 또는 제공받은 목적을 달성한 때에는 당해 개인정보를 지체 없이 파기합니다.</p>
+              <p class="prv-text--medium">7. 회사는 개인정보의 수집·이용·제공에 관한 동의 란을 미리 선택한 것으로 설정해두지 않습니다.
+또한 필수수집항목이 아닌 개인정보의 수집·이용·제공에 관한 이용자의 동의 거절을 이유로 서비스 제공을 제한하거나 거절하지 않습니다.</p>
+              <p class="prv-text--medium">8. 개인정보 처리에 관한 상세한 사항은 별도로 공개된 '개인정보 처리방침'에 따릅니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제8조 ── -->
+          <article class="prv-article" id="article-8">
+            <h2 class="prv-article__heading">제8조 (회사의 의무)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사는 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고 안정적으로 서비스를 제공하는 데 최선을 다하여야 합니다.</p>
+              <p class="prv-text--medium">2. 회사는 이용자가 안전하게 인터넷 서비스를 이용할 수 있도록 이용자의 개인정보(신용정보 포함) 보호를 위한 보안 시스템을 갖추어야 합니다.</p>
+              <p class="prv-text--medium">3. 회사는 이용자가 원하지 않는 영리목적의 광고성 전자우편을 발송하지 않습니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제9조 ── -->
+          <article class="prv-article" id="article-9">
+            <h2 class="prv-article__heading">제9조 (이용자의 의무)</h2>
+            <div class="prv-article__body">
+              <div class="prv-sub">
+                <p class="prv-text--medium">이용자는 다음 행위를 하여서는 안됩니다</p>
+                <p class="prv-text--list">1.&emsp;문의 접수 시 허위 내용의 등록<br>
+2.&emsp;타인의 정보 도용<br>
+3.&emsp;'사이트'에 게시된 정보의 무단 변경<br>
+4.&emsp;회사가 정한 정보 이외의 정보(컴퓨터 프로그램 등)의 무단 송신 또는 게시<br>
+5.&emsp;회사 기타 제3자의 저작권 등 지적재산권에 대한 침해<br>
+6.&emsp;회사 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위<br>
+7.&emsp;외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 사이트에 공개 또는 게시하는 행위</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제10조 ── -->
+          <article class="prv-article" id="article-10">
+            <h2 class="prv-article__heading">제10조 (저작권의 귀속 및 이용제한)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사가 작성한 저작물에 대한 저작권 기타 지적재산권은 회사에 귀속합니다.</p>
+              <p class="prv-text--medium">2. 이용자는 '사이트'를 이용함으로써 얻은 정보 중 회사에게 지적재산권이 귀속된 정보를 회사의 사전 승낙 없이
+복제, 송신, 출판, 배포, 방송 기타 방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안됩니다.</p>
+              <p class="prv-text--medium">3. 회사는 약정에 따라 이용자에게 귀속된 저작권을 사용하는 경우 당해 이용자에게 통보하여야 합니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제11조 ── -->
+          <article class="prv-article" id="article-11">
+            <h2 class="prv-article__heading">제11조 (분쟁해결)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사는 이용자가 제기하는 정당한 의견이나 불만을 반영하고 그 피해를 보상처리하기 위하여 피해보상처리기구를 설치·운영합니다.</p>
+              <p class="prv-text--medium">2. 회사는 이용자로부터 제출되는 불만사항 및 의견은 우선적으로 처리합니다. 다만, 신속한 처리가 곤란한 경우에는 이용자에게 그 사유와 처리일정을 즉시 통보해 드립니다.</p>
+              <p class="prv-text--medium">3. 회사와 이용자 간에 발생한 분쟁과 관련하여 이용자의 피해구제신청이 있는 경우에는 공정거래위원회 또는 시·도지사가 의뢰하는 분쟁조정기관의 조정에 따를 수 있습니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제12조 ── -->
+          <article class="prv-article" id="article-12">
+            <h2 class="prv-article__heading">제12조 (재판권 및 준거법)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 회사와 이용자 간에 발생한 분쟁에 관한 소송은 제소 당시 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다.
+다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다.</p>
+              <p class="prv-text--medium">2. 회사와 이용자 간에 제기된 소송에는 한국법을 적용합니다.</p>
+            </div>
+          </article>
+
+          <!-- ── 제13조 ── -->
+          <article class="prv-article" id="article-13">
+            <h2 class="prv-article__heading">제13조 (약관의 효력)</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. 본 약관은 2026년 03월 10일부터 시행합니다.</p>
+              <p class="prv-text--medium">2. 이 약관은 회사와 이용자 간의 서비스 이용 전반에 적용되며, 회사는 필요한 경우 개별 서비스에 대한 별도 약관 또는 운영정책을 정할 수 있습니다.</p>
+            </div>
+          </article>
+
+        </div><!-- /.prv-articles -->
+      </div><!-- /.prv-container -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="푸터 내비게이션">
+        <a href="./privacy.html" class="footer-link footer-link--primary">개인정보처리방침</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link" aria-current="page">이용약관</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">고객센터</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./recruitment.html" class="footer-link">채용정보</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>상호명 :</strong> (주)위더스헬스케어</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>대표자 :</strong> 김지영 David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>사업자등록번호 :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>주소 :</strong> 인천광역시 서구 청라한내로 96, 701호(청라동)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram">
+            <img src="assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="terms.js"></script>
+</body>
+</html>
+
+
+

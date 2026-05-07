@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Values | Withus Healthcare</title>
+  <meta name="description" content="Discover the core values that guide Withus Healthcare ??compassion, competence, and integrity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="core-values.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="釉뚮옖?쒖냼媛??섏쐞 硫붾돱">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a></li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="?몄뼱 ?좏깮" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag" width="18" height="18" aria-hidden="true">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron" width="16" height="16" aria-hidden="true">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="?몄뼱 ?좏깮">
+            <li><a href="../core-values.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/core-values.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="硫붾돱 ?닿린" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="紐⑤컮??硫붾돱" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="硫붾돱 ?リ린">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a></li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="pg-hero cv-pg-hero" aria-label="?듭떖媛移?諛곕꼫">
+      <div class="pg-hero__bg cv-hero-bg" aria-hidden="true"></div>
+      <div class="pg-hero__content">
+        <h1 class="pg-hero__title">Core Values</h1>
+        <nav class="pg-breadcrumb" aria-label="?꾩옱 ?꾩튂">
+          <a href="./index.html" class="pg-breadcrumb__home" aria-label="Home">
+            <img src="./assets/icon-home-breadcrumb.svg" alt="?? width="16" height="16">
+          </a>
+          <span class="pg-breadcrumb__dot" aria-hidden="true">쨌</span>
+          <a href="./about.html" class="pg-breadcrumb__item">COMPANY
+            <img src="./assets/icon-breadcrumb-arrow.svg" alt="" class="pg-breadcrumb__chevron-icon" aria-hidden="true" width="10" height="6">
+          </a>
+          <span class="pg-breadcrumb__dot" aria-hidden="true">쨌</span>
+          <span class="pg-breadcrumb__item pg-breadcrumb__item--current" aria-current="page">Core Values
+            <img src="./assets/icon-breadcrumb-arrow-active.svg" alt="" class="pg-breadcrumb__chevron-icon" aria-hidden="true" width="10" height="6">
+          </span>
+        </nav>
+      </div>
+      <nav class="pg-subnav" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+        <a href="./about.html" class="pg-subnav__item">About Us</a>
+        <a href="./core-values.html" class="pg-subnav__item pg-subnav__item--active" aria-current="page">Core Values</a>
+        <a href="./history.html" class="pg-subnav__item">Our History</a>
+        <a href="./directions.html" class="pg-subnav__item">Location</a>
+      </nav>
+    </section>
+
+    <section class="cv-section" aria-label="Core values">
+      <div class="cv-bg-circles" aria-hidden="true">
+        <div class="cv-bg-circle cv-bg-circle--1"></div>
+        <div class="cv-bg-circle cv-bg-circle--2"></div>
+        <div class="cv-bg-circle cv-bg-circle--3"></div>
+      </div>
+
+      <div class="cv-inner">
+
+        <div class="cv-heading cv-reveal">
+          <div class="cv-heading__top">
+            <p class="cv-heading__en">Our Mission and Core Value</p>
+          </div>
+          <div class="cv-heading__line" aria-hidden="true"></div>
+          <div class="cv-heading__bottom">
+            <h2 class="cv-heading__main">We exist to help those in need.</h2>
+          </div>
+        </div>
+
+        <div class="cv-values">
+
+          <div class="cv-value cv-reveal">
+            <div class="cv-value__circle">
+              <div class="cv-value__icon-wrap" aria-hidden="true">
+                <img src="assets/icon-hand-plant.svg" alt="" class="cv-value__icon">
+              </div>
+              <div class="cv-value__meta">
+                <span class="cv-value__num">01</span>
+                <p class="cv-value__title">Community for <br> Our Neighbors</p>
+              </div>
+            </div>
+            <div class="cv-value__connector" aria-hidden="true"></div>
+            <div class="cv-value__card">
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>Our standards are rooted in compassion for the vulnerable.</p>
+              </div>
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>We share the value of honest and diligent work.</p>
+              </div>
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>We practice a life of care and consideration.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-value cv-value--center cv-reveal">
+            <div class="cv-value__circle">
+              <div class="cv-value__icon-wrap" aria-hidden="true">
+                <img src="assets/icon-graduation-cap.svg" alt="" class="cv-value__icon">
+              </div>
+              <div class="cv-value__meta">
+                <span class="cv-value__num">02</span>
+                <p class="cv-value__title">Community Empowers <br> Dedicated Talent</p>
+              </div>
+            </div>
+            <div class="cv-value__connector" aria-hidden="true"></div>
+            <div class="cv-value__card">
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>Every employee maintains a commitment to learning.</p>
+              </div>
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>We constantly strive to enhance our expertise.</p>
+              </div>
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>The company proactively supports dedicated employees.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-value cv-reveal">
+            <div class="cv-value__circle">
+              <div class="cv-value__icon-wrap" aria-hidden="true">
+                <img src="assets/icon-head-gear.svg" alt="" class="cv-value__icon">
+              </div>
+              <div class="cv-value__meta">
+                <span class="cv-value__num">03</span>
+                <p class="cv-value__title">Community of Integrity &amp; Common Sense</p>
+              </div>
+            </div>
+            <div class="cv-value__connector" aria-hidden="true"></div>
+            <div class="cv-value__card">
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>We pursue mission success with optimal efficiency.</p>
+              </div>
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>We believe integrity is the only path to true success.</p>
+              </div>
+              <div class="cv-value__item">
+                <span class="cv-value__dot" aria-hidden="true"></span>
+                <p>We move forward toward ambitious, forward-looking goals.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 臾댄븳 留덊궎 ?뚰꽣留덊겕: cv-inner ?대? 留덉?留??붿냼, gap?쇰줈 ?먯뿰?ㅻ읇寃?遺숈쓬 -->
+        <div class="cv-watermark" aria-hidden="true">
+          <div class="cv-watermark__track">
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <!-- 2踰?蹂듭궗蹂????딄? ?녿뒗 猷⑦봽 -->
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+            <span class="cv-watermark__item">Withus Healthcare</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="core-values.js"></script>
+</body>
+</html>
+
+

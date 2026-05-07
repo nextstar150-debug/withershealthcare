@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스페셜 프로덕트 | Withus Healthcare</title>
+  <meta name="description" content="위더스헬스케어의 스페셜 프로덕트를 소개합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="brand.css">
+  <link rel="stylesheet" href="special-brand.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Withus Healthcare 홈으로">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              회사소개
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="회사소개 하위 메뉴">
+              <li><a href="about.html"><span>회사개요</span></a></li>
+              <li><a href="core-values.html"><span>핵심가치</span></a></li>
+              <li><a href="history.html"><span>연혁</span></a></li>
+              <li><a href="directions.html"><span>오시는길</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              브랜드소개
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="브랜드소개 하위 메뉴">
+              <li><a href="brand.html"><span>주력 브랜드</span></a></li>
+              <li><a href="special-brand.html" class="is-active"><span>스페셜 프로덕트</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">연구개발</a></li>
+          <li class="nav-item"><a href="./recruitment.html" class="nav-link">채용정보</a></li>
+          <!-- 온라인몰 — 서브메뉴 있음 -->
+          <li class="nav-item nav-item--has-sub">
+            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              온라인몰
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="온라인몰 하위 메뉴">
+              <li><a href="#"><span>일반고객 전용몰</span></a></li>
+              <li><a href="#"><span>병의원 전용몰</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">고객센터</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="언어 선택" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>KOR</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="언어 선택">
+            <li><a href="./special-brand.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">KOR</a></li>
+            <li><a href="./eng/special-brand.html" class="lang-dropdown__item">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="모바일 메뉴" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Withus Healthcare 홈으로">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="메뉴 닫기">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>회사소개</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="about.html" class="drawer__sub-link">회사개요</a></li>
+          <li><a href="core-values.html" class="drawer__sub-link">핵심가치</a></li>
+          <li><a href="history.html" class="drawer__sub-link">연혁</a></li>
+          <li><a href="directions.html" class="drawer__sub-link">오시는길</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>브랜드소개</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="brand.html" class="drawer__sub-link">주력 브랜드</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link is-active">스페셜 프로덕트</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">연구개발</a></li>
+      <li class="drawer__item"><a href="./recruitment.html" class="drawer__btn drawer__btn--link">채용정보</a></li>
+      <!-- 온라인몰 -->
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSubMall">
+          <span>온라인몰</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSubMall" role="list">
+          <li><a href="#" class="drawer__sub-link">일반고객 전용몰</a></li>
+          <li><a href="#" class="drawer__sub-link">병의원 전용몰</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">고객센터</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         BRAND PRODUCT LISTING SECTION
+    ============================================================ -->
+    <section class="brand-main" aria-labelledby="brand-heading">
+      <div class="brand-container">
+
+        <!-- Breadcrumb -->
+        <nav class="brand-breadcrumb" aria-label="현재 위치">
+          <a href="./index.html" class="brand-breadcrumb__home" aria-label="홈">
+            <img src="./assets/icon-home-breadcrumb.svg" alt="홈" width="14" height="14">
+          </a>
+          <span class="brand-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="brand-breadcrumb__item">브랜드소개</span>
+          <span class="brand-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="brand-breadcrumb__item" aria-current="page">
+            스페셜 프로덕트
+            <span class="brand-breadcrumb__chevron" aria-hidden="true"></span>
+          </span>
+        </nav>
+
+        <!-- Page heading -->
+        <h1 class="brand-heading" id="brand-heading">Special product</h1>
+
+        <!-- 제품 탭 네비 — heading 아래 가로 나열, 모바일 가로 스크롤 -->
+        <nav class="brand-product-nav" aria-label="제품 바로가기">
+          <ul class="brand-product-nav__list">
+            <li><a href="./special-brand.html" class="brand-product-nav__link is-active">알리스타 커피 소개</a></li>
+          </ul>
+        </nav>
+
+      </div><!-- /.brand-container -->
+
+      <!-- 알리스타 소개 본문 (배경 풀너비) -->
+      <div class="sb-alistar" aria-label="알리스타 브랜드 소개">
+
+        <!-- ============================================================
+             알리스타 히어로 섹션 — 좌: 로고+텍스트 / 우: 제브라 이미지
+        ============================================================ -->
+        <section
+          class="sb-section sb-section--care sb-section--bg-white"
+          aria-labelledby="care-diagram-title"
+        >
+          <div class="sb-care__inner">
+
+            <!-- 상단: 뱃지 + 로고행 — 가운데 정렬 -->
+            <div class="sb-care__top reveal">
+              <span class="sb-care__badge">
+                <span class="sb-care__badge--sub">주식회사</span>
+                <span class="sb-care__badge--main">위더스헬스케어</span>
+              </span>
+              <div class="sb-care__logo-row">
+                <img
+                  src="./assets/alistar-logo.jpg"
+                  alt="알리스타 케냐 커피 로고"
+                  class="sb-care__logo-img"
+                  width="600"
+                  height="200"
+                  fetchpriority="high"
+                >
+                <p class="sb-care__hero-sub">케냐 커피와 함께 합니다.</p>
+              </div>
+            </div><!-- /.sb-care__top -->
+
+            <!-- 하단: 좌 텍스트 / 우 얼룩말 -->
+            <div class="sb-care__bottom reveal">
+              <p class="sb-care__bottom-text">
+                케냐 바링고의 더 나은 내일을 만드는<br>
+                (주)알리스타 케냐 커피의 아름다운 여정에<br>
+                <span class="sb-care__bottom-text--point">(주)위더스헬스케어가 함께합니다.</span>
+              </p>
+              <div class="sb-care__hero-zebra">
+                <img
+                  src="./assets/alistar-zebra.jpg"
+                  alt="알리스타 케냐 커피 얼룩말 일러스트"
+                  class="sb-care__zebra-img"
+                  width="340"
+                  height="420"
+                >
+              </div>
+            </div><!-- /.sb-care__bottom -->
+
+          </div><!-- /.sb-care__inner -->
+        </section>
+
+        <section
+          class="sb-section sb-section--split sb-section--bg-beige"
+          aria-labelledby="alistar-sec-1-title"
+        >
+          <div class="sb-section__inner sb-section__inner--beige-reveal reveal">
+            <div class="sb-section__media sb-section__media--person sb-section__media--person--no-overlay">
+              <img
+                class="sb-section__img"
+                src="./assets/alistar-intro-0111.jpg"
+                alt="케냐 바링고 지역 농부들이 수확한 커피 원두를 손에 들고 있는 모습"
+                width="800"
+                height="600"
+                loading="eager"
+                fetchpriority="high"
+              >
+            </div>
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-1-title">아프리카 케냐의 '바링고 지역'은…<br>"주민의 85%가 절대빈곤에 처해있습니다."</h2>
+                  <p class="sb-text">현재 (주)알리스타커피를 이끌고 있는<br>김정화 대표와 유은성 이사는 12년 전부터 케냐 바링고 지역의<br>농민을 위해 커피나무를 심어주는 일을 시작했습니다.</p>
+                  <p class="sb-text">바링고 농민들의 삶의 질 향상을 생각하며<br>2020년까지 약 6,500대의 컴퓨터를 보급했으며,<br>국제 공정무역을 통해 합리적인 가격으로 커피를 구매합니다.</p>
+                  <p class="sb-text">믿을 수 있는 더 좋은 품질의 신선한 커피를 구매하여<br>합리적인 가격으로 국내 고객에게 제공하고 있습니다.</p>
+                </div>
+                <div class="sb-sec1-img-wrap">
+                  <img
+                    src="./assets/alistar-002.jpg"
+                    alt="케냐 AA 커피 원두"
+                    class="sb-sec1-img"
+                    width="1200"
+                    height="400"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+             새 섹션: 케냐 바링고 지역 농부들 — 좌 텍스트 / 우 이미지
+        ============================================================ -->
+        <section
+          class="sb-section sb-section--split sb-section--bg-white reveal"
+          aria-labelledby="alistar-sec-1b-title"
+        >
+          <div class="sb-section__inner sb-section__inner--1b">
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-1b-title">케냐 '바링고 지역' 농부들은…<br>"소규모 텃밭을 이용해 커피를 경작합니다."</h2>
+                  <p class="sb-text">커피 애호가들은 해발 1,200m 이상의 고산 지역에서<br>생산하는 커피를 가장 맛있다고 평가합니다.<br>케냐 바링고 지역은 평균 해발 2,250m에 달하는 지역입니다.<br>높은 산악지역으로 바링고 호수와 국립공원을 품은<br>아름다운 자연환경을 자랑합니다.</p>
+                  <p class="sb-text"><strong>케냐AA 커피 원두</strong>는 바링고의 풍부한 햇빛을 받으며 붉게 익어갑니다.<br>특히, 오염되지 않은 아름다운 청정지역이라<br>다른 지역의 커피와는 차별되는 아주 다른 맛과 향을 품고 있습니다.</p>
+                  <p class="sb-text">바링고의 농부들은 화학비료와 농약을 사용하지 않습니다.<br>특히, 50도 이상의 가파른 경사지역에서도<br>온가족이 함께 작은 텃밭을 일구는 소규모 텃밭 농장입니다.<br>이곳에서 관심과 사랑으로<br>커피나무를 돌보며<br>최상품 커피열매를 거두어들입니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sb-section__media sb-section__media--story01">
+              <img
+                class="sb-section__img"
+                src="./assets/alistar-story-01.jpg"
+                alt="케냐 바링고 지역 농부들이 커피 원두를 수확하는 모습"
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+             NGO 섹션: 좌 이미지 2장 / 우 텍스트 2블록
+        ============================================================ -->
+        <section
+          class="sb-section sb-section--split sb-section--bg-beige reveal"
+          aria-labelledby="alistar-sec-ngo-title"
+        >
+          <div class="sb-section__inner sb-section__inner--ngo">
+
+            <!-- 좌: 이미지 2장 세로 (760px 초과 기본 레이아웃) -->
+            <div class="sb-ngo__media">
+              <img
+                class="sb-ngo__img"
+                src="./assets/alistar-story-06.png"
+                alt="케냐 바링고 아이들이 컴퓨터를 사용하는 모습"
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+              >
+              <img
+                class="sb-ngo__img"
+                src="./assets/alistar-story-06-02.png"
+                alt="케냐 바링고 아이들이 컴퓨터 앞에 앉아 있는 모습"
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <!-- 우: 텍스트 2블록 (split 본문 규격 + NGO 열 폭 한정) -->
+            <div class="sb-section__body sb-ngo__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <img
+                    class="sb-ngo__img sb-ngo__img--inline"
+                    src="./assets/alistar-story-06.png"
+                    alt="케냐 바링고 아이들이 컴퓨터를 사용하는 모습"
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <h3 class="sb-ngo__subtitle" id="alistar-sec-ngo-title">NGO 월드 베스트 프랜드와 함께…</h3>
+                  <p class="sb-text">현재 (주)알리스타커피가 함께 하는 NGO단체<br>월드베스트프랜드는 케냐 바링고의 빈곤퇴치를 위해<br>농가에 직접 방문하여 커피 생산 방식과 유통구조를 연구했습니다.<br>그리고 바링고 농민들에게 정당한 이익을 돌려줄 수 있는<br>ICT를 이용한 직거래 공정무역을 시작했습니다.</p>
+                </div>
+                <div class="sb-section__text-block">
+                  <img
+                    class="sb-ngo__img sb-ngo__img--inline"
+                    src="./assets/alistar-story-06-02.png"
+                    alt="케냐 바링고 아이들이 컴퓨터 앞에 앉아 있는 모습"
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <h3 class="sb-ngo__subtitle">직거래 공정무역이 가져온 유익</h3>
+                  <p class="sb-text">직거래 공정무역에 참여하여<br>정당한 이익을 받게 된 케냐의 농민들은<br>소득이 <strong class="sb-text--red">6배에서 20배까지 증가</strong>했습니다.<br>직거래 공정무역을 통해 발생한 이익의 일부는<br>케냐 바링고의 지속적인 발전과<br>이곳 <strong class="sb-text--red">아이들의 교육을 위해 기부</strong>합니다.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section
+          class="sb-section sb-section--split sb-section--split--reverse sb-section--bg-white reveal"
+          aria-labelledby="alistar-sec-2-title"
+        >
+          <div class="sb-section__inner">
+            <div class="sb-section__media sb-section__media--logo">
+              <img
+                class="sb-section__img"
+                src="./assets/alistar-intro-02.jpg"
+                alt="케냐 바링고 지역에서 수확한 커피 원두가 담긴 바구니"
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-2-title">커피 그 이상의 가치</h2>
+                  <p class="sb-text">이 커피는 단순한 상품이 아닙니다.</p>
+                  <p class="sb-text">케냐 바링고 지역의 사람들과 자연이 함께 만들어낸 결과입니다.</p>
+                  <p class="sb-text">한 잔의 커피가 지역의 삶을 바꾸고, 지속 가능한 가치를 만들어갑니다.</p>
+                </div>
+                <div class="sb-section__text-block">
+                  <h3 class="sb-title">ALISTAR, '숭고한 별'</h3>
+                  <div class="sb-section__desc">
+                    <p class="sb-text">알리스타(ALISTAR)는 고대 그리스어 ALINA(고귀한, 숭고한)와 영어 STAR가 결합된 이름으로 '숭고한 별'을 의미합니다.</p>
+                    <p class="sb-text">최고의 커피를 통해 사람과 지역, 가치를 연결하는 브랜드입니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="sb-section sb-section--split sb-section--bg-beige"
+          aria-labelledby="alistar-sec-3-title"
+        >
+          <div class="sb-section__inner sb-section__inner--beige-reveal reveal">
+            <div class="sb-section__media sb-section__media--overlay">
+              <img
+                class="sb-section__img"
+                src="./assets/alistar-intro-03.jpg"
+                alt="알리스타 케냐 커피 제품을 들고 있는 모델"
+                width="800"
+                height="600"
+                loading="eager"
+              >
+            </div>
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-3-title">전문성과 진정성으로<br>완성합니다</h2>
+                  <div class="sb-section__desc">
+                    <p class="sb-text">알리스타는 커피업계 세계 최대 협회 SCA의 Barista Skills Professional, Brewing Professional 자격을 기반으로 전문적인 기준에서 커피를 선별하고 있습니다.</p>
+                    <p class="sb-text">케냐 바링고 지역의 생두를 직접 소싱하고 자체 로스팅을 통해 최상의 품질을 유지합니다.</p>
+                  </div>
+                </div>
+                <div class="sb-section__text-block">
+                  <h3 class="sb-subtitle">커피로 세상을 연결합니다</h3>
+                  <div class="sb-section__desc">
+                    <p class="sb-text">알리스타는 단순한 커피 브랜드를 넘어 지역 사회와 함께 성장하는 가치를 추구합니다.</p>
+                    <p class="sb-text">커피나무 보급을 비롯하여 케냐 바링고 지역의<br>경제와 교육 발전을 지원하고 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="sb-section sb-section--split sb-section--bg-white sb-section--cta-final reveal"
+          aria-labelledby="alistar-cta-title"
+        >
+          <div class="sb-section__inner sb-section__inner--cta-final">
+
+            <!-- 좌: 여자 이미지 -->
+            <div class="sb-section__media sb-section__media--person sb-section__media--person--no-overlay">
+              <img
+                class="sb-section__img"
+                src="./assets/alistar-intro-01.jpg"
+                alt="알리스타 케냐 커피를 들고 있는 모델"
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+
+            <!-- 우: 로고 + 텍스트 -->
+            <div class="sb-cta-final__body">
+              <img
+                src="./assets/alistar-gwu.png"
+                alt="Withus Healthcare GWU 로고"
+                class="sb-cta-final__logo"
+                width="400"
+                height="300"
+                loading="lazy"
+              >
+              <p class="sb-cta-final__text" id="alistar-cta-title">
+                케냐 바링고의 더 나은 내일을 만드는<br>
+                (주)알리스타 케냐 커피의 아름다운 여정에<br>
+                (주)위더스헬스케어가 함께합니다.
+              </p>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="푸터 내비게이션">
+        <a href="./privacy.html" class="footer-link footer-link--primary">개인정보처리방침</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">이용약관</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">고객센터</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./recruitment.html" class="footer-link">채용정보</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>상호명 :</strong> (주)위더스헬스케어</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>대표자 :</strong> 김지영 David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>사업자등록번호 :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>주소 :</strong> 인천광역시 서구 청라한내로 96, 701호(청라동)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FIXED RIGHT SIDEBAR
+  ============================================================ -->
+  <aside class="hero-sidebar" aria-label="빠른 링크">
+    <a href="#" class="sidebar-btn sidebar-btn--online" aria-label="온라인몰 문의">
+      <img src="assets/icon-online.svg" alt="" class="sidebar-icon">
+      <span>온라인몰</span>
+    </a>
+    <a href="#" class="sidebar-btn sidebar-btn--biz" aria-label="사업자몰 문의">
+      <img src="assets/icon-business.svg" alt="" class="sidebar-icon">
+      <span>사업자몰</span>
+    </a>
+    <a href="./contact.html" class="sidebar-btn sidebar-btn--blue" aria-label="고객센터 이동">
+      <img src="assets/icon-cs.svg" alt="" class="sidebar-icon">
+      <span>고객센터</span>
+    </a>
+    <div class="sidebar-scroll-ind" aria-hidden="true">
+      <img src="assets/arrowfloating.svg" alt="">
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+  <script src="brand.js"></script>
+  <script src="special-brand.js"></script>
+</body>
+</html>
+
+
+

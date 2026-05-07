@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Withus Healthcare Co., Ltd.</title>
+  <meta name="description" content="Privacy Policy of Withus Healthcare Co., Ltd. — We are committed to protecting your personal information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="Company submenu">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="Brand Info submenu">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./recruitment.html" class="nav-link">CAREERS</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="Select language" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="Select language">
+            <li><a href="../privacy.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/privacy.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       모바일 드로어
+       ============================================================ -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="Mobile menu" aria-hidden="true">
+
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close menu">&#10005;</button>
+    </div>
+
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer__item">
+        <a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH & DEVELOPMENT</a>
+      </li>
+      <li class="drawer__item">
+        <a href="./recruitment.html" class="drawer__btn drawer__btn--link">CAREERS</a>
+      </li>
+      <li class="drawer__item">
+        <a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       플로팅 사이드바 (데스크탑 고정)
+       ============================================================ -->
+  <aside class="privacy-sidebar" aria-label="Quick links">
+    <a href="#" class="sidebar-btn sidebar-btn--dark" aria-label="Go to Online Mall" title="Online Mall">
+      <img src="./assets/icon-online.svg" alt="" class="sidebar-icon">
+      <span>Online Mall</span>
+    </a>
+    <a href="#" class="sidebar-btn sidebar-btn--dark" aria-label="Go to Business Mall" title="Business Mall">
+      <img src="./assets/icon-business.svg" alt="" class="sidebar-icon">
+      <span>Business Mall</span>
+    </a>
+    <a href="./contact.html" class="sidebar-btn sidebar-btn--blue" aria-label="Go to Contact Us" title="Contact Us">
+      <img src="./assets/icon-cs.svg" alt="" class="sidebar-icon">
+      <span>Contact Us</span>
+    </a>
+    <button class="prv-scroll-top" id="scrollTopBtn" aria-label="Back to top" title="Back to top">
+      <img src="./assets/arrowfloating.svg" alt="Back to top" width="18" height="18">
+    </button>
+  </aside>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="privacy-main" id="privacyMain">
+
+    <!-- 브레드크럼 -->
+    <div class="prv-breadcrumb-bar">
+      <div class="prv-container">
+        <nav class="prv-breadcrumb" aria-label="Page path">
+          <!-- 집 아이콘: about.html과 동일한 icon-home-breadcrumb.svg, 14px, #999 -->
+          <a href="index.html" class="prv-breadcrumb__link prv-breadcrumb__home" aria-label="Home">
+            <img src="assets/icon-home-breadcrumb.svg" alt="Home" width="14" height="14">
+          </a>
+          <!-- 구분자: 3px 원형 점 -->
+          <span class="prv-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="prv-breadcrumb__current" aria-current="page">Privacy Policy</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 타이틀 섹션 -->
+    <section class="prv-hero" aria-labelledby="privacyTitle">
+      <div class="prv-container">
+
+        <div class="prv-hero__title-group">
+          <h1 class="prv-hero__title" id="privacyTitle">Privacy Policy of Withus Healthcare Co., Ltd.</h1>
+        </div>
+
+        <div class="prv-hero__meta">
+          <time class="prv-hero__date" datetime="2026-03-10">Effective Date: March 10, 2026</time>
+          <hr class="prv-divider" aria-hidden="true">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 본문 콘텐츠 -->
+    <section class="prv-content" aria-label="Privacy Policy Content">
+      <div class="prv-container">
+
+        <!-- 도입 문단 -->
+        <p class="prv-intro">
+          Withus Healthcare Co., Ltd. (hereinafter "the Company") establishes and discloses this Privacy Policy pursuant to Article 30 of the Personal Information Protection Act, in order to protect the personal information of data subjects and to handle any related grievances promptly and smoothly.
+        </p>
+
+        <div class="prv-articles">
+
+          <!-- ── 제1조 ── -->
+          <article class="prv-article" id="article-1">
+            <h2 class="prv-article__heading">Article 1. Personal Information Collected and Methods of Collection</h2>
+            <div class="prv-article__body">
+              <div class="prv-sub">
+                <p class="prv-text--medium">The Company collects the following personal information only upon receiving inquiries, without requiring membership registration.</p>
+                <p class="prv-text--list">
+                  - Items collected: Name, contact number, company name, email address, inquiry title, inquiry content<br>
+                  - Purpose: To receive and respond to inquiries<br>
+                  - Retention period: 3 years after the inquiry is resolved
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제2조 ── -->
+          <article class="prv-article" id="article-2">
+            <h2 class="prv-article__heading">Article 2. Purposes of Collection and Use of Personal Information</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">
+                The Company processes personal information for the following purposes. Personal information will not be used for any purposes other than those specified below. If the purpose of use changes, the Company will implement necessary measures, such as obtaining separate consent, in accordance with Article 18 of the Personal Information Protection Act.
+              </p>
+              <div class="prv-sub">
+                <p class="prv-text--medium">1. Handling Inquiries and Complaints</p>
+                <p class="prv-text--base">Personal information is processed for the purpose of verifying customer identity, confirming inquiries, contacting and notifying for fact-finding investigations, and communicating the results of processing.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제3조 ── -->
+          <article class="prv-article" id="article-3">
+            <h2 class="prv-article__heading">Article 3. Retention and Use Period of Personal Information</h2>
+            <div class="prv-article__body">
+              <div class="prv-num-row">
+                <span class="prv-num" aria-hidden="true">①</span>
+                <p class="prv-text--medium">The Company retains and processes personal information within the retention and use period prescribed by applicable laws, or within the period agreed upon by the data subject at the time of collection.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--list">- Inquiries and complaints: Retained for 3 years after resolution (Records of consumer complaints or dispute handling / Act on Consumer Protection in Electronic Commerce)</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제4조 ── -->
+          <article class="prv-article" id="article-4">
+            <h2 class="prv-article__heading">Article 4. Processing of Personal Information of Children Under the Age of 14</h2>
+            <p class="prv-text--base">The Company does not collect personal information from children under the age of 14.</p>
+          </article>
+
+          <!-- ── 제5조 ── -->
+          <article class="prv-article" id="article-5">
+            <h2 class="prv-article__heading">Article 5. Procedures and Methods for Destruction of Personal Information</h2>
+            <div class="prv-article__body">
+              <div class="prv-num-row">
+                <span class="prv-num" aria-hidden="true">①</span>
+                <p class="prv-text--medium">The Company destroys personal information without delay when it becomes unnecessary, such as upon expiration of the retention period or achievement of the processing purpose.</p>
+              </div>
+              <div class="prv-sub">
+                <div class="prv-num-row">
+                  <span class="prv-num" aria-hidden="true">②</span>
+                  <p class="prv-text--medium">If personal information must be retained pursuant to other applicable laws despite the expiration of the agreed retention period or the achievement of the processing purpose, such information will be transferred to a separate database or stored in a different location.</p>
+                </div>
+                <p class="prv-text--list">
+                  - Legal basis: Records of consumer complaints or dispute handling<br>
+                  - Items retained: Name, contact number, email address
+                </p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">1. Destruction Procedures</p>
+                <p class="prv-text--base">The Company identifies personal information subject to destruction and destroys it upon approval from the Company's Privacy Officer.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">2. Destruction Methods</p>
+                <p class="prv-text--base">Personal information printed on paper is destroyed by shredding or incineration. Information in electronic file format is destroyed using technical methods that prevent restoration of the records.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제6조 ── -->
+          <article class="prv-article" id="article-6">
+            <h2 class="prv-article__heading">Article 6. Rights and Obligations of Data Subjects and Legal Representatives, and How to Exercise Them</h2>
+            <div class="prv-article__body prv-article__body--rows">
+              <div class="prv-num-row">
+                <span class="prv-num">①</span>
+                <p class="prv-text--medium">Data subjects may exercise their rights to access, correct, delete, or suspend the processing of their personal information held by the Company at any time.</p>
+              </div>
+              <div class="prv-num-row">
+                <span class="prv-num">②</span>
+                <p class="prv-text--medium">The rights described in Paragraph 1 may be exercised against the Company in writing, by email, or by facsimile (FAX), in accordance with Article 41, Paragraph 1 of the Enforcement Decree of the Personal Information Protection Act. The Company will take action without delay.</p>
+              </div>
+              <div class="prv-num-row">
+                <span class="prv-num">③</span>
+                <p class="prv-text--medium">The rights described in Paragraph 1 may also be exercised through a legal representative or an authorized agent. In such cases, a power of attorney in accordance with Annex Form No. 11 of the "Notice on Methods of Processing Personal Information" must be submitted.</p>
+              </div>
+              <div class="prv-num-row">
+                <span class="prv-num">④</span>
+                <p class="prv-text--medium">The right to access personal information and to request suspension of processing may be restricted pursuant to Article 35, Paragraph 4 and Article 37, Paragraph 2 of the Personal Information Protection Act.</p>
+              </div>
+              <div class="prv-num-row">
+                <span class="prv-num">⑤</span>
+                <p class="prv-text--medium">A request for correction or deletion of personal information cannot be made if the relevant personal information is explicitly designated as a collection target under other applicable laws.</p>
+              </div>
+              <div class="prv-num-row">
+                <span class="prv-num">⑥</span>
+                <p class="prv-text--medium">When receiving requests for access, correction, deletion, or suspension of processing, the Company verifies whether the requester is the data subject themselves or a duly authorized representative.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제7조 ── -->
+          <article class="prv-article" id="article-7">
+            <h2 class="prv-article__heading">Article 7. Measures to Ensure the Security of Personal Information</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">The Company implements the following measures to ensure the security of personal information.</p>
+              <div class="prv-sub">
+                <p class="prv-text--medium">1. Establishment and Implementation of Internal Management Plans</p>
+                <p class="prv-text--base">An internal management plan has been established and is being implemented to ensure the safe processing of personal information.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">2. Minimization of Personnel Handling Personal Information and Training</p>
+                <p class="prv-text--base">Measures are in place to designate and minimize the number of employees who handle personal information, restricting access to authorized personnel only.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">3. Regular Internal Audits</p>
+                <p class="prv-text--base">Regular internal audits (once per quarter) are conducted to ensure the security of personal information handling.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">4. Restriction of Access to Personal Information</p>
+                <p class="prv-text--base">Necessary measures are implemented to control access to personal information through the granting, modification, and revocation of access rights to database systems. A firewall system is also in place to prevent unauthorized external access.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">5. Retention of Access Records and Prevention of Tampering</p>
+                <p class="prv-text--base">Access records to personal information processing systems are retained and managed for a minimum of one year, and security measures are implemented to prevent tampering, theft, or loss of such records.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">6. Technical Measures Against Hacking and Other Threats</p>
+                <p class="prv-text--base">To prevent the leakage or corruption of personal information due to hacking or computer viruses, the Company installs and regularly updates security programs, and places systems in access-controlled areas with technical and physical monitoring and blocking measures.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">7. Access Control for Unauthorized Personnel</p>
+                <p class="prv-text--base">A dedicated physical storage location for personal information is maintained, with established and enforced access control procedures.</p>
+              </div>
+              <div class="prv-sub">
+                <p class="prv-text--medium">8. Use of Locking Devices for Document Security</p>
+                <p class="prv-text--base">Documents and portable storage media containing personal information are stored in secure locations equipped with locking devices.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제8조 ── -->
+          <article class="prv-article" id="article-8">
+            <h2 class="prv-article__heading">Article 8. Installation, Operation, and Opt-Out of Automatic Personal Information Collection Devices</h2>
+            <div class="prv-article__body">
+              <div class="prv-sub">
+                <div class="prv-num-row">
+                  <span class="prv-num">①</span>
+                  <p class="prv-text--medium">The Company uses 'cookies' to store and retrieve usage information in order to provide personalized services to users.</p>
+                </div>
+                <p class="prv-text--list">- Collection through the inquiry form on the website</p>
+              </div>
+              <div class="prv-sub">
+                <div class="prv-num-row">
+                  <span class="prv-num">②</span>
+                  <p class="prv-text--medium">Cookies are small pieces of information sent by the server (https) operating the website to the user's browser, and may be stored on the user's computer hard drive.</p>
+                </div>
+                <p class="prv-text--list">
+                  - Purpose of cookies: Used to understand users' visit patterns, usage behavior, and secure connection status for each service and website visited, in order to provide optimized information to users.<br>
+                  - Installation, operation, and opt-out: You may refuse cookie storage through your web browser settings. (Chrome: Settings &gt; Privacy and Security &gt; Cookies and other site data / Edge: Settings &gt; Privacy, search, and services &gt; Clear browsing data)<br>
+                  - Refusing cookie storage may cause difficulties in using certain services.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제9조 ── -->
+          <article class="prv-article" id="article-9">
+            <h2 class="prv-article__heading">Article 9. Criteria for Judging Additional Use and Provision</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">Pursuant to Article 15, Paragraph 3 and Article 17, Paragraph 4 of the Personal Information Protection Act, the Company may additionally use or provide personal information without the consent of the data subject. The following factors are considered in making such determinations.</p>
+              <p class="prv-text--list">
+                - Whether the purpose of additional use or provision is related to the original purpose of collection<br>
+                - Whether additional use or provision is reasonably foreseeable given the context of collection or customary processing practices<br>
+                - Whether the additional use or provision unduly infringes on the interests of the data subject<br>
+                - Whether necessary measures such as pseudonymization or encryption have been implemented to ensure security
+              </p>
+            </div>
+          </article>
+
+          <!-- ── 제10조 ── -->
+          <article class="prv-article" id="article-10">
+            <h2 class="prv-article__heading">Article 10. Privacy Officer</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">The Company designates a Privacy Officer to take overall responsibility for personal information processing and to handle complaints and remedy damages related to personal information processing by data subjects.</p>
+              <p class="prv-text--list">
+                - Name: Jiyoung Kim<br>
+                - Title: CEO<br>
+                - Contact: 032-564-0174<br>
+                - Email: <a href="mailto:9040110@hanmail.net" class="prv-link">9040110@hanmail.net</a>
+              </p>
+              <p class="prv-text--base">Data subjects may contact the Privacy Officer for any inquiries, complaints, or requests for remedies related to personal information protection arising from the use of the Company's services.<br>
+              The Company will respond to and process inquiries from data subjects without delay.</p>
+            </div>
+          </article>
+
+          <!-- ── 제11조 ── -->
+          <article class="prv-article" id="article-11">
+            <h2 class="prv-article__heading">Article 11. Department for Receiving and Processing Requests to Access Personal Information</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">The Company operates as follows to ensure the right of data subjects to request access to their personal information pursuant to Article 35 of the Personal Information Protection Act.</p>
+              <p class="prv-text--list">
+                - Business hours: Weekdays 09:00–18:00 (closed on weekends and public holidays)<br>
+                - Phone: 032-564-0174<br>
+                - Email: <a href="mailto:9040110@hanmail.net" class="prv-link">9040110@hanmail.net</a><br>
+                - Other inquiries: Can be submitted through the inquiry form on the website
+              </p>
+            </div>
+          </article>
+
+          <!-- ── 제12조 ── -->
+          <article class="prv-article" id="article-12">
+            <h2 class="prv-article__heading">Article 12. Remedies for Infringement of Data Subject Rights</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">Data subjects may apply for dispute resolution or counseling to the Personal Information Dispute Mediation Committee, the Personal Information Infringement Report Center of the Korea Internet & Security Agency (KISA), and other relevant agencies to seek remedies for infringement of personal information.</p>
+              <p class="prv-text--list">
+                - Personal Information Dispute Mediation Committee: 1833-6972 (no area code) (<a href="https://www.kopico.go.kr" class="prv-link" target="_blank" rel="noopener noreferrer">https://www.kopico.go.kr</a>)<br>
+                - Personal Information Infringement Report Center (KISA): 118 (no area code) (<a href="https://privacy.kisa.or.kr" class="prv-link" target="_blank" rel="noopener noreferrer">https://privacy.kisa.or.kr</a>)<br>
+                - Supreme Prosecutors' Office: 1301 (no area code) (<a href="https://www.spo.go.kr" class="prv-link" target="_blank" rel="noopener noreferrer">https://www.spo.go.kr</a>)<br>
+                - National Police Agency Cyber Crime Report System: 182 (no area code) (<a href="https://ecrm.cyber.go.kr" class="prv-link" target="_blank" rel="noopener noreferrer">https://ecrm.cyber.go.kr</a>)
+              </p>
+              <p class="prv-text--base">Any person whose rights or interests have been infringed by a disposition or omission of the head of the Company in response to a request under Articles 35 (Access to Personal Information), 36 (Correction and Deletion of Personal Information), or 37 (Suspension of Processing, etc.) of the Personal Information Protection Act may file an administrative appeal in accordance with the Administrative Appeals Act.</p>
+            </div>
+          </article>
+
+          <!-- 제13조: prv-articles 안으로 이동 → 60px gap 자동 적용 -->
+          <article class="prv-article">
+            <h2 class="prv-article__heading">Article 13. Application of Privacy Policy</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">This Privacy Policy shall take effect as of March 10, 2026.</p>
+              <p class="prv-text--base">- Established: March 10, 2026</p>
+            </div>
+          </article>
+
+        </div><!-- /.prv-articles -->
+
+      </div><!-- /.prv-container -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary" aria-current="page">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">CONTACT US</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 701, 96 Cheongnahan-daero, Seo-gu, Incheon, Republic of Korea</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="privacy.js"></script>
+</body>
+</html>
+
+
+
+

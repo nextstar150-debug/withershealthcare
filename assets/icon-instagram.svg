@@ -1,0 +1,33 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"><defs><mask id="mask23_259_1565" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+<path id="Vector_138" d="M40,20c0,11.05 -8.95,20 -20,20c-11.05,0 -20,-8.96 -20,-20c0,-11.04 8.95,-20 20,-20c11.05,0 20,8.95 20,20z" fill="url(#paint21_linear_259_1565)"/>
+</mask><linearGradient id="paint21_linear_259_1565" x1="16.5" y1="-2" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4051A1"/>
+<stop offset="1" stop-color="#E6247A"/>
+</linearGradient><filter id="filter9_f_259_1565" x="-25" y="4" width="67" height="67" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur_259_1565"/>
+</filter><linearGradient id="paint22_linear_259_1565" x1="12" y1="-2" x2="24" y2="28" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4051A1"/>
+<stop offset="1" stop-color="#E6247A"/>
+</linearGradient><radialGradient id="paint23_radial_259_1565" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1779.94 6224.98) rotate(-39.9575) scale(23.1499)">
+<stop stop-color="#F0D063"/>
+<stop offset="1" stop-color="#E7254A"/>
+</radialGradient></defs><g id="Group 427318992">
+<g id="Mask group_24">
+<mask id="mask23_259_1565" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1770" y="6187" width="40" height="40">
+<path id="Vector_138" d="M1810 6207C1810 6218.05 1801.05 6227 1790 6227C1778.95 6227 1770 6218.04 1770 6207C1770 6195.96 1778.95 6187 1790 6187C1801.05 6187 1810 6195.95 1810 6207Z" fill="url(#paint21_linear_259_1565)"/>
+</mask>
+<g mask="url(#mask23_259_1565)">
+<path id="Vector_139" d="M40,20c0,11.05 -8.95,20 -20,20c-11.05,0 -20,-8.96 -20,-20c0,-11.04 8.95,-20 20,-20c11.05,0 20,8.95 20,20z" fill="url(#paint22_linear_259_1565)"/>
+<g id="Vector_140" filter="url(#filter9_f_259_1565)">
+<path d="M32,37.5c0,12.98 -10.52,23.5 -23.5,23.5c-12.98,0 -23.5,-10.53 -23.5,-23.5c0,-12.97 10.52,-23.5 23.5,-23.5c12.98,0 23.5,10.52 23.5,23.5z" fill="url(#paint23_radial_259_1565)"/>
+</g>
+</g>
+</g>
+<g id="Group 427319164">
+<path id="Vector_141" d="M24.23,10h-8.46c-3.19,0 -5.77,2.58 -5.77,5.77v8.46c0,3.19 2.58,5.77 5.77,5.77h8.46c3.19,0 5.77,-2.58 5.77,-5.77v-8.46c0,-3.19 -2.58,-5.77 -5.77,-5.77zM28.16,24.38c0,2.11 -1.72,3.83 -3.83,3.83h-8.66c-2.11,0 -3.83,-1.72 -3.83,-3.83v-8.66c0,-2.11 1.72,-3.83 3.83,-3.83h8.66c2.11,0 3.83,1.72 3.83,3.83z" fill="white"/>
+<path id="Vector_142" d="M20,14.86c-2.86,0 -5.19,2.32 -5.19,5.19c0,2.87 2.33,5.19 5.19,5.19c2.87,0 5.19,-2.32 5.19,-5.19c0,-2.87 -2.32,-5.19 -5.19,-5.19zM20,23.41c-1.86,0 -3.36,-1.5 -3.36,-3.36c0,-1.86 1.5,-3.36 3.36,-3.36c1.86,0 3.37,1.5 3.37,3.36c0,1.86 -1.51,3.36 -3.37,3.36z" fill="white"/>
+<path id="Vector_143" d="M25.36,13.45c-0.67,0 -1.21,0.55 -1.21,1.21c0,0.67 0.54,1.21 1.21,1.21c0.67,0 1.21,-0.54 1.21,-1.21c0,-0.66 -0.54,-1.21 -1.21,-1.21z" fill="white"/>
+</g>
+</g></svg>

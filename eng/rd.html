@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>?곌뎄媛쒕컻 | Withus Healthcare</title>
+  <meta name="description" content="?꾨뜑?ㅽ뿬?ㅼ??댁쓽 ?ъ슜??以묒떖 R&D ?곌뎄媛쒕컻 ?쒕룞???뚭컻?⑸땲??">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="rd.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="釉뚮옖?쒖냼媛??섏쐞 硫붾돱">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a></li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="?몄뼱 ?좏깮" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="?몄뼱 ?좏깮">
+            <li><a href="../rd.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/rd.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="硫붾돱 ?닿린" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="紐⑤컮??硫붾돱" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="硫붾돱 ?リ린">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a></li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         PAGE HERO BANNER ???곌뎄媛쒕컻
+         No subnav tabs (?곌뎄媛쒕컻 is a top-level navigation item)
+    ============================================================ -->
+    <section class="pg-hero pg-hero--no-subnav section" aria-label="Research &amp; Development Banner">
+      <div class="pg-hero__bg pg-hero__bg--rd" aria-hidden="true"></div>
+      <div class="pg-hero__content">
+        <h1 class="pg-hero__title">Research &amp; Development</h1>
+        <nav class="pg-breadcrumb" aria-label="?꾩옱 ?꾩튂">
+          <a href="./index.html" class="pg-breadcrumb__home" aria-label="Home">
+            <img src="./assets/icon-home-breadcrumb.svg" alt="?? width="16" height="16">
+          </a>
+          <span class="pg-breadcrumb__dot" aria-hidden="true">쨌</span>
+          <span class="pg-breadcrumb__item pg-breadcrumb__item--current" aria-current="page">
+            Research &amp; Development
+            <span class="rd-breadcrumb__chevron" aria-hidden="true"></span>
+          </span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         R&D CONTENT SECTION
+    ============================================================ -->
+    <section class="rd-content-section section" aria-labelledby="rd-heading">
+      <!-- ?뱀뀡 諛곌꼍 ?대?吏 ???????ㅻ쾭 ?⑥씠釉?-->
+      <div class="rd-section-bg" aria-hidden="true">
+        <img src="./assets/rd-section-bg.jpg" alt="" width="1920" height="1080" loading="lazy">
+      </div>
+      <div class="rd-container">
+
+        <!-- Intro text -->
+        <div class="rd-intro reveal">
+          <span class="rd-page-label">Research & Development</span>
+          <h2 class="rd-page-heading" id="rd-heading">User-First&nbsp;&nbsp;R&amp;D</h2>
+          <p class="rd-page-desc">We develop safe and effective solutions through <strong class="rd-page-desc__em">User-Needs-Based research and design</strong> for doctors and patients.</p>
+        </div>
+
+        <!-- 6-card grid (3??2?? -->
+        <div class="rd-cards">
+
+          <!-- Card 1: ?쒗뭹 媛쒕컻 -->
+          <article class="rd-card reveal" aria-label="Product Development">
+            <div class="rd-card__icon-wrap" aria-hidden="true">
+              <img src="./assets/icon-rd-product.svg" alt="" class="rd-card__icon" width="40" height="40" aria-hidden="true">
+            </div>
+            <h3 class="rd-card__title">Product Development</h3>
+            <p class="rd-card__desc">Evidence-based formulation<br>and innovation</p>
+          </article>
+
+          <!-- Card 2: ?ㅺ퀎 諛??붿옄??-->
+          <article class="rd-card reveal" aria-label="Design &amp; Engineering">
+            <div class="rd-card__icon-wrap" aria-hidden="true">
+              <img src="./assets/blueprint_4811523.svg" alt="" class="rd-card__icon" width="40" height="40" aria-hidden="true">
+            </div>
+            <h3 class="rd-card__title">Design &amp; Engineering</h3>
+            <p class="rd-card__desc">Functional and user-oriented<br>product design</p>
+          </article>
+
+          <!-- Card 3: ?ъ슜???곌뎄 -->
+          <article class="rd-card reveal" aria-label="Usability Research">
+            <div class="rd-card__icon-wrap" aria-hidden="true">
+              <img src="./assets/icon-rd-usability.svg" alt="" class="rd-card__icon" width="40" height="40" aria-hidden="true">
+            </div>
+            <h3 class="rd-card__title">Usability Research</h3>
+            <p class="rd-card__desc">Enhancing real-world<br>user experience</p>
+          </article>
+
+          <!-- Card 4: ?덉쭏 ?곌뎄 -->
+          <article class="rd-card reveal" aria-label="Quality Research">
+            <div class="rd-card__icon-wrap" aria-hidden="true">
+              <img src="./assets/analysis_14519729.svg" alt="" class="rd-card__icon" width="40" height="40" aria-hidden="true">
+            </div>
+            <h3 class="rd-card__title">Quality Research</h3>
+            <p class="rd-card__desc">Clinical validation<br>&amp; ingredient analysis</p>
+          </article>
+
+          <!-- Card 5: ?덉쟾??蹂댁옣 -->
+          <article class="rd-card reveal" aria-label="Safety Assurance">
+            <div class="rd-card__icon-wrap" aria-hidden="true">
+              <img src="./assets/security_10692464.svg" alt="" class="rd-card__icon" width="40" height="40" aria-hidden="true">
+            </div>
+            <h3 class="rd-card__title">Safety Assurance</h3>
+            <p class="rd-card__desc">User safety and<br>compliance standards</p>
+          </article>
+
+          <!-- Card 6: ?ъ슜??吏?μ꽦 -->
+          <article class="rd-card reveal" aria-label="User Experience">
+            <div class="rd-card__icon-wrap" aria-hidden="true">
+              <img src="./assets/icon-rd-ux.svg" alt="" class="rd-card__icon" width="40" height="40" aria-hidden="true">
+            </div>
+            <h3 class="rd-card__title">User Experience</h3>
+            <p class="rd-card__desc">Intuitive design<br>and ease of use</p>
+          </article>
+
+        </div><!-- /.rd-cards -->
+      </div><!-- /.rd-container -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+  <script src="rd.js"></script>
+</body>
+</html>
+
+

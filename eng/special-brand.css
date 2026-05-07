@@ -1,0 +1,37 @@
+.sb-care__withus-logo { display:block; margin-bottom: var(--sb-care-badge-mb, 8px); width: 255px; height: auto; }
+.eng-page .sb-care__logo-row { justify-content: center; }
+.eng-page .sb-care__bottom-text { font-size: clamp(1.1rem, 2vw, 1.5rem); }
+.eng-page .sb-section--split .sb-text { font-size: calc(1em + 1px); }
+.eng-page .sb-alistar .sb-section__inner--1b .sb-text { font-size: calc(1em + 1px); }
+.eng-page .sb-alistar .sb-section__inner--ngo .sb-text { font-size: calc(1em + 1px); }
+.eng-page .sb-alistar .sb-section__inner .sb-text { font-size: calc(1em + 1px); }
+.eng-page .sb-alistar .sb-section__inner--cta-final .sb-text { font-size: calc(1em + 1px); }
+/* 영문 페이지 — 섹션 타이틀 크기 확대 */
+.eng-page .sb-alistar .sb-title {
+  font-size: clamp(1.35rem, 1.8vw, 1.95rem);
+}
+.eng-page .sb-alistar .sb-subtitle {
+  font-size: clamp(1.25rem, 1.6vw, 1.75rem);
+}
+.eng-page .sb-alistar .sb-ngo__subtitle {
+  font-size: clamp(1.25rem, 1.6vw, 1.75rem);
+}
+/* 1b 섹션 — 텍스트 열 왼쪽 패딩 축소 (텍스트가 오른쪽으로 치우치는 현상 보정) */
+.eng-page .sb-alistar .sb-section__inner--1b .sb-section__body {
+  justify-content: flex-start;
+  padding-top: clamp(0.75rem, 1vw, 1.25rem);
+  padding-left: clamp(0.65rem, 2vw, 2.1rem);
+}
+/* 1b 섹션 — 타이틀과 본문 간격 보정 */
+.eng-page .sb-alistar .sb-section__inner--1b .sb-section__text-block {
+  gap: 16px;
+}
+@media (min-width: 769px) {
+  .eng-page .sb-alistar .sb-section__inner--1b {
+    align-items: flex-start;
+  }
+}
+.eng-page .sb-text--orange {
+  color: #e87722;
+  font-weight: 700;
+}

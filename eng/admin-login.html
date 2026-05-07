@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 로그인 | Withus Healthcare</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --c-blue: #0b579f;
+      --c-blue-grad: linear-gradient(149.05deg, rgba(108,166,232,1) 34.31%, rgba(11,87,159,1) 113.26%);
+      --c-dark: #111827;
+      --c-text: #374151;
+      --c-sub: #6b7280;
+      --c-border: #e5e7eb;
+      --c-bg: #f3f4f6;
+      --c-white: #ffffff;
+      --c-error: #e81111;
+      --f-pre: 'Pretendard', sans-serif;
+    }
+    body {
+      font-family: var(--f-pre);
+      background: var(--c-bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .login-wrap { width: 100%; max-width: 420px; }
+    .login-logo { text-align: center; margin-bottom: 28px; }
+    .login-logo__sub { font-size: 12px; color: var(--c-sub); letter-spacing: 1px; text-transform: uppercase; }
+    .login-logo__title { font-size: 20px; font-weight: 700; color: var(--c-blue); letter-spacing: -0.5px; margin-top: 4px; }
+    .login-card { background: var(--c-white); border-radius: 16px; padding: 40px 36px 36px; box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+    .login-card__title { font-size: 20px; font-weight: 700; color: var(--c-dark); letter-spacing: -0.5px; margin-bottom: 4px; }
+    .login-card__desc { font-size: 13px; color: var(--c-sub); margin-bottom: 28px; }
+    .form-group { margin-bottom: 14px; }
+    .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--c-text); margin-bottom: 6px; }
+    .form-input {
+      width: 100%; height: 46px; border: 1.5px solid var(--c-border); border-radius: 8px;
+      padding: 0 14px; font-family: var(--f-pre); font-size: 14px; color: var(--c-dark);
+      background: var(--c-white); transition: border-color 0.2s; outline: none;
+    }
+    .form-input:focus { border-color: var(--c-blue); }
+    .error-msg { font-size: 12px; color: var(--c-error); margin-top: 10px; text-align: center; min-height: 16px; }
+    .login-btn {
+      width: 100%; height: 50px; border: none; border-radius: 8px;
+      background: var(--c-blue-grad); color: #fff; font-family: var(--f-pre);
+      font-size: 15px; font-weight: 700; letter-spacing: -0.3px; cursor: pointer;
+      margin-top: 20px; transition: opacity 0.2s, transform 0.15s;
+    }
+    .login-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .login-btn:active { transform: translateY(0); }
+    .login-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+    .login-footer { text-align: center; margin-top: 16px; font-size: 12px; color: var(--c-sub); }
+  </style>
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-logo">
+    <div class="login-logo__sub">Withus Healthcare</div>
+    <div class="login-logo__title">채용 관리 시스템</div>
+  </div>
+  <div class="login-card">
+    <h1 class="login-card__title">관리자 로그인</h1>
+    <p class="login-card__desc">등록된 관리자 계정으로 로그인하세요.</p>
+    <div class="form-group">
+      <label class="form-label" for="email">이메일</label>
+      <input class="form-input" type="email" id="email" placeholder="admin@withushealthcare.com" autocomplete="email">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="password">비밀번호</label>
+      <input class="form-input" type="password" id="password" placeholder="비밀번호 입력" autocomplete="current-password">
+    </div>
+    <p class="error-msg" id="errorMsg"></p>
+    <button class="login-btn" id="loginBtn">로그인</button>
+    <p class="login-footer">관리자 전용 페이지입니다.</p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const { createClient } = supabase;
+  const sb = createClient('https://qdxivfcrtipqcmodekkk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkeGl2ZmNydGlwcWNtb2Rla2trIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5Nzc3NTAsImV4cCI6MjA4OTU1Mzc1MH0.GHY0aYFit4vbqjZrAovc12zIqIjQslPYcU3c8m4XcEs');
+
+  sb.auth.getSession().then(({ data: { session } }) => {
+    if (session) window.location.href = 'admin-recruitment.html';
+  });
+
+  const emailEl = document.getElementById('email');
+  const pwEl    = document.getElementById('password');
+  const btnEl   = document.getElementById('loginBtn');
+  const errEl   = document.getElementById('errorMsg');
+
+  pwEl.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+  btnEl.addEventListener('click', doLogin);
+
+  async function doLogin() {
+    const email = emailEl.value.trim();
+    const pw    = pwEl.value;
+    errEl.textContent = '';
+    if (!email || !pw) { errEl.textContent = '이메일과 비밀번호를 입력해주세요.'; return; }
+    btnEl.disabled = true; btnEl.textContent = '로그인 중...';
+    const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+    if (error) {
+      errEl.textContent = '이메일 또는 비밀번호가 올바르지 않습니다.';
+      btnEl.disabled = false; btnEl.textContent = '로그인';
+    } else {
+      window.location.href = 'admin-recruitment.html';
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Product | Withus Healthcare</title>
+  <meta name="description" content="Discover ALISTAR Kenya Coffee, a special product of Withus Healthcare.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../about.css">
+  <link rel="stylesheet" href="../brand.css">
+  <link rel="stylesheet" href="../special-brand.css">
+  <link rel="stylesheet" href="./special-brand.css">
+</head>
+<body class="eng-page">
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Withus Healthcare home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">COMPANY<span class="nav-indicator" aria-hidden="true"></span></a>
+            <ul class="nav-submenu" role="list" aria-label="Company submenu">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">BRAND&nbsp;&nbsp;INFO<span class="nav-indicator" aria-hidden="true"></span></a>
+            <ul class="nav-submenu" role="list" aria-label="Brand info submenu">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html" class="is-active"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a></li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="Select language" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag" width="18" height="18" aria-hidden="true">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron" width="16" height="16" aria-hidden="true">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="Language selection">
+            <li><a href="../special-brand.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="./special-brand.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="Mobile menu" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Withus Healthcare home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1"><span>COMPANY</span><span class="drawer__chevron" aria-hidden="true"></span></button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2"><span>BRAND INFO</span><span class="drawer__chevron" aria-hidden="true"></span></button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link is-active">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a></li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="brand-main" aria-labelledby="brand-heading">
+      <div class="brand-container">
+        <nav class="brand-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html" class="brand-breadcrumb__home" aria-label="Home">
+            <img src="../assets/icon-home-breadcrumb.svg" alt="Home" width="14" height="14">
+          </a>
+          <span class="brand-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="brand-breadcrumb__item">Brand Info</span>
+          <span class="brand-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="brand-breadcrumb__item" aria-current="page">Special Product</span>
+        </nav>
+        <h1 class="brand-heading" id="brand-heading">Special Product</h1>
+        <nav class="brand-product-nav" aria-label="Product tabs">
+          <ul class="brand-product-nav__list">
+            <li><a href="./special-brand.html" class="brand-product-nav__link is-active">INFO of ALISTAR COFFEE</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="sb-alistar" aria-label="ALISTAR brand introduction">
+        <section class="sb-section sb-section--care sb-section--bg-white" aria-labelledby="care-diagram-title">
+          <div class="sb-care__inner">
+            <div class="sb-care__top reveal">
+              <img src="../assets/nav-logo.svg" alt="Withus Healthcare" class="sb-care__withus-logo" width="165" height="32" loading="lazy">
+              <div class="sb-care__logo-row">
+                <img src="../assets/alistar-logo.jpg" alt="ALISTAR Kenya Coffee logo" class="sb-care__logo-img" width="600" height="200" fetchpriority="high">
+              </div>
+            </div>
+            <div class="sb-care__bottom reveal">
+              <p class="sb-care__bottom-text">
+                <span class="sb-care__bottom-text--point">Withus Healthcare Co., Ltd.</span> joins<br>
+                the beautiful journey of ALISTAR Coffee<br>
+                for a better tomorrow in Baringo, Kenya.
+              </p>
+              <div class="sb-care__hero-zebra">
+                <img src="../assets/alistar-zebra.jpg" alt="ALISTAR Kenya Coffee zebra illustration" class="sb-care__zebra-img" width="340" height="420">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sb-section sb-section--split sb-section--bg-beige" aria-labelledby="alistar-sec-1-title">
+          <div class="sb-section__inner sb-section__inner--beige-reveal reveal">
+            <div class="sb-section__media sb-section__media--person sb-section__media--person--no-overlay">
+              <img class="sb-section__img" src="../assets/alistar-intro-0111.jpg" alt="Baringo farmers holding coffee beans" width="800" height="600" loading="eager" fetchpriority="high">
+            </div>
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-1-title">In the Baringo region of Kenya, Africa<br>"85% of residents live in absolute poverty."</h2>
+                  <p class="sb-text">CEO Kim Jung-hwa and Director Yoo Eun-seong, who currently lead <strong>ALISTAR Coffee Co., Ltd.</strong>, began <strong>planting coffee trees</strong> for the farmers of Baringo 12 years ago.</p>
+                  <p class="sb-text"><strong>With the goal of improving the quality of life for Baringo farmers</strong>, they have supplied approximately <strong>6,500 computers</strong> as of 2020 and continue to purchase coffee at fair prices through international fair trade.</p>
+                  <p class="sb-text"><strong>By sourcing fresh, high-quality coffee you can trust,</strong> ALISTAR Coffee provide it to our customers <strong>at reasonable prices.</strong></p>
+                </div>
+                <div class="sb-sec1-img-wrap">
+                  <img src="../assets/alistar-002.jpg" alt="Kenya AA coffee beans" class="sb-sec1-img" width="1200" height="400" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sb-section sb-section--split sb-section--bg-white reveal" aria-labelledby="alistar-sec-1b-title">
+          <div class="sb-section__inner sb-section__inner--1b">
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-1b-title">Farmers in Baringo, Kenya…<br>"Cultivate coffee in small family gardens."</h2>
+                  <p class="sb-text">Coffee enthusiasts believe that coffee grown in high-altitude regions—above 1,200 meters—offers the most exceptional flavor. <strong>The Baringo region of Kenya sits at an average altitude of 2,250 meters.</strong> As a high-altitude mountainous area, it boasts a breathtaking natural environment, Lake Baringo and beautiful national parks.</p>
+                  <p class="sb-text"><strong>Kenya AA coffee beans</strong> ripen to a rich red under <strong>Baringo's abundant sunlight.</strong> Because it is a pristine, <strong>pollution-free region</strong>, its coffee possesses <strong>a distinct flavor and aroma</strong> that truly sets it apart from other regions.</p>
+                  <p class="sb-text">Farmers in Baringo <strong>do not use chemical fertilizers or pesticides.</strong> Even on <strong>steep slopes exceeding 50 degrees,</strong> entire families come together to manage these small-scale garden farms. By tending to each tree with care and devotion, they <strong>harvest only the most premium coffee cherries.</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="sb-section__media sb-section__media--story01">
+              <img class="sb-section__img" src="../assets/alistar-story-01.jpg" alt="Baringo farmers harvesting coffee beans" width="800" height="600" loading="lazy">
+            </div>
+          </div>
+        </section>
+
+        <section class="sb-section sb-section--split sb-section--bg-beige reveal" aria-labelledby="alistar-sec-ngo-title">
+          <div class="sb-section__inner sb-section__inner--ngo">
+            <div class="sb-ngo__media">
+              <img class="sb-ngo__img" src="../assets/alistar-story-06.png" alt="Children in Baringo using computers" width="600" height="400" loading="lazy" decoding="async">
+              <img class="sb-ngo__img" src="../assets/alistar-story-06-02.png" alt="Children in Baringo seated in front of computers" width="600" height="400" loading="lazy" decoding="async">
+            </div>
+            <div class="sb-section__body sb-ngo__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <img class="sb-ngo__img sb-ngo__img--inline" src="../assets/alistar-story-06.png" alt="Children in Baringo using computers" width="600" height="400" loading="lazy" decoding="async">
+                  <h3 class="sb-ngo__subtitle" id="alistar-sec-ngo-title">In partnership with the NGO World Best Friend</h3>
+                  <p class="sb-text"><strong>World Best Friend, the NGO</strong> currently partnering <strong>with ALISTAR Coffee Co., Ltd.</strong>, has visited local farms in Baringo, Kenya, to study coffee production methods and distribution structures to eradicate poverty. They have launched <strong>a direct-trade fair trade system using ICT</strong> to ensure fair profits are returned to Baringo farmers.</p>
+                </div>
+                <div class="sb-section__text-block">
+                  <img class="sb-ngo__img sb-ngo__img--inline" src="../assets/alistar-story-06-02.png" alt="Children in Baringo seated in front of computers" width="600" height="400" loading="lazy" decoding="async">
+                  <h3 class="sb-ngo__subtitle">The Benefits of Direct-Trade Fair Trade</h3>
+                  <p class="sb-text">By participating in direct-trade fair trade, <strong class="sb-text--orange">Kenyan farmers have seen their incomes increase by 6 to 20 times.</strong> <strong>A portion of the profits</strong> generated through this system is donated to support the <strong>sustainable development of Baringo</strong> and <strong class="sb-text--orange">the education of local children.</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sb-section sb-section--split sb-section--split--reverse sb-section--bg-white reveal" aria-labelledby="alistar-sec-2-title">
+          <div class="sb-section__inner">
+            <div class="sb-section__media sb-section__media--logo">
+              <img class="sb-section__img" src="../assets/alistar-intro-02.jpg" alt="Basket of coffee beans harvested in Baringo" width="800" height="600" loading="lazy">
+            </div>
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-2-title">Value Beyond Coffee</h2>
+                  <p class="sb-text"><strong>ALISTAR Coffee is not just a simple commodity.</strong> It is a masterpiece created by the harmony of the people and the nature of Baringo, Kenya.</p>
+                  <p class="sb-text">Each cup transforms the lives of the local community and cultivates sustainable value.</p>
+                </div>
+                <div class="sb-section__text-block">
+                  <h3 class="sb-title">ALISTAR, 'The Noble Star'</h3>
+                  <div class="sb-section__desc">
+                    <p class="sb-text"><strong>The name ALISTAR</strong> is a blend of the <strong>Ancient Greek word 'ALINA'</strong> (meaning noble) and the English word <strong>'STAR'</strong>, signifying a <strong>'Noble Star'</strong>. We are a brand dedicated to connecting people, communities, and values through the world's finest coffee.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sb-section sb-section--split sb-section--bg-beige" aria-labelledby="alistar-sec-3-title">
+          <div class="sb-section__inner sb-section__inner--beige-reveal reveal">
+            <div class="sb-section__media sb-section__media--overlay">
+              <img class="sb-section__img" src="../assets/alistar-intro-03.jpg" alt="Model holding ALISTAR Kenya Coffee product" width="800" height="600" loading="eager">
+            </div>
+            <div class="sb-section__body">
+              <div class="sb-section__text">
+                <div class="sb-section__text-block">
+                  <h2 class="sb-title" id="alistar-sec-3-title">Delivered with Expertise<br>and Sincerity</h2>
+                  <div class="sb-section__desc">
+                    <p class="sb-text"><strong>ALISTAR selects coffee</strong> based on professional standards, backed by <strong>the Barista Skills Professional and Brewing Professional certifications from the SCA</strong> (Specialty Coffee Association), the world's largest coffee organization.</p>
+                    <p class="sb-text">We maintain the highest quality <strong>by directly sourcing green beans from Baringo</strong>, Kenya, and roasting them in-house.</p>
+                  </div>
+                </div>
+                <div class="sb-section__text-block">
+                  <h3 class="sb-subtitle">Connecting the World Through Coffee</h3>
+                  <div class="sb-section__desc">
+                    <p class="sb-text">ALISTAR goes beyond being just a coffee brand, <strong>pursuing the value of growing together with local communities.</strong></p>
+                    <p class="sb-text"><strong>We support the economic and educational development</strong> of the Baringo region in Kenya, <strong>starting with the distribution of coffee trees.</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sb-section sb-section--split sb-section--bg-white sb-section--cta-final reveal" aria-labelledby="alistar-cta-title">
+          <div class="sb-section__inner sb-section__inner--cta-final">
+            <div class="sb-section__media sb-section__media--person sb-section__media--person--no-overlay">
+              <img class="sb-section__img" src="../assets/alistar-intro-01.jpg" alt="Model holding ALISTAR Kenya Coffee" width="800" height="600" loading="lazy">
+            </div>
+            <div class="sb-cta-final__body">
+              <img src="../assets/alistar-gwu.png" alt="Withus Healthcare GWU logo" class="sb-cta-final__logo" width="400" height="300" loading="lazy">
+              <p class="sb-cta-final__text" id="alistar-cta-title">
+                Withus Healthcare Co., Ltd. joins<br>
+                the beautiful journey of ALISTAR Coffee<br>
+                for a better tomorrow in Baringo, Kenya.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="../brand.js"></script>
+  <script src="../special-brand.js"></script>
+</body>
+</html>

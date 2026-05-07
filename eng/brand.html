@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Info | Withus Healthcare</title>
+  <meta name="description" content="Explore Withus Healthcare's specialized medical device brands for wound, burn, and scar care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="brand.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+              <li><a href="about.html"><span>About Us</span></a></li>
+              <li><a href="core-values.html"><span>Core Values</span></a></li>
+              <li><a href="history.html"><span>Our History</span></a></li>
+              <li><a href="directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="釉뚮옖?쒖냼媛??섏쐞 硫붾돱">
+              <li><a href="brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a></li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="?몄뼱 ?좏깮" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="?몄뼱 ?좏깮">
+            <li><a href="../brand.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/brand.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="硫붾돱 ?닿린" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="紐⑤컮??硫붾돱" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="硫붾돱 ?リ린">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a></li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         BRAND PRODUCT LISTING SECTION
+    ============================================================ -->
+    <section class="brand-main" aria-labelledby="brand-heading">
+      <div class="brand-container">
+
+        <!-- Breadcrumb -->
+        <nav class="brand-breadcrumb" aria-label="?꾩옱 ?꾩튂">
+          <a href="./index.html" class="brand-breadcrumb__home" aria-label="Home">
+            <img src="./assets/icon-home-breadcrumb.svg" alt="?? width="14" height="14">
+          </a>
+          <span class="brand-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="brand-breadcrumb__item" aria-current="page">
+            BRAND  INFO
+            <span class="brand-breadcrumb__chevron" aria-hidden="true"></span>
+          </span>
+        </nav>
+
+        <!-- Page heading -->
+        <h1 class="brand-heading" id="brand-heading">Main  Brands</h1>
+
+        <!-- ?쒗뭹 ???ㅻ퉬 ??heading ?꾨옒 媛濡??섏뿴, 紐⑤컮??媛濡??ㅽ겕濡?-->
+        <nav class="brand-product-nav" aria-label="Product quick links">
+          <ul class="brand-product-nav__list">
+            <li><a href="./brand-detail-carragel-s.html"          class="brand-product-nav__link">Carragel S</a></li>
+            <li><a href="./brand-detail-carragel-t.html"          class="brand-product-nav__link">Carragel T</a></li>
+            <li><a href="./brand-detail-avarus.html"              class="brand-product-nav__link">AVARUS</a></li>
+            <li><a href="./brand-detail-regensta-a.html"          class="brand-product-nav__link">REGENSTA A</a></li>
+            <li><a href="./brand-detail-regensta-b.html"          class="brand-product-nav__link">REGENSTA B</a></li>
+            <li><a href="./brand-detail-regensta-h.html"          class="brand-product-nav__link">REGENSTA H</a></li>
+            <li class="is-hidden--temp"><a href="./brand-detail-clevy-spray.html"         class="brand-product-nav__link">CLEVY</a></li>
+            <li><a href="./brand-detail-regensta-g-cream.html"    class="brand-product-nav__link">REGENSTA G Cream</a></li>
+            <li><a href="./brand-detail-scargel-combination.html" class="brand-product-nav__link">Scargel Combination</a></li>
+            <li><a href="./brand-detail-megaheal.html"            class="brand-product-nav__link">MEGAHEAL</a></li>
+          </ul>
+        </nav>
+
+        <!-- Product grid: 3 columns, 4 rows (last row has 1 item) -->
+        <div class="brand-grid">
+
+          <!-- ?? Row 1 ?? -->
+          <article class="brand-card reveal">
+            <a href="./brand-detail-carragel-s.html" class="brand-card__img-wrap" aria-label="?덈툕??移대씪寃??먯뒪 ?곸꽭蹂닿린">
+              <img
+                src="./assets/product_rev_d_carragel_s.webp"
+                alt="?덈툕??移대씪寃??먯뒪 (rev.D Carragel S) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">?덈툕??移대씪寃??먯뒪</p>
+              <p class="brand-card__name-en">rev.D Carragel S</p>
+            </div>
+          </article>
+
+          <article class="brand-card reveal">
+            <a href="./brand-detail-carragel-t.html" class="brand-card__img-wrap" aria-label="?덈툕??移대씪寃????곸꽭蹂닿린">
+              <img
+                src="./assets/product_rev_d_carragel_t.webp"
+                alt="?덈툕??移대씪寃???(rev.D Carragel T) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">?덈툕??移대씪寃???/p>
+              <p class="brand-card__name-en">rev.D Carragel T</p>
+            </div>
+          </article>
+
+          <article class="brand-card reveal">
+            <a href="./brand-detail-avarus.html" class="brand-card__img-wrap" aria-label="?꾨컮?ъ뒪 ?곸꽭蹂닿린">
+              <img
+                src="./assets/product_abarus.webp"
+                alt="?꾨컮?ъ뒪 (AVARUS) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">?꾨컮?ъ뒪</p>
+              <p class="brand-card__name-en">AVARUS</p>
+            </div>
+          </article>
+
+          <!-- ?? Row 2 ?? -->
+          <article class="brand-card reveal">
+            <a href="./brand-detail-regensta-a.html" class="brand-card__img-wrap" aria-label="由ъ젨?ㅽ? A ?곸꽭蹂닿린">
+              <img
+                src="./assets/product_regenta_a.webp"
+                alt="由ъ젨?ㅽ? A (Regensta A) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">由ъ젨?ㅽ? A</p>
+              <p class="brand-card__name-en">Regensta A</p>
+            </div>
+          </article>
+
+          <article class="brand-card reveal">
+            <a href="./brand-detail-regensta-b.html" class="brand-card__img-wrap" aria-label="由ъ젨?ㅽ? B ?곸꽭蹂닿린">
+              <img
+                src="./assets/product_regenta_b.webp"
+                alt="由ъ젨?ㅽ? B (Regensta B) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">由ъ젨?ㅽ? B</p>
+              <p class="brand-card__name-en">Regensta B</p>
+            </div>
+          </article>
+
+          <article class="brand-card reveal">
+            <a href="./brand-detail-regensta-h.html" class="brand-card__img-wrap" aria-label="由ъ젨?ㅽ? H ?곸꽭蹂닿린">
+              <img
+                src="./assets/product_regenta_h.webp"
+                alt="由ъ젨?ㅽ? H (Regensta H) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">由ъ젨?ㅽ? H</p>
+              <p class="brand-card__name-en">Regensta H</p>
+            </div>
+          </article>
+
+          <!-- ?? Row 3 ?? -->
+          <article class="brand-card reveal is-hidden--temp">
+            <a href="./brand-detail-clevy-spray.html" class="brand-card__img-wrap" aria-label="?대━鍮??ㅽ봽?덉씠 ?곸꽭蹂닿린">
+              <img
+                src="./assets/product_clevy_spray.webp"
+                alt="?대━鍮??ㅽ봽?덉씠 (Clevy Spray) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">?대━鍮??ㅽ봽?덉씠</p>
+              <p class="brand-card__name-en">Clevy Spray</p>
+            </div>
+          </article>
+
+          <article class="brand-card reveal">
+            <a href="./brand-detail-regensta-g-cream.html" class="brand-card__img-wrap" aria-label="由ъ젨?ㅽ? G ?щ┝ ?곸꽭蹂닿린">
+              <img
+                src="./assets/product_regenta_g.webp"
+                alt="由ъ젨?ㅽ? G ?щ┝ (Regensia G cream) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">由ъ젨?ㅽ? G ?щ┝</p>
+              <p class="brand-card__name-en">Regensia G cream</p>
+            </div>
+          </article>
+
+          <article class="brand-card reveal">
+            <a href="./brand-detail-scargel-combination.html" class="brand-card__img-wrap" aria-label="?ㅼ뭅寃?肄ㅻ퉬?ㅼ씠???곸꽭蹂닿린">
+              <img
+                src="./assets/product_scagelcombination.webp"
+                alt="?ㅼ뭅寃?肄ㅻ퉬?ㅼ씠??(Scargel Combination) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">?ㅼ뭅寃?肄ㅻ퉬?ㅼ씠??/p>
+              <p class="brand-card__name-en">Scargel Combination</p>
+            </div>
+          </article>
+
+          <!-- ?? Row 4: single item ?? -->
+          <article class="brand-card reveal">
+            <a href="./brand-detail-megaheal.html" class="brand-card__img-wrap" aria-label="硫붽????곸꽭蹂닿린">
+              <img
+                src="./assets/product_megaheal.webp"
+                alt="硫붽???(MegaHeal) ?쒗뭹 ?대?吏"
+                class="brand-card__img"
+                width="460"
+                height="400"
+                loading="lazy"
+              >
+            </a>
+            <div class="brand-card__info">
+              <p class="brand-card__name">硫붽???/p>
+              <p class="brand-card__name-en">MegaHeal</p>
+            </div>
+          </article>
+
+        </div><!-- /.brand-grid -->
+
+        <!-- Pagination -->
+        <nav class="brand-pagination" aria-label="?섏씠吏 ?먯깋">
+          <!-- ?쇱そ: ?랁솕?댄몴(泥ロ럹?댁?) ??gap-outer(30px) ???⑦솕?댄몴(?댁쟾) -->
+          <div class="pag-side pag-side--left">
+            <button class="pag-arrow" aria-label="First page">
+              <img src="assets/icon-page-first.svg" alt="" width="12" height="12" aria-hidden="true">
+            </button>
+            <button class="pag-arrow" aria-label="?댁쟾 ?섏씠吏">
+              <img src="assets/icon-prev.svg" alt="" width="8" height="14" aria-hidden="true">
+            </button>
+          </div>
+
+          <!-- ?レ옄 紐⑸줉 ???⑦솕?댄몴? gap-inner(40px) -->
+          <div class="pag-numbers">
+            <button class="pag-page pag-page--active" aria-current="page" aria-label="1?섏씠吏">1</button>
+          </div>
+
+          <!-- ?ㅻⅨ履? ?⑦솕?댄몴(?ㅼ쓬) ??gap-outer(30px) ???랁솕?댄몴(留덉?留? -->
+          <div class="pag-side pag-side--right">
+            <button class="pag-arrow" aria-label="?ㅼ쓬 ?섏씠吏">
+              <img src="assets/icon-next.svg" alt="" width="8" height="14" aria-hidden="true">
+            </button>
+            <button class="pag-arrow" aria-label="Last page">
+              <img src="assets/icon-page-last.svg" alt="" width="12" height="12" aria-hidden="true">
+            </button>
+          </div>
+        </nav>
+
+      </div><!-- /.brand-container -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="brand.js"></script>
+</body>
+</html>
+
+

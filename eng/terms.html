@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use | Withus Healthcare Co., Ltd.</title>
+  <meta name="description" content="Terms of Use for the Withus Healthcare website — governing the rights, obligations, and responsibilities of users and the Company.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- privacy.css provides shared policy-page layout styles (prv-*) -->
+  <link rel="stylesheet" href="privacy.css">
+  <link rel="stylesheet" href="terms.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Withus Healthcare 홈으로">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="회사소개 하위 메뉴">
+              <li><a href="./about.html"><span>About Us</span></a></li>
+              <li><a href="./core-values.html"><span>Core Values</span></a></li>
+              <li><a href="./history.html"><span>Our History</span></a></li>
+              <li><a href="./directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="브랜드소개 하위 메뉴">
+              <li><a href="./brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="언어 선택" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="언어 선택">
+            <li><a href="../terms.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/terms.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       모바일 드로어
+       ============================================================ -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="모바일 메뉴" aria-hidden="true">
+
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Withus Healthcare 홈으로">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="메뉴 닫기">&#10005;</button>
+    </div>
+
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="./history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer__item">
+        <a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a>
+      </li>
+      <li class="drawer__item">
+        <a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       플로팅 사이드바 (데스크탑 고정)
+       ============================================================ -->
+  <aside class="privacy-sidebar" aria-label="빠른 링크">
+    <a href="#" class="sidebar-btn sidebar-btn--dark" aria-label="온라인몰 바로가기" title="온라인몰">
+      <img src="./assets/icon-online.svg" alt="" class="sidebar-icon">
+      <span>온라인몰</span>
+    </a>
+    <a href="#" class="sidebar-btn sidebar-btn--dark" aria-label="사업자몰 바로가기" title="사업자몰">
+      <img src="./assets/icon-business.svg" alt="" class="sidebar-icon">
+      <span>사업자몰</span>
+    </a>
+    <a href="./contact.html" class="sidebar-btn sidebar-btn--blue" aria-label="고객센터 바로가기" title="고객센터">
+      <img src="./assets/icon-cs.svg" alt="" class="sidebar-icon">
+      <span>고객센터</span>
+    </a>
+    <button class="prv-scroll-top" id="scrollTopBtn" aria-label="맨 위로 이동" title="맨 위로">
+      <img src="./assets/arrowfloating.svg" alt="맨 위로" width="18" height="18">
+    </button>
+  </aside>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="terms-main" id="termsMain">
+
+    <!-- 브레드크럼 -->
+    <div class="prv-breadcrumb-bar">
+      <div class="prv-container">
+        <nav class="prv-breadcrumb" aria-label="페이지 경로">
+          <a href="index.html" class="prv-breadcrumb__link prv-breadcrumb__home" aria-label="홈">
+            <img src="assets/icon-home-breadcrumb.svg" alt="홈" width="14" height="14">
+          </a>
+          <span class="prv-breadcrumb__dot" aria-hidden="true"></span>
+          <span class="prv-breadcrumb__current" aria-current="page">Terms of Use</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 타이틀 섹션 -->
+    <section class="prv-hero" aria-labelledby="termsTitle">
+      <div class="prv-container">
+
+        <div class="prv-hero__title-group">
+          <h1 class="prv-hero__title" id="termsTitle">Terms of Use — Withus Healthcare Co., Ltd.</h1>
+        </div>
+
+        <div class="prv-hero__meta">
+          <time class="prv-hero__date" datetime="2026-03-10">Effective Date: March 10, 2026</time>
+          <hr class="prv-divider" aria-hidden="true">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 본문 콘텐츠 -->
+    <section class="prv-content" aria-label="이용약관 내용">
+      <div class="prv-container">
+        <div class="prv-articles">
+
+          <!-- ── 제1조 ── -->
+          <article class="prv-article" id="article-1">
+            <h2 class="prv-article__heading">Article 1. Purpose</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--base">These Terms of Use govern the rights, obligations, and responsibilities of Withus Healthcare Co., Ltd. (hereinafter "the Company") and users in connection with the internet-related services (hereinafter "Services") provided through the website operated by the Company (hereinafter "the Site").</p>
+              <p class="prv-text--base">※ These Terms also apply, to the extent not contrary to their nature, to electronic transactions conducted via PC communication, wireless networks, and similar means.</p>
+            </div>
+          </article>
+
+          <!-- ── 제2조 ── -->
+          <article class="prv-article" id="article-2">
+            <h2 class="prv-article__heading">Article 2. Definitions</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. "Site" refers to the virtual service space established by Withus Healthcare Co., Ltd. using information and communications equipment for the purpose of providing service information to users, and also refers to the business operator that operates the Site.</p>
+              <p class="prv-text--medium">2. "User" refers to any person who accesses the Site and uses the Services provided by the Site in accordance with these Terms.</p>
+            </div>
+          </article>
+
+          <!-- ── 제3조 ── -->
+          <article class="prv-article" id="article-3">
+            <h2 class="prv-article__heading">Article 3. Disclosure, Explanation, and Amendment of Terms</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. The Company shall post these Terms along with the Company's trade name, representative's name, business address, phone number, email address, business registration number, and personal data protection officer on the initial service screen of the Site in a manner easily accessible to users. The contents of the Terms may be made available through a linked page.</p>
+              <p class="prv-text--medium">2. Prior to obtaining user consent to these Terms, the Company shall provide a separate linked page or pop-up screen to ensure users understand the key provisions of the Terms.</p>
+              <p class="prv-text--medium">3. The Company may amend these Terms within the limits permitted by applicable laws, including the Act on the Regulation of Terms and Conditions and the Act on Promotion of Information and Communications Network Utilization and Information Protection.</p>
+              <p class="prv-text--medium">4. When amending these Terms, the Company shall post the amended Terms alongside the current Terms on the initial screen, specifying the effective date and reasons for amendment, from at least 7 days prior to the effective date. For amendments unfavorable to users, at least 30 days' advance notice shall be provided.</p>
+              <p class="prv-text--medium">5. Amended Terms shall apply only to contracts entered into after the effective date; previously concluded contracts shall remain subject to the prior Terms. However, if a user notifies the Company of their wish to be governed by the amended Terms during the notice period and obtains the Company's consent, the amended Terms shall apply.</p>
+              <p class="prv-text--medium">6. Matters not specified in these Terms and the interpretation of these Terms shall be governed by the Act on the Regulation of Terms and Conditions, consumer protection guidelines established by the Korea Fair Trade Commission, relevant laws, and customary practices.</p>
+            </div>
+          </article>
+
+          <!-- ── 제4조 ── -->
+          <article class="prv-article" id="article-4">
+            <h2 class="prv-article__heading">Article 4. Provision and Modification of Services</h2>
+            <div class="prv-article__body">
+              <div class="prv-sub">
+                <p class="prv-text--list">1.&emsp;Provision of information about the Company and its products and services<br>
+2.&emsp;Provision of inquiry and consultation services<br>
+3.&emsp;Other business activities as determined by the Company</p>
+              </div>
+              <p class="prv-text--medium">2. When modifying the content of Services, the Company shall immediately notify users at the location where the current service content is posted, specifying the modified content and the date of provision.</p>
+              <p class="prv-text--medium">3. If the Company modifies contracted Services due to changes in technical specifications or other reasons, it shall immediately notify users at a contactable address.</p>
+              <p class="prv-text--medium">4. In such cases, the Company shall compensate users for any resulting damages, unless the Company proves absence of intent or negligence.</p>
+            </div>
+          </article>
+
+          <!-- ── 제5조 ── -->
+          <article class="prv-article" id="article-5">
+            <h2 class="prv-article__heading">Article 5. Suspension of Services</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. The Company may temporarily suspend Services in the event of maintenance, replacement, or breakdown of information and communications equipment, or interruption of communications.</p>
+              <p class="prv-text--medium">2. The Company shall compensate users or third parties for damages caused by such suspension, unless the Company proves absence of intent or negligence.</p>
+              <p class="prv-text--medium">3. If the Company becomes unable to provide Services due to a change in business type, abandonment of business, or merger, it shall notify users in accordance with Article 6.</p>
+            </div>
+          </article>
+
+          <!-- ── 제6조 ── -->
+          <article class="prv-article" id="article-6">
+            <h2 class="prv-article__heading">Article 6. Notification to Users</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. When notifying users, the Company may do so via the email address pre-designated by the user in agreement with the Company.</p>
+              <p class="prv-text--medium">2. For notices directed at an unspecified number of users, the Company may substitute individual notification by posting on the Site's notice board for at least one week. Individual notification shall be provided for matters of significant impact on the user.</p>
+            </div>
+          </article>
+
+          <!-- ── 제7조 ── -->
+          <article class="prv-article" id="article-7">
+            <h2 class="prv-article__heading">Article 7. Protection of Personal Information</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. The Company shall collect only the minimum personal information necessary for the provision of Services.</p>
+              <p class="prv-text--medium">2. When collecting and using personal information, the Company shall inform the user of the purpose and obtain consent.</p>
+              <p class="prv-text--medium">3. Collected personal information shall not be used for purposes other than those intended. For new purposes or third-party disclosures, the user shall be informed and consent obtained at the point of use or disclosure, except as otherwise provided by applicable law.</p>
+              <p class="prv-text--medium">4. Users may request access to and correction of their personal information held by the Company at any time, and the Company shall take necessary action without delay.</p>
+              <p class="prv-text--medium">5. The Company shall limit access to personal information to the minimum number of personnel necessary, and shall bear full responsibility for damages arising from loss, theft, leakage, unauthorized third-party disclosure, or falsification of personal information.</p>
+              <p class="prv-text--medium">6. The Company or any third party that has received personal information shall promptly destroy such information upon achieving the purpose of collection or receipt.</p>
+              <p class="prv-text--medium">7. The Company shall not pre-select consent checkboxes for the collection, use, or disclosure of personal information, and shall not restrict or deny Services on the grounds of a user's refusal to consent to collection, use, or disclosure of non-mandatory personal information.</p>
+              <p class="prv-text--medium">8. Detailed matters regarding the processing of personal information shall be governed by the separately published Privacy Policy.</p>
+            </div>
+          </article>
+
+          <!-- ── 제8조 ── -->
+          <article class="prv-article" id="article-8">
+            <h2 class="prv-article__heading">Article 8. Obligations of the Company</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. The Company shall not engage in acts prohibited by law or these Terms or contrary to public order and morals, and shall make its best efforts to provide Services continuously and reliably.</p>
+              <p class="prv-text--medium">2. The Company shall maintain a security system to protect users' personal information (including credit information) to enable safe use of internet services.</p>
+              <p class="prv-text--medium">3. The Company shall not send unsolicited commercial emails to users.</p>
+            </div>
+          </article>
+
+          <!-- ── 제9조 ── -->
+          <article class="prv-article" id="article-9">
+            <h2 class="prv-article__heading">Article 9. Obligations of Users</h2>
+            <div class="prv-article__body">
+              <div class="prv-sub">
+                <p class="prv-text--medium">Users shall not engage in any of the following:</p>
+                <p class="prv-text--list">1.&emsp;Registering false information when submitting inquiries<br>
+2.&emsp;Misappropriating another person's information<br>
+3.&emsp;Unauthorized modification of information posted on the Site<br>
+4.&emsp;Unauthorized transmission or posting of information other than that designated by the Company<br>
+5.&emsp;Infringement of the Company's or any third party's intellectual property rights<br>
+6.&emsp;Damaging the reputation of the Company or any third party, or interfering with their business<br>
+7.&emsp;Publishing or posting obscene or violent messages, images, audio, or other information contrary to public order and morals on the Site</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 제10조 ── -->
+          <article class="prv-article" id="article-10">
+            <h2 class="prv-article__heading">Article 10. Ownership of Copyrights and Restrictions on Use</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. Copyrights and other intellectual property rights in works created by the Company belong to the Company.</p>
+              <p class="prv-text--medium">2. Users shall not reproduce, transmit, publish, distribute, broadcast, or otherwise use for commercial purposes any information obtained through the Site in which intellectual property rights belong to the Company, without prior consent from the Company.</p>
+              <p class="prv-text--medium">3. When the Company uses copyrights belonging to a user pursuant to an agreement, it shall notify the relevant user.</p>
+            </div>
+          </article>
+
+          <!-- ── 제11조 ── -->
+          <article class="prv-article" id="article-11">
+            <h2 class="prv-article__heading">Article 11. Dispute Resolution</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. The Company shall establish and operate a dispute resolution body to address legitimate opinions or complaints raised by users and to process compensation for damages.</p>
+              <p class="prv-text--medium">2. The Company shall prioritize the processing of complaints and opinions submitted by users. If prompt resolution is not feasible, the Company shall immediately notify users of the reasons and expected timeline.</p>
+              <p class="prv-text--medium">3. In the event of a dispute, mediation may be sought through a dispute mediation body referred by the Korea Fair Trade Commission or a provincial governor.</p>
+            </div>
+          </article>
+
+          <!-- ── 제12조 ── -->
+          <article class="prv-article" id="article-12">
+            <h2 class="prv-article__heading">Article 12. Jurisdiction and Governing Law</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. Litigation arising from disputes shall be subject to the exclusive jurisdiction of the district court having jurisdiction over the user's address at the time of filing. If the address is unclear or the user resides abroad, the court of competent jurisdiction under the Civil Procedure Act shall apply.</p>
+              <p class="prv-text--medium">2. Korean law shall govern any litigation between the Company and users.</p>
+            </div>
+          </article>
+
+          <!-- ── 제13조 ── -->
+          <article class="prv-article" id="article-13">
+            <h2 class="prv-article__heading">Article 13. Effectiveness of Terms</h2>
+            <div class="prv-article__body">
+              <p class="prv-text--medium">1. These Terms shall take effect as of March 10, 2026.</p>
+              <p class="prv-text--medium">2. These Terms shall apply to all aspects of service use between the Company and users, and the Company may establish separate terms or operating policies for individual services as necessary.</p>
+            </div>
+          </article>
+
+        </div><!-- /.prv-articles -->
+      </div><!-- /.prv-container -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="푸터 내비게이션">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link" aria-current="page">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram">
+            <img src="assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="terms.js"></script>
+</body>
+</html>
+
+
+
+
+

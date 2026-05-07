@@ -1,0 +1,1460 @@
+/* ============================================================
+   WITHUS HEALTHCARE — special-brand.css
+   스페셜 프로덕트 > 알리스타 소개 (special-brand.html 전용)
+   about.css(ao-vision / ao-mission), style.css 변수·reveal 재사용
+   ============================================================ */
+
+/* ---- about.css :root와 동일한 내부 간격 ao-vision__content / __text / 단락 ---- */
+:root {
+  --sb-content-stack-gap: 32px;
+  --sb-text-stack-gap: 16px;
+  --sb-para-gap: 10px;
+  --sb-split-min-h: 420px;
+  --sb-split-min-h-md: 340px;
+  /* 이 페이지 전용 베이지 — CTA·2섹션 배경 */
+  --c-sb-beige: #f7f4ef;
+  /* brand.css .brand-container 와 동일 */
+  --sb-content-max: 1440px;
+  /* 알리스타 히어로 (--care) */
+  --sb-care-hero-min-h: clamp(260px, 38vw, 440px);
+  --sb-care-hero-gap: clamp(1.25rem, 4vw, 3.5rem);
+  --sb-care-hero-stack-gap: 12px;
+  --sb-care-hero-logo-row-gap: clamp(0.75rem, 2vw, 1.25rem);
+  --sb-care-hero-logo-max-w: min(480px, 100%);
+  --sb-care-hero-zebra-max-w: clamp(200px, 24vw, 340px);
+  --sb-care-badge-py: 7px;
+  --sb-care-badge-px: 48px;
+  --sb-care-badge-mb: 8px;
+  --sb-care-inner-pad-block-start: clamp(0.5rem, 1.2vw, 1rem);
+  --sb-care-inner-pad-inline: clamp(1.25rem, 6.77vw, 8.125rem);
+  --sb-care-hero-mob-gap: clamp(1rem, 3vw, 1.5rem);
+  --sb-care-hero-mob-stack-pb: clamp(1.5rem, 4vw, 2rem);
+  /* 로고 이미지 위 한글 오버레이 — 손글씨 세로 중앙에 맞춤 */
+  --sb-care-overlay-top: 35%;
+  --sb-care-overlay-left: 58%;
+}
+
+/* special-brand 페이지 — 푸터 직전 여백은 .sb-cta-center 패딩만 (brand.css 768의 padding-bottom: 4rem 등 상쇄) */
+.brand-main {
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* 본문(.sb-alistar) 시작 위치 — brand 기본 대비 위로 살짝 */
+.brand-main:has(.sb-alistar) {
+  padding-top: calc(var(--nav-h) + 5.5rem);
+}
+.brand-main:has(.sb-alistar) .brand-product-nav {
+  margin-bottom: 2.25rem;
+}
+
+/* 알리스타 페이지 단일 탭 — brand.css ::after 언더라인 제거 */
+.brand-main:has(.sb-alistar) .brand-product-nav__link::after {
+  display: none;
+}
+@media (max-width: 1440px) {
+  .brand-main:has(.sb-alistar) {
+    padding-top: calc(var(--nav-h) + 4.5rem);
+  }
+}
+@media (max-width: 1199px) {
+  .brand-main:has(.sb-alistar) {
+    padding-top: calc(var(--nav-h) + 3.5rem);
+  }
+}
+@media (max-width: 768px) {
+  .brand-main:has(.sb-alistar) {
+    padding-top: calc(var(--nav-h) + 2.25rem);
+  }
+  .brand-main:has(.sb-alistar) .brand-product-nav {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 360px) {
+  .brand-main:has(.sb-alistar) {
+    padding-top: calc(var(--nav-h) + 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-main {
+    padding-bottom: 0;
+  }
+}
+
+/* style.css .reveal — translateY + opacity 둘 다 애니메이트하면 cover 이미지가 매 프레임 재합성되어 덜컹(특히 Win/Chrome). */
+.sb-alistar .reveal {
+  opacity:   0;
+  transform: none;
+  /* transform 전환 제거: 합성 부담 최소화(페이드만) */
+  transition: opacity 0.45s ease-out;
+}
+.sb-alistar .reveal.in-view {
+  opacity:   1;
+  transform: none;
+  transition: opacity 0.45s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-alistar .reveal,
+  .sb-alistar .reveal.in-view {
+    opacity:    1;
+    transform:  none;
+    transition: none;
+  }
+}
+
+/* about .section + .section — 동일 간격 */
+.sb-alistar .sb-section + .sb-section {
+  margin-top: var(--section-gap);
+}
+
+/* 히어로 바로 다음 섹션 — 간격 없음 */
+.sb-alistar .sb-section--care + .sb-section {
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .sb-alistar .sb-section + .sb-section {
+    margin-top: var(--section-gap-md);
+  }
+}
+
+/* brand.css — 사이드바와 겹침 방지 (split 콘텐츠 우측 패딩만 / CTA는 중앙 정렬이므로 제외) */
+@media (min-width: 1200px) {
+  .sb-section--split .sb-section__inner {
+    padding-right: clamp(6rem, 7vw, 8.125rem);
+  }
+}
+
+/* 풀너비 배경(.sb-section) + 내부만 1440 캡(about brand-container·ao-inner 패턴) */
+.sb-alistar {
+  width:      100%;
+  box-sizing: border-box;
+  /* inherit으로 .sb-section + .sb-section 간격 — about 160/80px보다 한 단계 촘촘히 */
+  --section-gap:    clamp(3.25rem, 6vw, 5rem);
+  --section-gap-md: clamp(2rem, 4vw, 3rem);
+}
+
+.sb-section--split {
+  width:      100%;
+  max-width:  100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-block: 0;
+  /* 섹션이 콘텐츠 높이를 정확히 감싸도록 — 베이지 배경 빈 공간 없음 */
+  display:    flex;
+  flex-direction: column;
+}
+
+/* 베이지 split 섹션은 상하 베이지 영역을 더 노출 */
+.sb-section--split.sb-section--bg-beige {
+  padding-block: clamp(0.5rem, 1.2vw, 1rem);
+}
+
+/* ---- 2단 split — about ao-vision (이미지 50% / 텍스트 50%, 행은 --sb-content-max 이하) ---- */
+.sb-section--split .sb-section__inner {
+  position:     relative;
+  display:      flex;
+  align-items:  stretch;
+  width:        100%;
+  max-width:    min(100%, var(--sb-content-max));
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+  overflow:     clip; /* overflow:hidden 대신 clip — 레이어 미생성으로 지직거림 방지 */
+  box-sizing:   border-box;
+
+}
+
+@media (min-width: 769px) {
+  .sb-section--split .sb-section__inner {
+    align-items: center;
+  }
+  /* NGO: 짧은 이미지 묶음 + 긴 텍스트 — flex-start 시 위쪽 몰림(베이지 안 위 좁고 아래 공백). 교차축 center로 세로 균등 */
+  .sb-section--split .sb-section__inner.sb-section__inner--ngo {
+    align-items: center;
+  }
+  .sb-section--split .sb-section__inner--cta-final {
+    align-items: stretch;
+  }
+}
+
+/* 섹션 2: ao-mission — 텍스트 좌 / 이미지 우 (DOM은 media→body, flex 반전) */
+.sb-section--split--reverse .sb-section__inner {
+  flex-direction: row-reverse;
+}
+
+/* 이미지 열 = 텍스트 열과 동일한 행 높이(align stretch) + img가 열 전체를 채움 */
+.sb-section--split .sb-section__media {
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-width: 0;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* 1920px 기준 700px 높이 목표 — 16/11 비율 */
+  aspect-ratio: 16 / 11;
+}
+
+/* 인물 무오버레이(intro-01 등): 고정 비율·최소높이 없이 같은 행의 텍스트 열 높이에 맞춤(img는 cover로 채움) */
+.sb-section--split .sb-section__media.sb-section__media--person.sb-section__media--person--no-overlay {
+  align-self:   stretch;
+  aspect-ratio: auto;
+  min-height:   0;
+}
+
+/* alistar-sec-1: 인물 열 — CTA 섹션과 동일하게 50% 폭, 텍스트 열 높이에 맞춤 */
+.sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) > .sb-section__inner > .sb-section__media {
+  flex:            0 0 50%;
+  max-width:       50%;
+  align-self:      stretch;
+  justify-content: flex-start;
+}
+
+/* 흰색 오버레이 — alistar-intro-03 섹션 이미지에만 적용 */
+.sb-section--split .sb-section__media--overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+/* 로고 이미지 섹션 — contain으로 축소, 흰색 배경 */
+.sb-section__media--logo {
+  background: var(--c-white);
+  justify-content: center;
+  align-items: center;
+}
+
+.sb-section--split .sb-section__img {
+  flex:             1 1 auto;
+  width:            100%;
+  max-width:        100%;
+  height:           100%;
+  min-height:       0;
+  min-width:        0;
+  object-fit:       cover;
+  object-position:  center center;
+  display:          block;
+  /* cover 이미지: 부가 레이어 최소화 */
+}
+
+/* 섹션 1 인물 이미지 — 중앙 정렬 */
+.sb-section__media--person .sb-section__img {
+  object-position: center center;
+}
+
+/* person, logo: contain: layout 은 reveal 부모 transform/opacity 애니메이션과 겹칠 때 프레임 끊김 유발 가능 — 스플릿 이미지는 제한 해제 */
+.sb-section__media--person,
+.sb-section__media--logo {
+  contain: none;
+}
+
+/* 인물 이미지 — 흰색 오버레이(선택). intro-01만 제외해 선명하게 — .sb-section__media--person--no-overlay */
+.sb-section__media--person:not(.sb-section__media--person--no-overlay)::after {
+  content:        '';
+  position:       absolute;
+  inset:          0;
+  background:     rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+}
+
+/* opacity 별도 선언 제거 — 오버레이로 통합하여 합성 레이어 축소 */
+.sb-section__media--person .sb-section__img {
+  opacity: 1;
+}
+
+/* 로고 img — 전역 cover 선언 이후에 위치해야 덮어씌워짐 방지 */
+.sb-section__media--logo .sb-section__img {
+  object-fit:      contain;
+  object-position: center center;
+  width:           100%;       /* 고정 65% → 100%로 재계산 제거 */
+  max-width:       65%;        /* 최대 폭만 제한 */
+  height:          auto;
+  max-height:      65%;
+  flex:            none;
+  margin:          auto;
+}
+
+.sb-section--split .sb-section__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sb-content-stack-gap);
+  padding: clamp(2rem, 4vw, 4rem) clamp(2rem, 4.17vw, 5rem) clamp(2rem, 4vw, 4rem) clamp(2rem, 5.2vw, 6.25rem);
+  justify-content: center;
+}
+
+/* beige 섹션 body — 상단 정렬로 이미지가 하단까지 늘어나도록 */
+.sb-section--bg-beige .sb-section__body {
+  justify-content: flex-start;
+}
+
+.sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) .sb-section__body {
+  justify-content: flex-start;
+  padding-block: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+.sb-section--bg-beige .sb-section__text {
+  flex:           1 1 auto;
+  display:        flex;
+  flex-direction: column;
+}
+
+/* 텍스트 블록 줄바꿈 균형 — 위쪽이 너무 길고 아래 짧아지는 현상 방지 */
+.sb-section--split .sb-section__text-block p.sb-text,
+.sb-section--split .sb-section__desc p.sb-text {
+  max-width: 38em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.sb-section--split .sb-section__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sb-text-stack-gap);
+}
+
+.sb-section--split .sb-section__text-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sb-para-gap);
+}
+
+/* beige 섹션 text-block 간격 — p 태그 사이 더 넓게 */
+.sb-section--bg-beige .sb-section__text-block {
+  gap: 20px;
+}
+
+.sb-section--bg-beige .sb-section__text-block p.sb-text + p.sb-text {
+  margin-top: 8px;
+}
+
+/* about ao-vision__title / ao-mission__title */
+.sb-title {
+  font-family: var(--f-outfit);
+  font-size: clamp(1.2rem, 1.5vw, 1.625rem);
+  font-weight: 500;
+  letter-spacing: -0.9px;
+  line-height: 1.25;
+  color: var(--c-dark);
+}
+
+/* 보조 제목 — ao-vision 블록 내 소제목 느낌(Outfit, 약간 작게) */
+.sb-subtitle {
+  font-family: var(--f-outfit);
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 1.3;
+  color: var(--c-dark);
+}
+
+/* about ao-desc-ko */
+.sb-text {
+  font-family: var(--f-pre);
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  font-weight: 400;
+  letter-spacing: -0.6px;
+  line-height: 1.75;
+  color: var(--c-text-sec);
+}
+
+.sb-section--split p.sb-text {
+  color: var(--c-dark);
+}
+
+.sb-section--split .sb-section__desc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sb-para-gap);
+}
+
+.sb-section--bg-white {
+  background: var(--c-white, #fff) !important;
+}
+
+.sb-section--bg-beige {
+  background: var(--c-sb-beige);
+}
+
+/* ---- CTA 영역 — 흰색, 텍스트·버튼 중앙 정렬
+   section 껍데기는 패딩 없음(상·하는 .sb-cta-center만) ---- */
+.sb-section--cta {
+  width: 100%;
+  max-width: 100%;
+  background: var(--c-white);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.sb-cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sb-text-stack-gap);
+  width: 100%;
+}
+
+/* CTA 제목: h2 기본 margin 제거(상단 패딩과 이중으로 넓어지지 않게) */
+.sb-section--cta .sb-cta-block > .sb-title,
+.sb-section--cta h2.sb-title {
+  margin: 0;
+}
+
+.sb-cta-block__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sb-para-gap);
+  max-width: 100%;
+}
+
+.sb-section--cta .sb-title,
+.sb-section--cta .sb-text {
+  text-align: center;
+}
+
+/*
+ * CTA — style.css .btn-view-more 그대로(가로만 auto / min-width 유지)
+ * style.css에는 gap 없음 → flex 간격은 justify-content: space-between(텍스트–아이콘)
+ */
+.sb-alistar .sb-section--cta .btn-view-more.btn-blue {
+  width: auto;
+  padding: 0 14px 0 24px;
+  gap: 12px;
+}
+
+/* ============================================================
+   1440px
+   ============================================================ */
+@media (max-width: 1440px) {
+  .sb-section--split .sb-section__body {
+    gap: 36px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .sb-section--split .sb-text {
+    font-size: clamp(18px, 1.2vw, 20px);
+  }
+}
+
+/* ============================================================
+   1024px — about: 이미지 열 42%
+   ============================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --sb-split-min-h: 340px;
+  }
+
+  .sb-section--split .sb-section__media {
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
+
+  .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) > .sb-section__inner > .sb-section__media {
+    flex:      0 0 38%;
+    max-width: 38%;
+  }
+
+  .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) > .sb-section__inner,
+  .sb-section--split .sb-section__inner.sb-section__inner--cta-final {
+    min-height: 0;
+  }
+
+  .sb-section--split .sb-section__inner {
+    min-height: var(--sb-split-min-h-md);
+  }
+}
+
+/* ============================================================
+   768px — 2단→1단, reverse 포함 동일(이미지 상·텍스트 하)
+   ============================================================ */
+@media (max-width: 768px) {
+  .sb-section--split .sb-section__inner,
+  .sb-section--split--reverse .sb-section__inner {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .sb-section--split .sb-section__media {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    min-height: 0;
+    height: auto;
+  }
+
+  .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) > .sb-section__inner > .sb-section__media {
+    min-height: 0;
+    height:      auto;
+  }
+
+  .sb-section--split .sb-section__img {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .sb-section__media--story01 {
+    flex:       0 0 100% !important;
+    width:      100%;
+    max-width:  100% !important;
+    align-self: stretch;
+  }
+
+  .sb-section--split .sb-section__body {
+    flex: none;
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .sb-section--split .sb-title,
+  .sb-section--story .sb-title {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.65px;
+  }
+
+  .sb-section--split .sb-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+  }
+
+  .sb-section--split .sb-text {
+    font-size: 15px;
+  }
+
+  .sb-section--cta .sb-title,
+  .sb-section--cta .sb-text {
+    text-align: center;
+  }
+
+  .sb-section--cta h2.sb-title {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.65px;
+  }
+
+  .sb-section--cta .sb-text {
+    font-size: 15px;
+  }
+}
+/* ============================================================
+   CARE DIAGRAM — 알리스타 히어로 + 삼각형 배치
+   rd-card glassmorphism 효과, 동그라미 유지
+============================================================ */
+
+.sb-section--care {
+  width:          100%;
+  box-sizing:     border-box;
+  position:       relative;
+  padding-bottom: 0;
+}
+
+/* ── 히어로 상단 회사명: 파란 pill 뱃지 */
+.sb-section--care .sb-care__badge {
+  display:         inline-flex;
+  flex-direction:  row;
+  flex-wrap:       nowrap;
+  align-items:     center;
+  gap:             0.35em;
+  padding:         var(--sb-care-badge-py) var(--sb-care-badge-px);
+  margin:          0 0 var(--sb-care-badge-mb);
+  background:      var(--c-primary, #0b579f);
+  color:           #fff;
+  font-family:     var(--f-pre);
+  font-weight:     600;
+  letter-spacing:  0.01em;
+  border-radius:   100px;
+  line-height:     1.35;
+}
+
+.sb-section--care .sb-care__badge--sub {
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  font-weight: 600;
+}
+.sb-section--care .sb-care__badge--main {
+  font-size: clamp(1.375rem, 1.75vw, 1.75rem);
+  font-weight: 700;
+}
+
+/* ── inner: 세로 스택, 가운데 정렬 */
+.sb-section--care .sb-care__inner {
+  max-width:      min(100%, var(--sb-content-max));
+  margin-inline:  auto;
+  padding-block:  var(--sb-care-inner-pad-block-start) 0;
+  padding-inline: var(--sb-care-inner-pad-inline);
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            0;
+  box-sizing:     border-box;
+}
+
+@media (min-width: 1200px) {
+  .sb-section--care .sb-care__inner {
+    padding-right: clamp(6rem, 7vw, 8.125rem);
+  }
+}
+
+/* ── 상단 블록: 뱃지 + 로고+텍스트 — 전체 가운데 정렬 */
+.sb-section--care .sb-care__top {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  width:          100%;
+  gap:            var(--sb-care-hero-stack-gap);
+}
+
+/* 로고 박스: 이미지 기준 높이, 가운데 정렬 기준점 + 한글 레이어 */
+.sb-section--care .sb-care__logo-row {
+  position:       relative;
+  display:        block;
+  width:          fit-content;
+  max-width:      100%;
+  margin-inline:  auto;
+  isolation:      isolate;
+}
+
+.sb-section--care .sb-care__logo-img {
+  display:        block;
+  width:          auto;
+  max-width:      var(--sb-care-hero-logo-max-w);
+  height:         auto;
+  margin-inline:  auto;
+  object-fit:     contain;
+}
+
+/* 손글씨 알리스타·영문 위 빈 영역에 겹침 — 로고 비트맵 위쪽 (left 기준으로 오른쪽 마진이 아닌 그래픽 위) */
+.sb-section--care .sb-care__hero-sub {
+  position:       absolute;
+  top:            var(--sb-care-overlay-top);
+  left:           var(--sb-care-overlay-left);
+  right:          auto;
+  bottom:         auto;
+  z-index:        1;
+  margin:         0;
+  font-family:    var(--f-pre);
+  font-size:      clamp(1.125rem, 1.5vw, 1.5rem);
+  font-weight:    600;
+  letter-spacing: -0.04em;
+  color:          var(--c-dark);
+  line-height:    1.45;
+  white-space:    nowrap;
+}
+
+/* ── 하단 블록: 좌 텍스트 / 우 얼룩말 */
+.sb-section--care .sb-care__bottom {
+  display:         flex;
+  flex-direction:  row;
+  align-items:     flex-end;
+  justify-content: space-between;
+  width:           100%;
+  gap:             var(--sb-care-hero-gap);
+  padding-top:     clamp(1.5rem, 2.5vw, 2.5rem);
+  padding-bottom:  clamp(2rem, 4vw, 4rem);
+}
+
+.sb-section--care .sb-care__bottom-text {
+  flex:            1 1 auto;
+  margin:          0;
+  font-family:     var(--f-pre);
+  font-size:       clamp(1.125rem, 1.5vw, 1.5rem);
+  font-weight:     600;
+  letter-spacing:  -0.03em;
+  color:           var(--c-dark);
+  line-height:     1.9;
+  word-break:      keep-all;
+}
+
+.sb-section--care .sb-care__bottom-text--point {
+  color: var(--c-primary, #0b579f);
+}
+
+.sb-section--care .sb-care__hero-zebra {
+  flex:            0 0 auto;
+  width:           var(--sb-care-hero-zebra-max-w);
+  display:         flex;
+  align-items:     flex-end;
+  justify-content: flex-end;
+  line-height:     0;
+}
+
+.sb-section--care .sb-care__zebra-img {
+  width:           100%;
+  max-width:       var(--sb-care-hero-zebra-max-w);
+  height:          auto;
+  display:         block;
+  object-fit:      contain;
+  object-position: right bottom;
+}
+
+/* ── 케어 다이어그램 헤딩 블록 */
+.sb-care-diagram__heading {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            6px;
+  text-align:     center;
+  width:          100%;
+}
+
+/* 영문 서브 — DM Serif Display italic, 파란색, 작게 */
+.sb-care-diagram__en {
+  font-family:    var(--f-dm);
+  font-style:     italic;
+  font-size:      20px;
+  font-weight:    400;
+  letter-spacing: -0.6px;
+  color:          #00479d;
+  display:        block;
+  text-align:     center;
+}
+
+/* ── 케어 다이어그램 헤드라인 */
+.sb-care-diagram__title {
+  font-family:    var(--f-pre);
+  font-size:      clamp(1.35rem, 1.95vw, 1.95rem);
+  font-weight:    600;
+  letter-spacing: -0.04em;
+  color:          var(--c-dark, #121212);
+  text-align:     center;
+  line-height:    1.3;
+  word-break:     keep-all;
+}
+
+/* ── CTA 위 다이어그램 섹션 래퍼 */
+.sb-section--care-diagram {
+  width:               100%;
+  box-sizing:          border-box;
+  position:            relative;
+  background-image:    url('./assets/sub_visual01.jpg');
+  background-size:     cover;
+  background-position: center center;
+  background-repeat:   no-repeat;
+}
+
+/* 베이지 오버레이 — 친환경 느낌 유지 + 카드 가독성 확보 */
+.sb-section--care-diagram::before {
+  content:    '';
+  position:   absolute;
+  inset:      0;
+  background: rgba(247, 244, 239, 0.80);
+  z-index:    0;
+}
+
+/* 내부 콘텐츠가 오버레이 위로 */
+.sb-section--care-diagram .sb-care-diagram__inner {
+  position: relative;
+  z-index:  1;
+}
+
+/* 다이어그램 섹션 — 위아래 section-gap 대신 자체 여백으로 제어 */
+.sb-alistar .sb-section--care-diagram.sb-section {
+  margin-top: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.sb-care-diagram__inner {
+  max-width:      1440px;
+  margin-inline:  auto;
+  /* 상·하 동일 / 좌우는 인라인(1200px↑에서 padding-right만 별도 보정) */
+  padding-block:  clamp(3rem, 5.5vw, 5.5rem);
+  padding-inline: clamp(1.25rem, 6.77vw, 8.125rem);
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            clamp(1.25rem, 2.5vw, 2.25rem);
+  box-sizing:     border-box;
+}
+
+@media (min-width: 1200px) {
+  .sb-care-diagram__inner { padding-right: clamp(6rem, 7vw, 8.125rem); }
+}
+
+/* 가로 3단 — 동일 크기 */
+.sb-care__row--horizontal {
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+  gap:             clamp(2rem, 4vw, 4rem);
+  width:           100%;
+}
+
+@media (max-width: 768px) {
+  .sb-care__row--horizontal {
+    flex-direction: column;
+    align-items:    center;
+    gap:            1.5rem;
+  }
+
+  /* 알리스타 히어로: 얼룩말 숨김 · 로고 가운데 · 한글 우상단 오버레이 유지 */
+  .sb-section--care .sb-care__badge {
+    align-self: center;
+  }
+  .sb-section--care .sb-care__hero-zebra {
+    display: none;
+  }
+  .sb-section--care .sb-care__hero-sub {
+    top:        clamp(8%, 2vw, 15%);
+    left:       clamp(22%, 7vw, 44%);
+    right:      auto;
+    max-width:  min(72%, 18rem);
+    font-size:  clamp(1.125rem, 1.5vw, 1.5rem);
+    line-height: 1.45;
+    text-align: left;
+  }
+}
+
+/* ── 카드 공통 */
+.sb-care-card {
+  display:         flex;
+  justify-content: center;
+}
+
+/* ── 원형 공통 — rd-card glassmorphism */
+.sb-care-card__circle {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  text-align:      center;
+  gap:             8px;
+  border-radius:   50%;
+  /* rd-card 동일 glassmorphism */
+  background:      rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border:          1px solid rgba(255, 255, 255, 0.90);
+  box-shadow:      0 2px 16px rgba(11, 87, 159, 0.08),
+                   inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  color:           var(--c-primary, #0b579f);
+  padding:         clamp(1.5rem, 2.5vw, 2.5rem);
+  box-sizing:      border-box;
+  transition:      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                   box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                   background 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sb-care-card__circle:hover {
+  transform:  translateY(-4px);
+  background: rgba(255, 255, 255, 0.90);
+  box-shadow: 0 12px 36px rgba(11, 87, 159, 0.16),
+              inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* 의료케어(01) — 기본 상태에서 hover 강조 적용 */
+.sb-care__row--horizontal .sb-care-card:first-child .sb-care-card__circle {
+  transform:  translateY(-4px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 36px rgba(11, 87, 159, 0.18),
+              inset 0 1px 0 rgba(255, 255, 255, 1);
+  border:     1.5px solid rgba(11, 87, 159, 0.15);
+}
+
+/* 3단 동일 크기 */
+.sb-care-card__circle {
+  width:  clamp(210px, 20vw, 270px);
+  height: clamp(210px, 20vw, 270px);
+}
+
+/* 번호 */
+.sb-care-card__num {
+  font-family:    var(--f-outfit);
+  font-size:      12px;
+  font-weight:    600;
+  letter-spacing: 0.08em;
+  color:          var(--c-primary-light, #6ca6e8);
+}
+
+/* 아이콘 */
+.sb-care-card__icon {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  color:           var(--c-primary, #0b579f);
+}
+
+/* 제목 */
+.sb-care-card__title {
+  font-family:    var(--f-pre);
+  font-size:      clamp(0.9375rem, 1.1vw, 1.0625rem);
+  font-weight:    700;
+  letter-spacing: -0.04em;
+  color:          var(--c-dark);
+  line-height:    1.2;
+}
+.sb-care-card--main .sb-care-card__title {
+  font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+}
+
+/* 영문 서브 */
+.sb-care-card__sub {
+  font-family:    var(--f-outfit);
+  font-size:      11px;
+  font-weight:    500;
+  letter-spacing: 0.06em;
+  color:          var(--c-primary-light, #6ca6e8);
+  text-transform: uppercase;
+}
+
+/* 설명 */
+.sb-care-card__desc {
+  font-family:    var(--f-pre);
+  font-size:      clamp(0.75rem, 0.85vw, 0.875rem);
+  font-weight:    400;
+  letter-spacing: -0.03em;
+  color:          var(--c-text, #434343);
+  line-height:    1.65;
+  word-break:     keep-all;
+}
+
+/* ============================================================
+   반응형 — 768px 이하 (모바일: 세로 1열)
+============================================================ */
+@media (max-width: 768px) {
+  .sb-care__row--bottom {
+    flex-direction: column;
+    align-items:    center;
+    gap:            1.25rem;
+  }
+  .sb-care-card--main .sb-care-card__circle,
+  .sb-care-card__circle--sub {
+    width:  clamp(200px, 60vw, 260px);
+    height: clamp(200px, 60vw, 260px);
+  }
+  .sb-section--care .sb-care__logo-img { width: clamp(180px, 70vw, 320px); }
+}
+
+@media (max-width: 480px) {
+  .sb-care-card__desc { font-size: 0.75rem; }
+  .sb-care-card--main .sb-care-card__circle,
+  .sb-care-card__circle--sub {
+    width:  clamp(170px, 72vw, 220px);
+    height: clamp(170px, 72vw, 220px);
+    gap:    6px;
+  }
+}
+
+/* ============================================================
+   바링고 스토리 섹션
+============================================================ */
+.sb-section--story .sb-section__inner--story {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            40px;
+  padding-block:  clamp(2.5rem, 5vw, 4.25rem);
+  padding-inline: clamp(1.25rem, 6.77vw, 8.125rem);
+}
+
+@media (min-width: 1200px) {
+  .sb-section--story .sb-section__inner--story {
+    padding-right: clamp(6rem, 7vw, 8.125rem);
+  }
+}
+
+.sb-story-desc {
+  font-family:    var(--f-pre);
+  font-size:      clamp(0.9375rem, 1.1vw, 1.0625rem);
+  font-weight:    400;
+  color:          var(--c-text, #434343);
+  text-align:     center;
+  letter-spacing: -0.03em;
+  margin-top:     -20px;
+}
+
+.sb-story-cards {
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:                   24px;
+  width:                 100%;
+  max-width:             1100px;
+}
+
+.sb-story-card {
+  display:         flex;
+  flex-direction:  column;
+  gap:             16px;
+  padding:         clamp(1.75rem, 2.5vw, 2.5rem);
+  background:      rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border:          1px solid rgba(255, 255, 255, 0.90);
+  border-top:      3px solid var(--c-primary, #0b579f);
+  box-shadow:      0 2px 16px rgba(11, 87, 159, 0.06),
+                   inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-radius:   12px;
+  transition:      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                   box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sb-story-card:hover {
+  transform:  translateY(-4px);
+  box-shadow: 0 12px 36px rgba(11, 87, 159, 0.14),
+              inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.sb-story-card__icon-wrap {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           64px;
+  height:          64px;
+  border-radius:   50%;
+  background:      rgba(11, 87, 159, 0.07);
+  color:           var(--c-primary, #0b579f);
+  flex-shrink:     0;
+}
+
+.sb-story-card__title {
+  font-family:    var(--f-pre);
+  font-size:      clamp(1rem, 1.2vw, 1.125rem);
+  font-weight:    700;
+  letter-spacing: -0.04em;
+  color:          var(--c-dark, #121212);
+  line-height:    1.4;
+  word-break:     keep-all;
+}
+
+.sb-story-card__list {
+  list-style:     none;
+  padding:        0;
+  margin:         0;
+  display:        flex;
+  flex-direction: column;
+  gap:            10px;
+}
+.sb-story-card__list li {
+  font-family:    var(--f-pre);
+  font-size:      clamp(0.875rem, 0.95vw, 1rem);
+  font-weight:    400;
+  color:          var(--c-text, #434343);
+  line-height:    1.7; /* 통일: 1.65 → 1.7 */
+  letter-spacing: -0.03em;
+  word-break:     keep-all;
+  padding-left:   1.1em;
+  position:       relative;
+}
+.sb-story-card__list li::before {
+  content:     '•';
+  position:    absolute;
+  left:        0;
+  color:       var(--c-primary, #0b579f);
+  font-weight: 700;
+}
+.sb-story-card__list li strong {
+  font-weight: 700;
+  color:       var(--c-dark, #121212);
+}
+
+@media (max-width: 1023px) {
+  .sb-story-cards { grid-template-columns: 1fr; max-width: 640px; }
+}
+@media (max-width: 768px) {
+  .sb-section--story .sb-section__inner--story { padding-inline: clamp(1rem, 5vw, 1.5rem); gap: 32px; }
+  .sb-story-card { padding: 1.5rem; gap: 14px; }
+  .sb-story-card__icon-wrap { width: 52px; height: 52px; }
+  .sb-story-card__title { font-size: 1rem; }
+  .sb-story-card__list li { font-size: 0.875rem; }
+}
+@media (max-width: 480px) {
+  .sb-story-card__list li { font-size: 0.8125rem; }
+}
+
+/* ============================================================
+   콘텐츠 reveal (스크롤 시 페이드)
+   — 위 .sb-alistar .reveal 에서 transform 슬라이드 제거(이미지 덜컹 완화)
+   ============================================================ */
+
+/* 콘텐츠 섹션들 — 슬라이드 업 트랜지션 */
+.sb-alistar .sb-section--care,
+.sb-alistar .sb-section--split,
+.sb-alistar .sb-section--story,
+.sb-alistar .sb-section--care-diagram,
+.sb-alistar .sb-section--cta {
+  position:   relative;
+  z-index:    1;
+  margin-top: 0; /* 섹션 간 공통 margin-top 상쇄 — CTA 세로는 .sb-cta-center만 */
+}
+
+/* 섹션/베이지 inner reveal — .sb-alistar .reveal(위)이 공통 페이드만 담당(슬라이드 transform은 제거) */
+
+/* ============================================================
+   CTA 중앙 레이아웃 — 이미지 제거 후 텍스트 블록 중앙 배치
+   ============================================================ */
+.sb-cta-center {
+  width:            100%;
+  max-width:        min(100%, var(--sb-content-max));
+  margin-inline:    auto;
+  display:          flex;
+  justify-content:  center;
+  align-items:      center;
+  /* 흰색 CTA 구역: 상·하 동일(텍스트 블록 기준) */
+  padding-block:    clamp(2.5rem, 4.25vw, 4.25rem);
+  padding-inline:   var(--pad-x);
+  box-sizing:       border-box;
+}
+
+.sb-cta-center .sb-cta-block {
+  max-width:  640px;   /* 텍스트 행 길이 제한 — 가독성 */
+  width:      100%;
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  .sb-cta-center {
+    padding-block:  2.25rem;
+    padding-inline: var(--pad-x);
+  }
+}
+
+/* ── 768px 이하: 케어 히어로 반응형 */
+@media (max-width: 768px) {
+  /* "케냐 커피와 함께 합니다." 숨김 */
+  .sb-section--care .sb-care__hero-sub {
+    display: none;
+  }
+  /* 하단 텍스트 가운데 정렬 */
+  .sb-section--care .sb-care__bottom-text {
+    text-align: center;
+  }
+  /* bottom 블록 세로 전환, 가운데 정렬 */
+  .sb-section--care .sb-care__bottom {
+    flex-direction: column;
+    align-items:    center;
+  }
+  /* 얼룩말 숨김 */
+  .sb-section--care .sb-care__hero-zebra {
+    display: none;
+  }
+}
+
+/* ── alistar-sec-1 전용 스타일 */
+#alistar-sec-1-title {
+  margin:         0 0 12px;
+  font-size:      clamp(1.1rem, 1.4vw, 1.5rem);
+  font-weight:    500;
+  letter-spacing: -0.04em;
+  line-height:    1.35;
+  color:          var(--c-dark);
+}
+
+/* beige 섹션 본문 — 작은 크기·촘촘 줄간격(색은 split 본문과 동일 진한 톤) */
+.sb-section--bg-beige .sb-text {
+  font-size:   clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.52;
+}
+
+/* 커피 바닥형 이미지 — sec-1 우하단 줄맞춤 */
+.sb-sec1-img-wrap {
+  margin-top:     auto;
+  width:          calc(100% + clamp(4rem, 8vw, 10rem));
+  flex-shrink:    0;
+  display:        flex;
+  flex-direction: column;
+}
+
+/* 와이드 박형 — 높이 고정(16:5 느낌 유지 위해 clamp), 폭 100%, crop */
+.sb-sec1-img {
+  width:           100%;
+  height:          clamp(140px, 16vw, 240px);
+  display:         block;
+  border-radius:   0;
+  object-fit:      cover;
+  object-position: center center;
+}
+
+/* intro-01: 행 높이만큼 세로 채움 → 우측 하단 커피와 같은 기준선(행 하단). 상단부터 crop */
+.sb-alistar .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) > .sb-section__inner > .sb-section__media .sb-section__img {
+  width:            100%;
+  height:           100%;
+  min-height:       0;
+  flex:             1 1 auto;
+  align-self:       stretch;
+  object-fit:       cover;
+  object-position:  center 28%;
+}
+
+.sb-alistar .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) .sb-section__body > .sb-section__text {
+  flex:             1 1 auto;
+  align-self:       stretch;
+  width:            100%;
+  min-height:       0;
+  justify-content:  flex-start;
+  gap:              12px;
+}
+
+.sb-alistar .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) .sb-section__text-block {
+  gap: 8px;
+}
+
+/* ── 1b 섹션 — 위 80px, 하단 없음 */
+.sb-alistar .sb-section:has(.sb-section__inner--1b) {
+  margin-top: 80px !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── 새 섹션(alistar-sec-1b) — inner 세로 패딩 0 고정(story 영역 폭 아래 규칙에서 조절) */
+section.sb-section.sb-section--split .sb-section__inner.sb-section__inner--1b {
+  padding-top:    0;
+  padding-bottom: 0;
+  padding-block:  0 !important;
+}
+
+.sb-section--split .sb-section__inner.sb-section__inner--1b .sb-section__body {
+  justify-content: flex-start;
+  padding-block:   0;
+}
+
+/* ── 섹션 1b: 우 story01 컬럼은 stretch 금지(행 min-height 때문에 이미지가 세로로 커진 것처럼 보임) — 교차축은 center 유지 */
+@media (min-width: 769px) {
+  .sb-section--split .sb-section__inner.sb-section__inner--1b .sb-section__body {
+    justify-content: center;
+  }
+}
+
+/* 1b 우측 이미지 — 30%는 본문 대비 과도하게 작아 리듐·정렬 불만 발생. 태블릿대는 다른 split 이미지열(42%)과 맞추고, XL은 40%로 가독·이미지 균형 */
+.sb-section__media--story01 {
+  flex:            0 0 42% !important;
+  max-width:       42% !important;
+  aspect-ratio:    4 / 3;
+  overflow:        clip;
+  align-self:      center;
+}
+
+@media (min-width: 1025px) {
+  .sb-section__media--story01 {
+    flex:      0 0 40% !important;
+    max-width: 40% !important;
+  }
+}
+
+.sb-alistar [aria-labelledby="alistar-sec-1b-title"] .sb-text {
+  font-size:   clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.75;
+}
+
+#alistar-sec-1b-title {
+  font-weight:  500;
+  white-space:  nowrap;
+}
+
+@media (max-width: 768px) {
+  #alistar-sec-1b-title {
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}
+
+/* ── NGO 섹션: 좌 이미지 2장 / 우 텍스트
+   inner는 .sb-section--split .sb-section__inner 와 동일 규격(pad-x, max-width, 1200px 우패딩 별도 규칙 적용). 중복 선언 제거. */
+/* 이미지 열 ↔ 본문 열 사이 간격(우측 이미지 옆 여백). 텍스트 박스 padding만 키우는 것과 달리 ‘열 사이’를 직접 벌림 */
+.sb-section__inner--ngo {
+  gap: clamp(3rem, 7.5vw, 6rem);
+}
+
+/* 좌: 이미지 2장 세로 — flex 아이템 min-width:auto + img intrinsic(600 등) 때문에 폭 한도가 깨지는 문제 → min-width:0 + 명시 max-width */
+/* 아래 clamp는 margin-offset 계산식과 숫자를 동일하게 유지할 것 (--sb-ngo-media-max) */
+.sb-ngo__media {
+  --sb-ngo-media-max: clamp(312px, 40vw, 400px);
+
+  flex:              0 1 auto;
+  width:             100%;
+  max-width:         var(--sb-ngo-media-max);
+  min-width:         0;
+  align-self:        center;
+  display:           flex;
+  flex-direction:    column;
+  justify-content:   center;
+  gap:               clamp(1.5rem, 3.5vw, 2.75rem);
+  box-sizing:        border-box;
+}
+
+.sb-ngo__img {
+  width:      100%;
+  max-width:  100%;
+  min-width:  0;
+  height:     auto;
+  display:    block;
+  object-fit: contain;
+  flex:       0 0 auto;
+}
+
+.sb-ngo__img--inline {
+  display: none;
+}
+
+/* 우: 본문 시작선을 더 오른쪽으로(이미지 열 대비) — 분할 본문 기본 좌패딩보다 추가 들여쓰기 */
+@media (min-width: 769px) {
+  .sb-section--split .sb-section__inner--ngo .sb-section__body.sb-ngo__body {
+    padding-top:       clamp(2rem, 4vw, 4rem);
+    padding-bottom:    clamp(2rem, 4vw, 4rem);
+    padding-right:     clamp(2rem, 4.17vw, 5rem);
+    padding-left:      clamp(3rem, 8vw, 7rem);
+  }
+}
+
+/* 우: split 공통 flex·max-width · 교차축은 inner align-items:center와 함께 본문 박스도 세로 중앙 */
+.sb-section--split .sb-section__inner--ngo .sb-section__body.sb-ngo__body {
+  flex:               0 1 auto;
+  min-width:          0;
+  max-width:          min(100%, 38em);
+  align-self:         center;
+  justify-content:    center;
+}
+
+/* NGO 이미지: 일반 좌패딩 기준 시작선이 아니라, 섹션1 좌측 이미지 열(.sb-section__media 50%/38%)의 가로중심선에 좁은 열 중심을 맞춤 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sb-section__inner--ngo .sb-ngo__media {
+    margin-inline-start: max(
+      0px,
+      calc(19% - (var(--sb-ngo-media-max, clamp(312px, 40vw, 400px)) / 2))
+    );
+  }
+}
+
+@media (min-width: 1025px) {
+  .sb-section__inner--ngo .sb-ngo__media {
+    margin-inline-start: max(
+      0px,
+      calc(25% - (var(--sb-ngo-media-max, clamp(312px, 40vw, 400px)) / 2))
+    );
+  }
+}
+
+/* 서브타이틀 */
+.sb-ngo__subtitle {
+  font-family:    var(--f-outfit);
+  font-size:      clamp(1.1rem, 1.4vw, 1.5rem);
+  font-weight:    500;
+  letter-spacing: -0.6px;
+  line-height:    1.4;
+  color:          var(--c-dark);
+  margin:         0 0 clamp(0.75rem, 1vw, 1rem);
+}
+
+/* 빨간 볼드 */
+.sb-text--red {
+  color:       #e03030;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .sb-section__inner--ngo {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:             1.25rem;
+  }
+  .sb-section--split .sb-section__inner--ngo .sb-section__body.sb-ngo__body {
+    max-width: none;
+    width:     100%;
+    padding:   40px 20px;
+  }
+  .sb-ngo__media {
+    width:               100%;
+    max-width:           100%;
+    align-self:          stretch;
+    margin-inline-start: 0;
+    margin-inline-end:   0;
+    flex-direction:      column;
+    justify-content:     flex-start;
+    align-items:         flex-start;
+    gap:                 1rem;
+  }
+  .sb-ngo__img {
+    flex:       0 0 auto;
+    width:      100%;
+    min-width:  0;
+    max-width:  100%;
+    height:     auto;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 760px) {
+  .sb-ngo__media {
+    display: none;
+  }
+
+  .sb-ngo__img--inline {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ── CTA final 섹션 */
+.sb-section__inner--cta-final {
+  align-items: stretch;
+}
+
+.sb-cta-final__body {
+  flex:            1 1 auto;
+  min-height:      100%;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             clamp(1.5rem, 3vw, 3rem);
+  padding:         clamp(2rem, 4vw, 4rem) clamp(2rem, 4.17vw, 5rem);
+  text-align:      center;
+}
+
+.sb-cta-final__logo {
+  width:     auto;
+  max-width: clamp(180px, 20vw, 280px);
+  height:    auto;
+  display:   block;
+}
+
+.sb-cta-final__text {
+  font-family:    var(--f-pre);
+  font-size:      clamp(1rem, 1.3vw, 1.25rem);
+  font-weight:    700;
+  letter-spacing: -0.03em;
+  color:          var(--c-dark);
+  line-height:    2;
+  text-align:     center;
+  margin:         0;
+}
+
+.sb-cta-final__text strong {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sb-mobile-media-width: 100%;
+    --sb-mobile-media-max-width: 100%;
+    --sb-mobile-media-height: auto;
+  }
+
+  .sb-section--split .sb-section__media,
+  .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) > .sb-section__inner > .sb-section__media,
+  .sb-section__media--story01 {
+    width:      var(--sb-mobile-media-width) !important;
+    max-width:  var(--sb-mobile-media-max-width) !important;
+    height:     var(--sb-mobile-media-height) !important;
+    align-self: stretch;
+    transform:  none;
+  }
+
+  .sb-section--split .sb-section__img,
+  .sb-alistar .sb-section--split.sb-section--bg-beige:has(#alistar-sec-1-title) > .sb-section__inner > .sb-section__media .sb-section__img {
+    width:      var(--sb-mobile-media-width) !important;
+    max-width:  var(--sb-mobile-media-max-width) !important;
+    height:     var(--sb-mobile-media-height) !important;
+  }
+
+  .sb-section__inner--cta-final {
+    flex-direction: column;
+  }
+}

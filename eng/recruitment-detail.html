@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>?곸뾽 諛?愿由??낅Т 梨꾩슜 ?곸꽭 | Withus Healthcare</title>
+  <meta name="description" content="?꾨뜑?ㅽ뿬?ㅼ????곸뾽 諛?愿由??낅Т (?좎엯 諛?寃쎈젰) ?ъ썝 ?곸떆 梨꾩슜 怨듦퀬?낅땲??">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="recruitment.css">
+  <link rel="stylesheet" href="recruitment-detail.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Go to Withus Healthcare Home">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              ?뚯궗?뚭컻
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="?뚯궗?뚭컻 ?섏쐞 硫붾돱">
+              <li><a href="./about.html"><span>?뚯궗媛쒖슂</span></a></li>
+              <li><a href="./core-values.html"><span>?듭떖媛移?/span></a></li>
+              <li><a href="./history.html"><span>?고쁺</span></a></li>
+              <li><a href="./directions.html"><span>?ㅼ떆?붽만</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              釉뚮옖?쒖냼媛?              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="釉뚮옖?쒖냼媛??섏쐞 硫붾돱">
+              <li><a href="./brand.html"><span>二쇰젰 釉뚮옖??/span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">?곌뎄媛쒕컻</a></li>
+          <li class="nav-item">
+            <a href="./recruitment.html" class="nav-link" aria-current="page">梨꾩슜?뺣낫</a>
+          </li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">怨좉컼?쇳꽣</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="?몄뼱 ?좏깮" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="?몄뼱 ?좏깮">
+            <li><a href="../recruitment-detail.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/recruitment-detail.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="硫붾돱 ?닿린" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="紐⑤컮??硫붾돱" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Go to Withus Healthcare Home">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="硫붾돱 ?リ린">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>?뚯궗?뚭컻</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="./about.html" class="drawer__sub-link">?뚯궗媛쒖슂</a></li>
+          <li><a href="./core-values.html" class="drawer__sub-link">?듭떖媛移?/a></li>
+          <li><a href="./history.html" class="drawer__sub-link">?고쁺</a></li>
+          <li><a href="./directions.html" class="drawer__sub-link">?ㅼ떆?붽만</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>釉뚮옖?쒖냼媛?/span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="./brand.html" class="drawer__sub-link">二쇰젰 釉뚮옖??/a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">?곌뎄媛쒕컻</a></li>
+      <li class="drawer__item"><a href="./recruitment.html" class="drawer__btn drawer__btn--link">梨꾩슜?뺣낫</a></li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">怨좉컼?쇳꽣</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         PAGE HERO BANNER ??reuses recruitment.css classes
+    ============================================================ -->
+    <section class="pg-hero pg-hero--recruit" aria-label="梨꾩슜?뺣낫 諛곕꼫">
+      <div class="pg-hero__bg" aria-hidden="true"></div>
+      <div class="pg-hero__content">
+        <h1 class="pg-hero__title">梨꾩슜?뺣낫</h1>
+        <nav class="pg-breadcrumb" aria-label="?꾩옱 ?꾩튂">
+          <a href="./index.html" class="pg-breadcrumb__home" aria-label="Home">
+            <img src="assets/icon-home-breadcrumb.svg" alt="?? width="16" height="16">
+          </a>
+          <span class="pg-breadcrumb__dot" aria-hidden="true">쨌</span>
+          <span class="pg-breadcrumb__item pg-breadcrumb__item--current" aria-current="page">
+            梨꾩슜?뺣낫
+            <img src="assets/icon-breadcrumb-arrow-active.svg" alt="" class="pg-breadcrumb__chevron-icon" aria-hidden="true" width="10" height="6">
+          </span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         JOB DETAIL SECTION
+    ============================================================ -->
+    <section class="rcd-section" aria-label="梨꾩슜 怨듦퀬 ?곸꽭">
+      <div class="rcd-inner">
+
+        <!-- Two-column layout: main content + sidebar -->
+        <div class="rcd-layout">
+
+          <!-- ?? LEFT: Main content ?? -->
+          <article class="rcd-main">
+
+            <!-- Job header: title + upload date + divider -->
+            <header class="rcd-header">
+              <h2 class="rcd-title">?곸뾽 諛?愿由??낅Т (?좎엯 諛?寃쎈젰) ?ъ썝 ?곸떆 梨꾩슜</h2>
+              <div class="rcd-meta">
+                <p class="rcd-date">?낅줈?? 2026??03??10??/p>
+                <hr class="rcd-divider" aria-hidden="true">
+              </div>
+            </header>
+
+            <!-- Inline info card visible on mobile/tablet (below title) -->
+            <div class="rcd-mobile-card" aria-label="梨꾩슜 ?뺣낫 ?붿빟">
+              <div class="rcd-info-rows">
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">吏곷Т 援щ텇</span>
+                  <span class="rcd-info-row__value" data-field="job_type">?곸뾽??뙋留ㅲ?Т??/span>
+                </div>
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">梨꾩슜 ?뺥깭</span>
+                  <span class="rcd-info-row__value" data-field="hire_type">?쇰컲梨꾩슜</span>
+                </div>
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">梨꾩슜 援щ텇</span>
+                  <span class="rcd-info-row__value" data-field="career">寃쎈젰臾닿?</span>
+                </div>
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">留덇컧??/span>
+                  <span class="rcd-info-row__value rcd-info-row__value--deadline" data-field="deadline">2026.01.28<br>?ㅽ썑 11:59</span>
+                </div>
+              </div>
+              <a href="#" class="rcd-apply-btn" target="_blank" rel="noopener noreferrer" aria-label="Apply for recruitment">
+                <span>吏?먰븯湲?/span>
+                <img src="assets/icon-apply-link.svg" alt="" width="17" height="17" aria-hidden="true">
+              </a>
+            </div>
+
+            <!-- Content body sections -->
+            <div class="rcd-body">
+
+              <div class="rcd-block">
+                <h3 class="rcd-block__title">[吏곷Т ?뚭컻]</h3>
+                <p class="rcd-block__text rcd-block__text--lg">?꾨?移대뱶??'Digital ?꾨?移대뱶'???щ줈嫄??꾨옒 Data Science瑜??쒖슜??留덉??낆쓣 湲곕컲?쇰줈 寃쎌웳?μ쓣 ?뺣낫?섎ŉ ?곸떊??嫄곕벊?섍퀬 ?덉뒿?덈떎.<br>
+Data Lab??留덉??곕뒗 Data Science??????댄빐瑜?諛뷀깢?쇰줈 媛쒖씤??留덉??낆쓣 湲고쉷/?댁쁺?섎ŉ<br>
+?대? ?듯빐 留덉???Insight瑜?諛쒓뎬?섍퀬 PLCC 怨좉컼?ъ????묒뾽???듯빐 ?ъ뾽???곸슜?섏뿬 怨듬룞??媛移섎? 李쎌텧?섎뒗 ??븷???섑뻾?섍퀬 ?덉뒿?덈떎.</p>
+              </div>
+
+              <div class="rcd-block">
+                <h3 class="rcd-block__title">[二쇱슂?낅Т]</h3>
+                <p class="rcd-block__text">- PLCC 怨좉컼???꾨줈?앺듃 怨쇱젣 愿由?諛?Communication ?꾨떞 RM(Relationship Manager)<br>
+- Data 援ъ“??遺꾩꽍 諛??좉퇋 AI ?쒖슜 A/B TEST 湲고쉷<br>
+- 媛쒖씤??留덉???湲고쉷/?댁쁺???듯빐 怨좉컼??Needs??????닿껐梨??쒖떆 諛?吏??br>
+- ?묒쓽泥??댁쁺 諛?愿由?/p>
+              </div>
+
+              <div class="rcd-block">
+                <h3 class="rcd-block__title">[?먭꺽?붽굔 諛??곕??ы빆]</h3>
+                <p class="rcd-block__text">- ?숈궗 ?댁긽 ?숈쐞 蹂댁쑀??br>
+- ?쒗쑕?ъ????꾨줈?앺듃 怨쇱젣 Leading 寃쏀뿕<br>
+- Data ?붽굔 ?뺤쓽 諛?遺꾩꽍, ?꾩텧 怨쇱젙???듯븳 Insight 諛쒓뎬 諛?Reporting ??웾<br>
+- AI 諛??좏넻/鍮꾩쑀???낃퀎 Trend 蹂?붿뿉 ???愿??br>
+- CRM 愿???낅Т ?먮뒗 Data 湲곕컲 留덉????낅Т 寃쎈젰 7-10???곕?<br>
+- Data 遺꾩꽍 諛??듦퀎 Tool ?쒖슜 Skill(Oracle SQL, Python, R ?? ?곕?<br>
+- ?듦퀎 Tool ?먭꺽利?諛??곌? ?꾧났(?듦퀎?? ?섑븰, Data Science ?? ?곕?</p>
+              </div>
+
+              <div class="rcd-block">
+                <h3 class="rcd-block__title">[梨꾩슜?덉감]</h3>
+                <p class="rcd-block__text rcd-block__text--lg">?쒕쪟 寃??&gt; 硫댁젒(?ㅻТ, ?꾩썝, HR ?? &gt; 泥섏슦 ?묒쓽 &gt; ?됲뙋 議고쉶 &gt; 理쒖쥌 ?⑷꺽(?낆궗)<br>
+*?곴린 紐⑥쭛 ?덉감??紐⑥쭛 ?ъ???諛??뚯궗 ?ъ젙???섑빐 蹂寃쎈맆 ???덉뒿?덈떎.</p>
+              </div>
+
+              <div class="rcd-block">
+                <h3 class="rcd-block__title">[洹쇰Т議곌굔]</h3>
+                <p class="rcd-block__text">- 怨좎슜 ?뺥깭 : ?뺢퇋吏?br>
+- 洹쇰Т ?μ냼 : ?꾨?移대뱶 蹂몄궗 (援?쉶?섏궗?뱀뿭 ?꾨?移대뱶 鍮뚮뵫)</p>
+              </div>
+
+              <div class="rcd-block">
+                <h3 class="rcd-block__title">[?쒗깮 諛?蹂듭?]</h3>
+                <p class="rcd-block__text">- 二쇳깮援ъ엯/?꾩꽭?먭툑?異?br>
+- ?꾨?湲곗븘李?李⑤웾 援ъ엯吏??br>
+- 紐낆젅 ?좊Ъ 湲고봽??移대뱶 吏湲?br>
+- ?щ궡 ?쇳듃?덉뒪 ?댁슜<br>
+- ?щ궡 ?대┛?댁쭛 ?댁쁺<br>
+- ?먮??숈옄湲?吏??br>
+- ?섎즺鍮?吏??br>
+- 踰뺤젙 ?곗감 ?닿? ???뺢린 ?닿? 5??吏湲?br>
+- Year-End Holiday : ?곕쭚 ?좉툒?닿? 2??吏湲?/p>
+              </div>
+
+              <div class="rcd-block">
+                <h3 class="rcd-block__title">[湲고??ы빆]</h3>
+                <p class="rcd-block__text">- 援?궡 痍⑥뾽 諛??댁쇅 異쒖옣??寃곌꺽 ?ъ쑀媛 ?덈뒗 寃쎌슦 梨꾩슜 遺덇? ?⑸땲??<br>
+- 梨꾩슜愿??遺??泥?긽 ?먮뒗 ?낆궗 吏?먯꽌 ?덉쐞 ?ъ떎 湲곗옱 ??梨꾩슜 諛??낆궗 痍⑥냼?⑸땲??<br>
+- 援???좉났?????덉슦 諛?吏?먯뿉 愿??踰뺣쪧???섍굅 痍⑥뾽吏????곸옄瑜??곕??⑸땲??<br>
+- ?꾪삎 蹂??⑷꺽/遺덊빀寃???곸옄??媛쒕퀎?곸쑝濡?吏꾪뻾?섎ŉ, ?곸꽭 ?쇱젙? ?꾪삎 蹂??⑷꺽?먯뿉 ?쒗븯??媛쒕퀎 ?덈궡 ?쒕┫ ?덉젙?낅땲??<br>
+&nbsp;&nbsp;怨듦퀬 ?쇱젙? 梨꾩슜???곕씪 蹂寃? ?곗옣, 議곌린 醫낅즺 ?????덉뒿?덈떎.<br>
+- 吏?먯꽌瑜??ы븿??梨꾩슜 ?꾪삎?먯꽌 ?쒖텧???댁슜???ъ떎怨??ㅻⅤ嫄곕굹 臾몄꽌濡?利앸튃??遺덇???寃쎌슦,<br>
+&nbsp;&nbsp;?뱀? 怨좎쓽?곸씤 湲곗옱?ы빆 ?꾨씫???뺤씤??寃쎌슦 ?⑷꺽??痍⑥냼?섍굅???꾪삎 ?곸쓽 遺덉씠?듭쓣 諛쏆쓣 ???덉뒿?덈떎.</p>
+              </div>
+
+            </div><!-- /.rcd-body -->
+          </article>
+
+          <!-- ?? RIGHT: Sticky sidebar ?? -->
+          <aside class="rcd-sidebar" aria-label="Recruitment information and support">
+            <div class="rcd-info-card">
+              <div class="rcd-info-rows">
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">吏곷Т 援щ텇</span>
+                  <span class="rcd-info-row__value" data-field="job_type">?곸뾽??뙋留ㅲ?Т??/span>
+                </div>
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">梨꾩슜 ?뺥깭</span>
+                  <span class="rcd-info-row__value" data-field="hire_type">?쇰컲梨꾩슜</span>
+                </div>
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">梨꾩슜 援щ텇</span>
+                  <span class="rcd-info-row__value" data-field="career">寃쎈젰臾닿?</span>
+                </div>
+                <div class="rcd-info-row">
+                  <span class="rcd-info-row__label">留덇컧??/span>
+                  <span class="rcd-info-row__value rcd-info-row__value--deadline" data-field="deadline">2026.01.28<br>?ㅽ썑 11:59</span>
+                </div>
+              </div>
+              <a href="#" class="rcd-apply-btn" target="_blank" rel="noopener noreferrer" aria-label="Apply for recruitment">
+                <span>吏?먰븯湲?/span>
+                <img src="assets/icon-apply-link.svg" alt="" width="17" height="17" aria-hidden="true">
+              </a>
+            </div>
+          </aside>
+
+        </div><!-- /.rcd-layout -->
+      </div><!-- /.rcd-inner -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="./privacy.html" class="footer-link footer-link--primary">媛쒖씤?뺣낫泥섎━諛⑹묠</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">?댁슜?쎄?</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">怨좉컼?쇳꽣</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>?곹샇紐?:</strong> (二??꾨뜑?ㅽ뿬?ㅼ???/span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>??쒖옄 :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>?ъ뾽?먮벑濡앸쾲??:</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>二쇱냼 :</strong> ?몄쿇愿묒뿭???쒓뎄 泥?씪?쒕궡濡?96, 701??泥?씪??</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script src="recruitment-detail.js"></script>
+</body>
+</html>
+

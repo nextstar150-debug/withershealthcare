@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리젠스타 B | Withus Healthcare</title>
+  <meta name="description" content="리젠스타 B 제품 상세 소개">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400&family=DM+Serif+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="brand-detail.css">
+  <link rel="stylesheet" href="brand.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="./index.html" class="nav-logo-link" aria-label="Withus Healthcare 홈으로">
+          <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="nav-logo-img" width="165" height="32">
+        </a>
+      </div>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li class="nav-item nav-item--has-sub">
+            <a href="./about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              COMPANY
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="회사소개 하위 메뉴">
+              <li><a href="about.html"><span>About Us</span></a></li>
+              <li><a href="core-values.html"><span>Core Values</span></a></li>
+              <li><a href="history.html"><span>Our History</span></a></li>
+              <li><a href="directions.html"><span>Location</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="./brand.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              BRAND&nbsp;&nbsp;INFO
+              <span class="nav-indicator" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-submenu" role="list" aria-label="브랜드소개 하위 메뉴">
+              <li><a href="brand.html"><span>Main Brands</span></a></li>
+              <li><a href="special-brand.html"><span>Special Product</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./rd.html" class="nav-link">RESEARCH&nbsp;&nbsp;&amp;&nbsp;&nbsp;DEVELOPMENT</a></li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link">CONTACT&nbsp;&nbsp;US</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="nav-lang-wrap" id="navLangWrap">
+          <button class="nav-lang" id="navLangBtn" aria-label="언어 선택" aria-haspopup="true" aria-expanded="false">
+            <img src="./assets/icon-flag.svg" alt="" class="nav-flag">
+            <span>ENG</span>
+            <img src="./assets/icon-chevron.svg" alt="" class="nav-chevron">
+          </button>
+          <ul class="lang-dropdown" id="langDropdown" role="list" aria-label="언어 선택">
+            <li><a href="../brand-detail-regensta-b.html" class="lang-dropdown__item">KOR</a></li>
+            <li><a href="/eng/brand-detail-regensta-b.html" class="lang-dropdown__item lang-dropdown__item--active" aria-current="true">ENG</a></li>
+          </ul>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="drawer" id="navDrawer" aria-label="모바일 메뉴" aria-hidden="true">
+    <div class="drawer__header">
+      <a href="./index.html" class="drawer__logo-link" aria-label="Withus Healthcare 홈으로">
+        <img src="./assets/nav-logo.svg" alt="Withus Healthcare" class="drawer__logo-img" width="165" height="32">
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="메뉴 닫기">&#10005;</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub1">
+          <span>COMPANY</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub1" role="list">
+          <li><a href="about.html" class="drawer__sub-link">About Us</a></li>
+          <li><a href="core-values.html" class="drawer__sub-link">Core Values</a></li>
+          <li><a href="history.html" class="drawer__sub-link">Our History</a></li>
+          <li><a href="directions.html" class="drawer__sub-link">Location</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item drawer__item--has-sub">
+        <button class="drawer__btn" aria-expanded="false" aria-controls="drawerSub2">
+          <span>BRAND INFO</span>
+          <span class="drawer__chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="drawer__sub" id="drawerSub2" role="list">
+          <li><a href="brand.html" class="drawer__sub-link">Main Brands</a></li>
+          <li><a href="special-brand.html" class="drawer__sub-link">Special Product</a></li>
+        </ul>
+      </li>
+      <li class="drawer__item"><a href="./rd.html" class="drawer__btn drawer__btn--link">RESEARCH &amp; DEVELOPMENT</a></li>
+      <li class="drawer__item"><a href="./contact.html" class="drawer__btn drawer__btn--link">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="brand-detail-intro">
+      <div class="brand-container">
+        <nav class="brand-breadcrumb" aria-label="현재 위치">
+          <a href="./index.html" class="brand-breadcrumb__home" aria-label="홈">
+            <img src="./assets/icon-home-breadcrumb.svg" alt="홈" width="14" height="14">
+          </a>
+          <span class="brand-breadcrumb__dot" aria-hidden="true"></span>
+          <a href="./brand.html" class="brand-breadcrumb__item">
+            BRAND INFO
+            <span class="brand-breadcrumb__chevron" aria-hidden="true"></span>
+          </a>
+        </nav>
+
+        <a href="./brand.html" class="brand-heading__link">
+          <h2 class="brand-heading">Main  Brands</h2>
+        </a>
+
+        <nav class="brand-product-nav" aria-label="제품 바로가기">
+          <ul class="brand-product-nav__list">
+            <li><a href="./brand-detail-carragel-s.html"          class="brand-product-nav__link">Carragel S</a></li>
+            <li><a href="./brand-detail-carragel-t.html"          class="brand-product-nav__link">Carragel T</a></li>
+            <li><a href="./brand-detail-avarus.html"          class="brand-product-nav__link">AVARUS</a></li>
+            <li><a href="./brand-detail-regensta-a.html"          class="brand-product-nav__link">REGENSTA A</a></li>
+            <li><a href="./brand-detail-regensta-b.html"          class="brand-product-nav__link is-active">REGENSTA B</a></li>
+            <li><a href="./brand-detail-regensta-h.html"          class="brand-product-nav__link">REGENSTA H</a></li>
+            <li class="is-hidden--temp"><a href="./brand-detail-clevy-spray.html"          class="brand-product-nav__link">CLEVY</a></li>
+            <li><a href="./brand-detail-regensta-g-cream.html"          class="brand-product-nav__link">REGENSTA G Cream</a></li>
+            <li><a href="./brand-detail-scargel-combination.html"          class="brand-product-nav__link">Scargel Combination</a></li>
+            <li><a href="./brand-detail-megaheal.html"          class="brand-product-nav__link">MEGAHEAL</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section class="section brand-detail">
+      <div class="brand-detail__image">
+        <img
+          src="./assets/eng-brand-detail-regensta-b.jpg"
+          alt="리젠스타 B 제품 상세 이미지"
+          loading="lazy"
+          width="720"
+          height="6976"
+        >
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="푸터 내비게이션">
+        <a href="./privacy.html" class="footer-link footer-link--primary">Privacy Policy</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./terms.html" class="footer-link">Terms of Use</a>
+        <span class="footer-dot" aria-hidden="true"></span>
+        <a href="./contact.html" class="footer-link">Contact Us</a>
+      </nav>
+      <div class="footer-info">
+        <div class="footer-info-left">
+          <a href="./index.html" class="footer-logo-link" aria-label="Withus Healthcare">
+            <img src="./assets/footer-logo.svg" alt="Withus Healthcare" class="footer-logo" width="165" height="32">
+          </a>
+          <div class="footer-company">
+            <div class="footer-row">
+              <span><strong>Company :</strong> Withus Healthcare Co., Ltd.</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>CEO :</strong> David Jiyoung Kim</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Tel :</strong> 032-564-0174</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Fax :</strong> 032-564-0175</span>
+            </div>
+            <div class="footer-row">
+              <span><strong>Business Reg. No. :</strong> 875-87-00730</span>
+              <span class="footer-bullet" aria-hidden="true"></span>
+              <span><strong>Address :</strong> 96, Cheongna-hanne-ro, Seo-gu, Incheon, Republic of Korea (Unit 701)</span>
+            </div>
+            <p class="footer-copy">Copyright &copy; 2026 Withus Healthcare. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/withus__healthcare/" class="footer-ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/icon-instagram.svg" alt="Instagram" width="40" height="40">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="brand-detail.js"></script>
+
+</body>
+</html>
+
+
+
+
+
